@@ -155,8 +155,12 @@ class Settings {
         mechanics: "accurate",
 		music: "typea",
       },
+	  standardx: {
+        lockdownMode: "classic",
+      },
       prox: {
         startingLevel: 1,
+		lockdownMode: "classic",
       },
       handheld: {
         startingLevel: 0,

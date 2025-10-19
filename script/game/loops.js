@@ -7259,7 +7259,17 @@ export const loops = {
       gravity(arg)
       hyperSoftDrop(arg)
       hardDrop(arg)
-      classicLockdown(arg)
+      switch (settings.game.standardx.lockdownMode) {
+        case "infinity":
+          infiniteLockdown(arg)
+          break
+        case "extended":
+          extendedLockdown(arg)
+          break
+        case "classic":
+          classicLockdown(arg)
+          break
+      }
       if (!arg.piece.inAre) {
         hold(arg)
       }
@@ -7531,7 +7541,17 @@ export const loops = {
       gravity(arg)
       hyperSoftDrop(arg)
       hardDrop(arg)
-      classicLockdown(arg)
+      switch (settings.game.prox.lockdownMode) {
+        case "infinity":
+          infiniteLockdown(arg)
+          break
+        case "extended":
+          extendedLockdown(arg)
+          break
+        case "classic":
+          classicLockdown(arg)
+          break
+      }
       if (!arg.piece.inAre) {
         hold(arg)
       }

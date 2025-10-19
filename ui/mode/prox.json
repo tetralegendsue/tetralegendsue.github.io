@@ -22,6 +22,25 @@
       "setting": "startingLevel",
       "gameName": "prox",
       "settingType": "game"
+    },
+	{
+      "string": "lockdownModeLabel",
+      "stringDesc": "lockdownModeDescription",
+      "type": "select",
+      "action": "select",
+      "selectOptions": [
+	    {
+          "string": "classicLdOption",
+          "value": "classic"
+        },
+        {
+          "string": "extendedLdOption",
+          "value": "extended"
+        }
+      ],
+      "setting": "lockdownMode",
+      "gameName": "prox",
+      "settingType": "game"
     }
   ]
 }

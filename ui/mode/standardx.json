@@ -10,6 +10,25 @@
       "string": "standardLabel",
       "langOverride": "menu_tetrax",
       "type": "header"
+    },
+	{
+      "string": "lockdownModeLabel",
+      "stringDesc": "lockdownModeDescription",
+      "type": "select",
+      "action": "select",
+      "selectOptions": [
+	    {
+          "string": "classicLdOption",
+          "value": "classic"
+        },
+        {
+          "string": "extendedLdOption",
+          "value": "extended"
+        }
+      ],
+      "setting": "lockdownMode",
+      "gameName": "standardx",
+      "settingType": "game"
     }
   ]
 }
