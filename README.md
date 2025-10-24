@@ -1,5 +1,5 @@
-# Tetra Legends OE
-Tetra Legends OE is an unofficial Tetra Legends expansion built on Tetra Legends Ultimate by Talon125.
+# Tetra Legends Enhanced
+Tetra Legends Enhanced is an unofficial Tetra Legends expansion built on Tetra Legends Ultimate by Talon125.
 Play here: https://krsofficial.github.io/tetralegends/
 
 # Additions

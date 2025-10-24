@@ -105,7 +105,7 @@
 	{
       "fixedText": true,
       "label": "GitHub Repository",
-      "description": "Go to the GitHub Repository of Tetra Legends OE",
+      "description": "Go to the GitHub Repository of Tetra Legends Enhanced",
       "action": "link",
       "url": "https://github.com/krsofficial/tetralegends/"
     },

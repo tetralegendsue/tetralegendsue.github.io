@@ -54,7 +54,7 @@
           "langOverride": "menu_general"
         },
 		{
-          "label": "Default",
+          "label": "Standard",
           "fixedText": true,
           "value": "standard"
         },
