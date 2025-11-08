@@ -186,8 +186,25 @@ export default class Stack extends GameModule {
 	if (this.isFrozen && this.wouldCauseLineClear() <= 0) {
 		this.freezePlacedMinos()
 	}
+	if (this.parent.piece.useBoneBlocks || settings.settings.outline !== true) {
+		$(".stack-canvas").classList.add("outlineoff")
+		$(".tetris-flash").classList.add("outlineoff")
+	} else {
+		$(".stack-canvas").classList.remove("outlineoff")
+		$(".tetris-flash").classList.remove("outlineoff")
+	}
 	if (this.isFading && this.isHidden === false) {
+		$(".stack-canvas").classList.remove("outlineoff")
+		$(".tetris-flash").classList.remove("outlineoff")
+		$(".stack-canvas").classList.add("invis")
+		$(".tetris-flash").classList.add("invis")
 		this.fadePlacedMinos()
+	}
+	if (this.isHidden) {
+		$(".stack-canvas").classList.remove("outlineoff")
+		$(".tetris-flash").classList.remove("outlineoff")
+		$(".stack-canvas").classList.add("invis")
+		$(".tetris-flash").classList.add("invis")
 	}
 	this.resetLastPlacedBlocks()
     for (let y = 0; y < shape.length; y++) {

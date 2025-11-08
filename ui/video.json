@@ -101,7 +101,7 @@
 		{
           "label": "Arika-ACE",
           "fixedText": true,
-          "value": "krs"
+          "value": "ace"
         },
         {
           "string": "glossyOption",
@@ -171,12 +171,26 @@
           "fixedText": true,
           "value": "sega"
         },
+		{
+          "label": "KRS",
+          "fixedText": true,
+          "value": "krs"
+        },
         {
           "string": "boneOption",
           "value": "bone"
         }
       ],
       "setting": "skin",
+      "settingType": "setting"
+    },
+	{
+      "label": "OUTLINE",
+	  "description": "",
+      "fixedText": true,
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "outline",
       "settingType": "setting"
     },
     {

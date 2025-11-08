@@ -117,6 +117,11 @@ const testModeUpdate = () => {
 			testMode = true
 		}
 	}
+	if (testMode === true) {
+		$(".delay-time").classList.add("testmode")
+	} else {
+		$(".delay-time").classList.remove("testmode")
+	}
 }
 const levelUpdateSega = (game) => {
   let returnValue = false
@@ -1789,6 +1794,7 @@ export const loops = {
 	  if (game.stat.level >= 200) {
 		  if (isEndRoll === false) {
 			isEndRoll = true
+			game.stack.isFading = true
 			game.stack.endRollStart()
 			rtaGoal = game.rta + 55000
 			sound.loadBgm(["ending1"], "arcade")
@@ -1887,6 +1893,7 @@ export const loops = {
       game.stat.initPieces = 2
       updateFallSpeed(game)
       game.updateStats()
+	  game.stack.isFading = false
     },
   },
   suddenworld: {
@@ -2459,6 +2466,7 @@ export const loops = {
 	  if (game.stat.level >= 200) {
 		  if (isEndRoll === false) {
 			isEndRoll = true
+			game.stack.isFading = true
 			game.stack.endRollStart()
 			rtaGoal = game.rta + 55000
 			sound.loadBgm(["ending1"], "arcade")
@@ -2557,6 +2565,7 @@ export const loops = {
       game.stat.initPieces = 2
       updateFallSpeed(game)
       game.updateStats()
+	  game.stack.isFading = false
     },
   },
   marathon: {

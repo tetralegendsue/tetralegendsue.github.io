@@ -980,15 +980,71 @@ body {
 
 @keyframes tetris-flash {
   from {
-    filter: brightness(100%);
+    filter: brightness(100%)
   }
 
   to {
-    filter: brightness(800%);
+    filter: brightness(800%)
+  }
+}
+
+@keyframes tetris-flash-outlineoff {
+  from {
+    filter:
+	brightness(100%)
+	drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+    drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+    drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+    drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+  }
+
+  to {
+    filter:
+	brightness(800%)
+	drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+    drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+    drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+    drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+  }
+}
+
+@keyframes tetris-flash-outlineon {
+  from {
+    filter:
+	brightness(100%)
+	drop-shadow(3px 3px 0px rgba(255,255,255,0.25))
+    drop-shadow(-3px -3px 0px rgba(255,255,255,0.25))
+    drop-shadow(3px -3px 0px rgba(255,255,255,0.25))
+    drop-shadow(-3px 3px 0px rgba(255,255,255,0.25))
+  }
+
+  to {
+    filter:
+	brightness(800%)
+	drop-shadow(3px 3px 0px rgba(255,255,255,0.25))
+    drop-shadow(-3px -3px 0px rgba(255,255,255,0.25))
+    drop-shadow(3px -3px 0px rgba(255,255,255,0.25))
+    drop-shadow(-3px 3px 0px rgba(255,255,255,0.25))
   }
 }
 
 .tetris-flash {
+  animation-name: tetris-flash-outlineon;
+  animation-duration: .05s;
+  animation-iteration-count: 8;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.tetris-flash.outlineoff {
+  animation-name: tetris-flash-outlineoff;
+  animation-duration: .05s;
+  animation-iteration-count: 8;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.tetris-flash.invis {
   animation-name: tetris-flash;
   animation-duration: .05s;
   animation-iteration-count: 8;
@@ -1417,6 +1473,34 @@ body[theme="tetrjs"] .game-center {
   left: 0;
 }
 
+.stack-canvas {
+  filter: 
+  drop-shadow(3px 3px 0px rgba(255,255,255,0.25))
+  drop-shadow(-3px -3px 0px rgba(255,255,255,0.25))
+  drop-shadow(3px -3px 0px rgba(255,255,255,0.25))
+  drop-shadow(-3px 3px 0px rgba(255,255,255,0.25))
+  ;
+}
+
+.stack-canvas.outlineoff {
+  filter: 
+  drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+  drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+  drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+  drop-shadow(0px 0px 0px rgba(255,255,255,0.25))
+  ;
+}
+
+.stack-canvas.invis {
+  filter: 
+  drop-shadow(0px 0px 0px rgba(255,255,255,0))
+  drop-shadow(0px 0px 0px rgba(255,255,255,0))
+  drop-shadow(0px 0px 0px rgba(255,255,255,0))
+  drop-shadow(0px 0px 0px rgba(255,255,255,0))
+  ;
+  opacity: 0.25;
+}
+
 .hold-container {
   text-align: right;
 }
@@ -1518,6 +1602,16 @@ body[theme="tetrjs"] .hold-label {
   width: 6em;
   bottom: -2.3em;
   left: -7em;
+}
+
+.delay-time.testmode {
+  position: absolute;
+  color: white;
+  text-align: right;
+  width: 6em;
+  bottom: -2.3em;
+  left: -7em;
+  opacity: 0;
 }
 
 .rotation-warning {
