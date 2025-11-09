@@ -1,7 +1,7 @@
 # Tetra Legends Enhanced
-Tetra Legends Enhanced is an unofficial Tetra Legends expansion built on Tetra Legends Ultimate by Talon125.
-Play here: https://tetralegendsenhanced.netlify.app/
-Alternate link if above link doesnt work: https://krstacker.github.io/tetralegendsenhanced/
+- Tetra Legends Enhanced is an unofficial Tetra Legends expansion built on Tetra Legends Ultimate by Talon125.
+- Play here: https://tetralegendsenhanced.netlify.app/
+- Alternate link if above link doesnt work: https://krstacker.github.io/tetralegendsenhanced/
 
 # Additions
 - Total UI Overhaul
