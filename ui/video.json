@@ -91,7 +91,7 @@
 		{
           "label": "Arika-TAP",
           "fixedText": true,
-          "value": "arcade"
+          "value": "tap"
         },
         {
           "label": "Arika-TI",
@@ -102,6 +102,11 @@
           "label": "Arika-ACE",
           "fixedText": true,
           "value": "ace"
+        },
+		{
+          "label": "Arika-AE",
+          "fixedText": true,
+          "value": "ae"
         },
         {
           "string": "glossyOption",
@@ -155,11 +160,6 @@
           "label": "PPT",
           "fixedText": true,
           "value": "ppt"
-        },
-		{
-          "label": "Prismal",
-          "fixedText": true,
-          "value": "prismal"
         },
 		{
           "label": "Pyramidal",

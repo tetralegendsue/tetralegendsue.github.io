@@ -1075,25 +1075,43 @@ export const SPAWN_OFFSETS = {
     J: [3, -1],
     S: [2, -1],
   },
+  ace: {
+    downShift: 1,
+    I: [2, -3],
+    L: [3, -2],
+    O: [3, -2],
+    Z: [3, -1],
+    T: [2, -3],
+    J: [3, -2],
+    S: [2, -3],
+  },
+  aceworld: {
+    downShift: 1,
+    I: [2, -3],
+    L: [3, -2],
+    O: [3, -3],
+    Z: [3, -2],
+    T: [2, -3],
+    J: [3, -2],
+    S: [2, -3],
+  },
 }
 SPAWN_OFFSETS.asc = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.ascx = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.tetrax = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
 SPAWN_OFFSETS.oshisaure = { ...SPAWN_OFFSETS.srs, downShift: 0 }
-SPAWN_OFFSETS.world = SPAWN_OFFSETS.srs
+SPAWN_OFFSETS.world = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
 SPAWN_OFFSETS.arsti = SPAWN_OFFSETS.ars
-SPAWN_OFFSETS.arsx = SPAWN_OFFSETS.ars
+SPAWN_OFFSETS.arsx = SPAWN_OFFSETS.ace
 SPAWN_OFFSETS.original = SPAWN_OFFSETS.retro
-SPAWN_OFFSETS.ace = SPAWN_OFFSETS.srs
-SPAWN_OFFSETS.aceworld = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.battle = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.friends = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.dshock = SPAWN_OFFSETS.srs
-SPAWN_OFFSETS.krs = SPAWN_OFFSETS.arsx
+SPAWN_OFFSETS.krs = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.t99 = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.ppt = SPAWN_OFFSETS.srs
-SPAWN_OFFSETS.arsae = SPAWN_OFFSETS.srs
-SPAWN_OFFSETS.worldae = SPAWN_OFFSETS.srs
+SPAWN_OFFSETS.arsae = SPAWN_OFFSETS.ace
+SPAWN_OFFSETS.worldae = SPAWN_OFFSETS.aceworld
 SPAWN_OFFSETS.sega = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.tonline = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.srsx = SPAWN_OFFSETS.srs
@@ -1135,7 +1153,7 @@ INITIAL_ORIENTATION.original = INITIAL_ORIENTATION.retro
 INITIAL_ORIENTATION.arsti = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.arsx = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.ace = INITIAL_ORIENTATION.arsx
-INITIAL_ORIENTATION.aceworld = INITIAL_ORIENTATION.world
+INITIAL_ORIENTATION.aceworld = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.battle = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.friends = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.dshock = INITIAL_ORIENTATION.srs
@@ -1143,8 +1161,8 @@ INITIAL_ORIENTATION.toj = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.krs = INITIAL_ORIENTATION.arsx
 INITIAL_ORIENTATION.t99 = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.ppt = INITIAL_ORIENTATION.srs
-INITIAL_ORIENTATION.arsae = INITIAL_ORIENTATION.arsx
-INITIAL_ORIENTATION.worldae = INITIAL_ORIENTATION.world
+INITIAL_ORIENTATION.arsae = INITIAL_ORIENTATION.ace
+INITIAL_ORIENTATION.worldae = INITIAL_ORIENTATION.aceworld
 INITIAL_ORIENTATION.sega = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.tonline = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.srsx = INITIAL_ORIENTATION.srs
@@ -2977,57 +2995,6 @@ const KICK_TEMPLATES = {
         ],
       ],
     },
-    I: {
-      right: [
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-      ],
-      left: [
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-      ],
-      double: [[[0, 0]], [[0, 0]], [[0, 0]], [[0, 0]]],
-    },
   },
   none: {
     all: {
@@ -3180,8 +3147,8 @@ KICK_TEMPLATES.friends = KICK_TEMPLATES.srs
 KICK_TEMPLATES.dshock = KICK_TEMPLATES.srs
 KICK_TEMPLATES.t99 = KICK_TEMPLATES.srs
 KICK_TEMPLATES.ppt = KICK_TEMPLATES.srs
-KICK_TEMPLATES.arsae = KICK_TEMPLATES.arsx
-KICK_TEMPLATES.worldae = KICK_TEMPLATES.srs
+KICK_TEMPLATES.arsae = KICK_TEMPLATES.ace
+KICK_TEMPLATES.worldae = KICK_TEMPLATES.aceworld
 KICK_TEMPLATES.srsx = KICK_TEMPLATES.srs
 KICK_TEMPLATES.toj = KICK_TEMPLATES.srs
 KICK_TEMPLATES.newcentury = KICK_TEMPLATES.srs
@@ -3834,7 +3801,7 @@ export const KICK_TABLES = {
     S: KICK_TEMPLATES.deluxe.x,
   },
   ars: {
-    I: KICK_TEMPLATES.ars.I,
+    I: KICK_TEMPLATES.ars.x,
     L: KICK_TEMPLATES.ars.x,
     O: KICK_TEMPLATES.o,
     Z: KICK_TEMPLATES.ars.x,
@@ -3916,7 +3883,7 @@ export const KICK_TABLES = {
     },
   },
   sega: {
-    I: KICK_TEMPLATES.sega.I,
+    I: KICK_TEMPLATES.sega.x,
     L: KICK_TEMPLATES.sega.x,
     O: KICK_TEMPLATES.o,
     Z: KICK_TEMPLATES.sega.x,
@@ -4047,8 +4014,8 @@ KICK_TABLES.friends = KICK_TABLES.srs
 KICK_TABLES.dshock = KICK_TABLES.srs
 KICK_TABLES.t99 = KICK_TABLES.srs
 KICK_TABLES.ppt = KICK_TABLES.srs
-KICK_TABLES.arsae = KICK_TABLES.arsx
-KICK_TABLES.worldae = KICK_TABLES.srs
+KICK_TABLES.arsae = KICK_TABLES.ace
+KICK_TABLES.worldae = KICK_TABLES.aceworld
 KICK_TABLES.toj = KICK_TABLES.srs
 KICK_TABLES.srsx = KICK_TABLES.srs
 KICK_TABLES.newcentury = KICK_TABLES.srs
@@ -4187,8 +4154,8 @@ PIECE_COLORS.friends = PIECE_COLORS.srs
 PIECE_COLORS.dshock = PIECE_COLORS.srs
 PIECE_COLORS.t99 = PIECE_COLORS.srs
 PIECE_COLORS.ppt = PIECE_COLORS.srs
-PIECE_COLORS.arsae = PIECE_COLORS.arsx
-PIECE_COLORS.worldae = PIECE_COLORS.world
+PIECE_COLORS.arsae = PIECE_COLORS.arsti
+PIECE_COLORS.worldae = PIECE_COLORS.aceworld
 PIECE_COLORS.toj = PIECE_COLORS.srs
 PIECE_COLORS.srsx = PIECE_COLORS.srs
 PIECE_COLORS.sega = PIECE_COLORS.ars
@@ -4248,8 +4215,8 @@ NEXT_OFFSETS.t99 = NEXT_OFFSETS.srs
 NEXT_OFFSETS.ppt = NEXT_OFFSETS.srs
 NEXT_OFFSETS.srsx = NEXT_OFFSETS.srs
 NEXT_OFFSETS.toj = NEXT_OFFSETS.srs
-NEXT_OFFSETS.arsae = NEXT_OFFSETS.arsx
-NEXT_OFFSETS.worldae = NEXT_OFFSETS.srs
+NEXT_OFFSETS.arsae = NEXT_OFFSETS.ace
+NEXT_OFFSETS.worldae = NEXT_OFFSETS.aceworld
 NEXT_OFFSETS.sega = NEXT_OFFSETS.ars
 NEXT_OFFSETS.tonline = NEXT_OFFSETS.srs
 NEXT_OFFSETS.krs = NEXT_OFFSETS.arsx
@@ -4602,8 +4569,8 @@ PIECE_OFFSETS.ppt = PIECE_OFFSETS.srs
 PIECE_OFFSETS.dshock = PIECE_OFFSETS.srs
 PIECE_OFFSETS.srsx = PIECE_OFFSETS.srs
 PIECE_OFFSETS.toj = PIECE_OFFSETS.srs
-PIECE_OFFSETS.arsae = PIECE_OFFSETS.arsx
-PIECE_OFFSETS.worldae = PIECE_OFFSETS.srs
+PIECE_OFFSETS.arsae = PIECE_OFFSETS.ace
+PIECE_OFFSETS.worldae = PIECE_OFFSETS.aceworld
 PIECE_OFFSETS.newcentury = PIECE_OFFSETS.srs
 PIECE_OFFSETS.sega = PIECE_OFFSETS.ars
 PIECE_OFFSETS.heboris = PIECE_OFFSETS.ars
@@ -5162,9 +5129,9 @@ export const SKIN_SETS = {
   retro: "retro",
   handheld: "handheld",
   deluxe: "deluxe",
-  ars: "arcade",
+  ars: "tap",
   arsti: "arika",
-  arsx: "ace",
+  arsx: "arika",
   oshisaure: "oshisaure",
   original: "bone",
   ace: "ace",
@@ -5172,7 +5139,7 @@ export const SKIN_SETS = {
   battle: "friends",
   friends: "friends",
   dshock: "dshock",
-  arsae: "prismal",
+  arsae: "ae",
   worldae: "pyramidal",
   t99: "t99",
   ppt: "ppt",
@@ -5182,7 +5149,7 @@ export const SKIN_SETS = {
   tonline: "standard",
   krs: "krs",
   ksc: "krs",
-  heboris: "arcade",
+  heboris: "tap",
   toj: "toj",
   party: "party",
 }
