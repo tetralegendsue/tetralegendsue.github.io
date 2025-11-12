@@ -168,11 +168,6 @@
           "label": "Heboris",
           "fixedText": true,
           "value": "heboris"
-        },
-		{
-          "label": "E60",
-          "fixedText": true,
-          "value": "e60"
         }
       ],
       "setting": "soundbank",
