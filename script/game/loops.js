@@ -632,7 +632,7 @@ export const loops = {
       //extendedLockdown(arg);
       //classicLockdown(arg);
 	  if (
-		settings.settings.rotationSystem === "arsae"
+		gamehandler.game.type === "normal21"
 		) {
 		  if (input.getGameDown("specialKey")) {
 			tgmSoftDrop(arg)
@@ -643,7 +643,7 @@ export const loops = {
 		  }
 		  extendedLockdown(arg)
 	  } else if (
-		settings.settings.rotationSystem === "worldae"
+		gamehandler.game.type === "normal21world"
 	  ) {
 		  tgmSoftDrop(arg)
 		  hardDrop(arg)
@@ -662,8 +662,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  if (
-		settings.settings.rotationSystem === "arsae" ||
-		settings.settings.rotationSystem === "worldae"
+		gamehandler.game.type === "normal21" ||
+		gamehandler.game.type === "normal21world"
 		) {
 		  game.hold.isDisabled = false
 		  game.next.nextLimit = 6
@@ -1251,7 +1251,7 @@ export const loops = {
       //extendedLockdown(arg);
       //classicLockdown(arg)
 	  if (
-		settings.settings.rotationSystem === "arsae"
+		gamehandler.game.type === "normal31"
 		) {
 		  if (input.getGameDown("specialKey")) {
 			tgmSoftDrop(arg)
@@ -1263,7 +1263,7 @@ export const loops = {
 		  extendedLockdown(arg)
 		  game.piece.boneColor = "white"
 	  } else if (
-		settings.settings.rotationSystem === "worldae"
+		gamehandler.game.type === "normal31world"
 	  ) {
 		  tgmSoftDrop(arg)
 		  hardDrop(arg)
@@ -1285,7 +1285,10 @@ export const loops = {
         garbageTimer += arg.ms
         if (garbageTimer > 10240) {
           garbageTimer -= 10240
-          if (game.stat.level >= 500 && game.stat.level <= 1000) {
+          if (game.stat.level >= 500 && 
+		  (game.stat.level <= 1000 ||
+		  gameHandler.game.type === "normal31" ||
+		  gamehandler.game.type === "normal31world")) {
 			  arg.stack.addGarbageToCounter(1)
 		  }
         }
@@ -1294,8 +1297,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  if (
-		settings.settings.rotationSystem === "arsae" ||
-		settings.settings.rotationSystem === "worldae"
+		gamehandler.game.type === "normal31" ||
+		gamehandler.game.type === "normal31world"
 		) {
 		  game.next.nextLimit = 6
 		  shiraseTargetLevel = 2000
@@ -1924,7 +1927,7 @@ export const loops = {
       //hardDrop(arg)
       //extendedLockdown(arg)
 	  if (
-		settings.settings.rotationSystem === "arsae"
+		gamehandler.game.type === "normal31"
 		) {
 		  if (input.getGameDown("specialKey")) {
 			tgmSoftDrop(arg)
@@ -1936,7 +1939,7 @@ export const loops = {
 		  extendedLockdown(arg)
 		  game.piece.boneColor = "white"
 	  } else if (
-		settings.settings.rotationSystem === "worldae"
+		gamehandler.game.type === "normal31world"
 	  ) {
 		  tgmSoftDrop(arg)
 		  hardDrop(arg)
@@ -1958,7 +1961,10 @@ export const loops = {
         garbageTimer += arg.ms
         if (garbageTimer > 10240) {
           garbageTimer -= 10240
-          if (game.stat.level >= 500 && game.stat.level <= 1000) {
+          if (game.stat.level >= 500 && 
+		  (game.stat.level <= 1000 ||
+		  gameHandler.game.type === "normal31" ||
+		  gamehandler.game.type === "normal31world")) {
 			  arg.stack.addGarbageToCounter(1)
 		  }
         }
@@ -1967,8 +1973,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  if (
-		settings.settings.rotationSystem === "arsae" ||
-		settings.settings.rotationSystem === "worldae"
+		gamehandler.game.type === "normal31" ||
+		gamehandler.game.type === "normal31world"
 		) {
 		  game.next.nextLimit = 6
 		  shiraseTargetLevel = 2000
@@ -8077,7 +8083,7 @@ export const loops = {
 	  const difficulty = parseInt(settings.game.sega.difficulty)
 	  switch (difficulty) {
 		  case 1: {
-			  gravityMultiplier = 600
+			  gravityMultiplier = 700
 			  break
 		  }
 		  case 2: {
@@ -8085,15 +8091,11 @@ export const loops = {
 			  break
 		  }
 		  case 3: {
-			  gravityMultiplier = 400
-			  break
-		  }
-		  case 4: {
 			  gravityMultiplier = 300
 			  break
 		  }
-		  case 5: {
-			  gravityMultiplier = 0
+		  case 4: {
+			  gravityMultiplier = 100
 			  break
 		  }
 	  }
@@ -8196,7 +8198,7 @@ export const loops = {
 	  lastPieces = game.stat.piece
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
-	  let gravityMultiplier = 150
+	  let gravityMultiplier = Math.max(0, 100 - (game.stat.level * 12.5))
       game.piece.gravity = Math.max(gravityEquation * gravityMultiplier, framesToMs(1))
       game.piece.lockDelayLimit = 500
       updateFallSpeed(game)
@@ -8283,3 +8285,7 @@ export const loops = {
 }
 loops.beatx = loops.beat
 loops.beattgm = loops.beat
+loops.normal21 = loops.sudden
+loops.normal21world = loops.sudden
+loops.normal31 = loops.suddenti
+loops.normal31world = loops.suddenworld

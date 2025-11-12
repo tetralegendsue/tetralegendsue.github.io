@@ -71,6 +71,22 @@
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/rounds"
+    },
+	{
+      "label": "SPECIAL-AE 2.1",
+      "description": "Congratulations! You have found a secret mode!",
+      "fixedText": true,
+	  "secretA": true,
+      "action": "submenu",
+      "submenu": "mode/normal21"
+    },
+	{
+      "label": "SPECIAL-AE 3.1",
+      "description": "Congratulations! You have found a secret mode!",
+      "fixedText": true,
+	  "secretA": true,
+      "action": "submenu",
+      "submenu": "mode/normal31"
     }
   ]
 }

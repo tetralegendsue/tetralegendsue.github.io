@@ -1,6 +1,6 @@
 {
   "properties": {
-    "parent": "arcadeace",
+    "parent": "acemode",
     "langOverride": "mode-options",
     "game": "aceworld"
   },

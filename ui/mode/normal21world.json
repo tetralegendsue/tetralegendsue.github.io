@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "parent": "arcadeworld",
+    "langOverride": "mode-options",
+    "game": "normal21world",
+    "pgmusic": "pg-arcade2"
+  },
+  "data": [
+    {
+      "label": "Special-AE 2.1",
+      "description": "",
+      "fixedText": true,
+      "type": "header"
+    }
+  ]
+}

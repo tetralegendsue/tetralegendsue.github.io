@@ -51,7 +51,7 @@
       "label": "Ace",
       "description": "Clearing 10 lines resets the time limit! Can you reach the goal?",
       "action": "submenu",
-      "submenu": "arcadeace"
+      "submenu": "acemode"
     },
 	{
       "label": "Beat",
