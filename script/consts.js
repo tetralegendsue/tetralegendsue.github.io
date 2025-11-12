@@ -1077,7 +1077,7 @@ export const SPAWN_OFFSETS = {
   },
   ace: {
     downShift: 1,
-    I: [2, -4],
+    I: [2, -3],
     L: [3, -3],
     O: [3, -3],
     Z: [3, -2],
