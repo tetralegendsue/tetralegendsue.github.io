@@ -5513,6 +5513,9 @@ export const loops = {
 		case "ggg":
           bpm = 154
           break
+		case "kalinka":
+          bpm = 127.5
+          break
 		case "ar":
           bpm = 100
           break
