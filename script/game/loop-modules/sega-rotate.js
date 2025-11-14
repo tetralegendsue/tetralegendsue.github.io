@@ -10,7 +10,7 @@ import {
   INITIAL_ORIENTATION,
   PIECE_OFFSETS,
   SPIN_POINTS,
-} from "../consts.js"
+} from "../../consts.js"
 
 export default function segaRotate(arg) {
   /*if (piece.y + 1 < 4 && piece.shape === "I") {
@@ -26,7 +26,7 @@ export default function segaRotate(arg) {
   let spawnY = downShift - yShift
   let pieceY = piece.y + spawnY
   if (pieceShape === "I") {
-	  if (pieceY <= spawnY + 2) {
+	  if (pieceY <= spawnY + 1) {
 		  return
 	  }
   } else {
