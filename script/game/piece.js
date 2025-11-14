@@ -1271,45 +1271,12 @@ export default class Piece extends GameModule {
     }
   }
   rotateLeft() {
-	if (this.parent.rotationSystem === "sega") {
-		if (this.shape === "Z") {
-			if (this.y <= this.lowestY + 1) {
-				return
-			}
-		} else {
-			if (this.y <= this.lowestY) {
-				return
-			}
-		}
-	}
     this.rotate(3, "left")
   }
   rotateRight() {
-	if (this.parent.rotationSystem === "sega") {
-		if (this.shape === "Z") {
-			if (this.y <= this.lowestY + 1) {
-				return
-			}
-		} else {
-			if (this.y <= this.lowestY) {
-				return
-			}
-		}
-	}
     this.rotate(1, "right")
   }
   rotate180() {
-	if (this.parent.rotationSystem === "sega") {
-		if (this.shape === "Z") {
-			if (this.y <= this.lowestY + 1) {
-				return
-			}
-		} else {
-			if (this.y <= this.lowestY) {
-				return
-			}
-		}
-	}
     this.rotate(2, "double")
   }
   checkSpin() {
