@@ -763,40 +763,40 @@ export default class Piece extends GameModule {
     const nextBlocks = []
     const nextPiece = this.parent.next.queue[0]
 
-    let nextPieceShape
+    let nextthis.shape
     let spawnOffsets
 
     switch (settings.settings.shapeOverride) {
       case "mono":
-        nextPieceShape =
+        nextthis.shape =
           MONOMINO_PIECES[nextPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][nextPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS["monomino"][nextPiece]
         break
       case "do":
-        nextPieceShape =
+        nextthis.shape =
           DOMINO_PIECES[nextPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][nextPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS["monomino"][nextPiece]
         break
       case "tro":
-        nextPieceShape =
+        nextthis.shape =
           TROMINO_PIECES[nextPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][nextPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS[this.parent.rotationSystem][nextPiece]
         break
       case "pento":
-        nextPieceShape =
+        nextthis.shape =
           PENTOMINO_PIECES[nextPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][nextPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS[this.parent.rotationSystem][nextPiece]
         break
       default:
-        nextPieceShape =
+        nextthis.shape =
           PIECES[nextPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][nextPiece]
           ]
@@ -804,9 +804,9 @@ export default class Piece extends GameModule {
         break
     }
 
-    for (let y = 0; y < nextPieceShape.length; y++) {
-      for (let x = 0; x < nextPieceShape[y].length; x++) {
-        const isFilled = nextPieceShape[y][x]
+    for (let y = 0; y < nextthis.shape.length; y++) {
+      for (let x = 0; x < nextthis.shape[y].length; x++) {
+        const isFilled = nextthis.shape[y][x]
         if (isFilled) {
           nextBlocks.push([
             x + spawnOffsets[0] + this.xSpawnOffset,
@@ -821,40 +821,40 @@ export default class Piece extends GameModule {
     const holdBlocks = []
     const holdPiece = this.parent.hold.getPiece()
 
-    let holdPieceShape
+    let holdthis.shape
     let spawnOffsets
 
     switch (settings.settings.shapeOverride) {
       case "mono":
-        holdPieceShape =
+        holdthis.shape =
           MONOMINO_PIECES[holdPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][holdPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS["monomino"][holdPiece]
         break
       case "do":
-        holdPieceShape =
+        holdthis.shape =
           DOMINO_PIECES[holdPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][holdPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS["monomino"][holdPiece]
         break
       case "tro":
-        holdPieceShape =
+        holdthis.shape =
           TROMINO_PIECES[holdPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][holdPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS[this.parent.rotationSystem][holdPiece]
         break
       case "pento":
-        holdPieceShape =
+        holdthis.shape =
           PENTOMINO_PIECES[holdPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][holdPiece]
           ]
         spawnOffsets = SPAWN_OFFSETS[this.parent.rotationSystem][holdPiece]
         break
       default:
-        holdPieceShape =
+        holdthis.shape =
           PIECES[holdPiece].shape[
             INITIAL_ORIENTATION[this.parent.rotationSystem][holdPiece]
           ]
@@ -862,9 +862,9 @@ export default class Piece extends GameModule {
         break
     }
 
-    for (let y = 0; y < holdPieceShape.length; y++) {
-      for (let x = 0; x < holdPieceShape[y].length; x++) {
-        const isFilled = holdPieceShape[y][x]
+    for (let y = 0; y < holdthis.shape.length; y++) {
+      for (let x = 0; x < holdthis.shape[y].length; x++) {
+        const isFilled = holdthis.shape[y][x]
         if (isFilled) {
           holdBlocks.push([
             x + spawnOffsets[0] + this.xSpawnOffset,
@@ -1271,12 +1271,45 @@ export default class Piece extends GameModule {
     }
   }
   rotateLeft() {
+	if (this.parent.rotationSystem === "sega") {
+		if (this.shape === "Z") {
+			if (this.y <= this.lowestY + 1) {
+				return
+			}
+		} else {
+			if (this.y <= this.lowestY) {
+				return
+			}
+		}
+	}
     this.rotate(3, "left")
   }
   rotateRight() {
+	if (this.parent.rotationSystem === "sega") {
+		if (this.shape === "Z") {
+			if (this.y <= this.lowestY + 1) {
+				return
+			}
+		} else {
+			if (this.y <= this.lowestY) {
+				return
+			}
+		}
+	}
     this.rotate(1, "right")
   }
   rotate180() {
+	if (this.parent.rotationSystem === "sega") {
+		if (this.shape === "Z") {
+			if (this.y <= this.lowestY + 1) {
+				return
+			}
+		} else {
+			if (this.y <= this.lowestY) {
+				return
+			}
+		}
+	}
     this.rotate(2, "double")
   }
   checkSpin() {
