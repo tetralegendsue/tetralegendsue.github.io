@@ -30,6 +30,7 @@ import linesToLevel from "./loop-modules/lines-to-level.js"
 import lockFlash from "./loop-modules/lock-flash.js"
 import respawnPiece from "./loop-modules/respawn-piece.js"
 import rotate from "./loop-modules/rotate.js"
+import segaRotate from "./loop-modules/sega-rotate.js"
 import rotate180 from "./loop-modules/rotate-180.js"
 import shifting from "./loop-modules/shifting.js"
 import shiftingRetro from "./loop-modules/shifting-retro.js"
@@ -8069,7 +8070,7 @@ export const loops = {
         arg.piece.are += arg.ms
       } else {
         respawnPiece(arg)
-        rotate(arg)
+        segaRotate(arg)
         shifting(arg)
       }
       gravity(arg)
@@ -8188,7 +8189,7 @@ export const loops = {
         arg.piece.are += arg.ms
       } else {
         respawnPiece(arg)
-        rotate(arg)
+        segaRotate(arg)
         shifting(arg)
       }
       gravity(arg)

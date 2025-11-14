@@ -82,6 +82,7 @@ export default class Piece extends GameModule {
     this.lastSpinDirection = null
 	this.useBoneBlocks = false
 	this.boneColor = "green"
+	this.onCeiling = true
   }
   new(name = this.parent.next.next()) {
     this.isFrozen = false
@@ -135,6 +136,7 @@ export default class Piece extends GameModule {
     this.lockDelay = 0
     this.name = name
     this.orientation = INITIAL_ORIENTATION[rotSys][name]
+	this.onCeiling = true
 
     let backUpRotSys = rotSys
 
@@ -1067,6 +1069,9 @@ export default class Piece extends GameModule {
       if (direction === "x") {
         sound.add("move")
       }
+	  if (direction === "y") {
+	    this.onCeiling = false
+	  }
       if (this.isLanded) {
         sound.add("step")
       }
