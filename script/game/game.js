@@ -188,8 +188,19 @@ export default class Game {
 			sound.load(soundbankName)
 			this.loadedSoundbank = soundbankName
 		} else {
-			sound.load(this.settings.soundbank)
-			this.loadedSounbank = this.settings.soundbank
+			if (
+			soundbankName === "heboris" ||
+			this.settings.rotationSystem === "handheld" ||
+			this.settings.rotationSystem === "deluxe" ||
+			this.settings.rotationSystem === "retro" ||
+			this.settings.rotationSystem === "heboris"
+			) {
+				sound.load("heboris")
+				this.loadedSounbank = "heboris"
+			} else {
+				sound.load(this.settings.soundbank)
+				this.loadedSounbank = this.settings.soundbank
+			}
 		}
         this.colors = JSON.parse(
           JSON.stringify(PIECE_COLORS[this.settings.rotationSystem])
