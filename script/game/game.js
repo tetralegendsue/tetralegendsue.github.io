@@ -1241,8 +1241,19 @@ export default class Game {
     $("#load-message").classList.remove("hidden")
     const toLoad = colors.length * types.length
     let loaded = 0
-	if (skin === "sega" && settings.settings.soundbank === "heboris") {
-		skin = "srsx"
+	if (skin === "sega") {
+		if (settings.settings.soundbank === "heboris") {
+			skin = "srsx"
+		}
+		if (this.settings.rotationSystem === "heboris") {
+			skin = "srsx"
+		}
+		if (this.userSettings.rotationSystem === "heboris") {
+			skin = "srsx"
+		}
+		if (this.rotationSystem === "heboris") {
+			skin = "srsx"
+		}
 	}
     for (const type of types) {
       for (const color of colors) {
