@@ -1,0 +1,31 @@
+{
+  "usesReadyGoVoices": true,
+  "files": [
+    "b2b_erase4",
+    "b2b_tspin1",
+	"b2b_tspin2",
+	"b2b_tspin3",
+    "collapse",
+    "erase1",
+    "erase2",
+    "erase3",
+    "erase4",
+	"endingstart",
+    "excellent",
+	"garbage",
+    "gameover",
+    "initialrotate",
+    "ko",
+    "land",
+    "levelup",
+    "move",
+    "ready",
+    "rotate",
+    "start",
+	"step",
+    "tspin1",
+	"tspin2",
+	"tspin3"
+  ],
+  "ren": []
+}

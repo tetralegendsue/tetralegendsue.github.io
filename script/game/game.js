@@ -196,8 +196,17 @@ export default class Game {
 			(this.settings.rotationSystem === "original" && gametype.includes("sega")) ||
 			this.settings.rotationSystem === "heboris"
 			) {
+				if (
+				gametype.includes("sega") || 
+				gametype.includes("retro") ||
+				gametype.includes("handheld") ||
+				gametype === "deluxe") {
+				sound.load("hebooldstyle")
+				this.loadedSounbank = "hebooldstyle"
+				} else {
 				sound.load("heboris")
 				this.loadedSounbank = "heboris"
+				}
 			} else {
 				sound.load(this.settings.soundbank)
 				this.loadedSounbank = this.settings.soundbank
