@@ -1241,6 +1241,9 @@ export default class Game {
     $("#load-message").classList.remove("hidden")
     const toLoad = colors.length * types.length
     let loaded = 0
+	if (skin === "sega" && settings.settings.soundbank === "heboris") {
+		skin = "srsx"
+	}
     for (const type of types) {
       for (const color of colors) {
         const img = document.createElement("img")
