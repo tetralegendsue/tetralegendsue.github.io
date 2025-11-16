@@ -3681,7 +3681,7 @@ KICK_TEMPLATES.krs = {
 */
 KICK_TEMPLATES.krs = {
   x: KICK_TEMPLATES.tetrax.x,  
-  I: KICK_TEMPLATES.ascx.x,
+  I: KICK_TEMPLATES.tetrax.x,
   LJ: KICK_TEMPLATES.tetrax.x,
   T: KICK_TEMPLATES.tetrax.x,
   O: KICK_TEMPLATES.ascx.x,
@@ -4525,7 +4525,7 @@ PIECE_OFFSETS.tonline = {
   S: PIECE_OFFSETS.srs.S,
 }
 PIECE_OFFSETS.krs = {
-  I: PIECE_OFFSETS.ascx.I,
+  I: PIECE_OFFSETS.tetrax.I,
   L: PIECE_OFFSETS.tetrax.L,
   O: PIECE_OFFSETS.ascx.O,
   Z: PIECE_OFFSETS.tetrax.Z,
