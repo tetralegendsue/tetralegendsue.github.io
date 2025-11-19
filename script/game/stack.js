@@ -1082,8 +1082,19 @@ export default class Stack extends GameModule {
         brightnessHex = "ff"
       }
       ctx.fillStyle = `#ffffff${brightnessHex}`
+	  let lineClearCtx = this.parent.piece.ctx
+	  lineClearCtx.fillStyle = ctx.fillStyle
       for (let i = 0; i < this.toCollapse.length; i++) {
         ctx.clearRect(
+          0,
+          Math.floor(
+            (this.toCollapse[i] - this.hiddenHeight) * cellSize +
+              buffer * cellSize
+          ),
+          cellSize * this.width,
+          cellSize
+        )
+		lineClearCtx.clearRect(
           0,
           Math.floor(
             (this.toCollapse[i] - this.hiddenHeight) * cellSize +
@@ -1110,8 +1121,6 @@ export default class Stack extends GameModule {
           Math.round(this.parent.piece.are / this.flashClearRate) % 2 !== 1 ||
           !this.flashLineClear
         ) {
-		  let lineClearCtx = this.parent.piece.ctx
-		  lineClearCtx.fillStyle = `#ffffff${brightnessHex}`
           lineClearCtx.fillRect(
             0,
             Math.floor(
