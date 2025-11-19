@@ -313,6 +313,8 @@ export default class Stack extends GameModule {
 		resetAnimation("#stack", "tetris-flash-invis")
 	  } else if (this.parent.piece.useBoneBlocks || settings.settings.outline !== true) {
 		resetAnimation("#stack", "tetris-flash-outlineoff")
+	  } else if (this.alarmIsOn) {
+		resetAnimation("#stack", "tetris-flash-outlineon-danger")
 	  } else {
 		resetAnimation("#stack", "tetris-flash")
 	  }
@@ -619,6 +621,9 @@ export default class Stack extends GameModule {
     this.updateGrid()
     document.documentElement.style.setProperty("--tetrion-color", "#f00")
     $("#next-piece").classList.add("danger")
+	if (this.parent.piece.useBoneBlocks !== true && settings.settings.outline === true) {
+		$(".stack-canvas").classList.add("outlineon-danger")
+	}
   }
   endAlarm() {
     sound.lowerDangerBgm()
@@ -627,6 +632,7 @@ export default class Stack extends GameModule {
     this.updateGrid()
     document.documentElement.style.setProperty("--tetrion-color", "#fff")
     $("#next-piece").classList.remove("danger")
+	$(".stack-canvas").classList.remove("outlineon-danger")
   }
   addGarbageToCounter(amount = 1) {
     const selectedStartingType = Math.floor(Math.random() * 2)

@@ -1022,8 +1022,36 @@ body {
   }
 }
 
+@keyframes tetris-flash-outlineon-danger {
+  from {
+    filter:
+	brightness(100%)
+	drop-shadow(0.2em 0em 0em rgba(255,0,0,0.625))
+	drop-shadow(-0.2em 0em 0em rgba(255,0,0,0.625))
+	drop-shadow(0em 0.2em 0em rgba(255,0,0,0.625))
+	drop-shadow(0em -0.2em 0em rgba(255,0,0,0.625))
+  }
+
+  to {
+    filter:
+	brightness(800%)
+	drop-shadow(0.2em 0em 0em rgba(255,255,255,0.625))
+	drop-shadow(-0.2em 0em 0em rgba(255,255,255,0.625))
+	drop-shadow(0em 0.2em 0em rgba(255,255,255,0.625))
+	drop-shadow(0em -0.2em 0em rgba(255,255,255,0.625))
+  }
+}
+
 .tetris-flash {
   animation-name: tetris-flash-outlineon;
+  animation-duration: .05s;
+  animation-iteration-count: 8;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.tetris-flash-outlineon-danger {
+  animation-name: tetris-flash-outlineon-danger;
   animation-duration: .05s;
   animation-iteration-count: 8;
   animation-direction: alternate;
@@ -1473,6 +1501,15 @@ body[theme="tetrjs"] .game-center {
   drop-shadow(-0.2em 0em 0em rgba(255,255,255,0.625))
   drop-shadow(0em 0.2em 0em rgba(255,255,255,0.625))
   drop-shadow(0em -0.2em 0em rgba(255,255,255,0.625))
+  ;
+}
+
+.stack-canvas.outlineon-danger {
+  filter: 
+  drop-shadow(0.2em 0em 0em rgba(255,0,0,0.625))
+  drop-shadow(-0.2em 0em 0em rgba(255,0,0,0.625))
+  drop-shadow(0em 0.2em 0em rgba(255,0,0,0.625))
+  drop-shadow(0em -0.2em 0em rgba(255,0,0,0.625))
   ;
 }
 
