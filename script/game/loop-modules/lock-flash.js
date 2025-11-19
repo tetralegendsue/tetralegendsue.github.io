@@ -5,6 +5,9 @@ export default function lockFlash(arg) {
   if (settings.settings.lockFlash === "off" && !stack.lineClear) {
     return
   }
+  if (arg.piece.useBoneBlocks) {
+	return
+  }
   if (
     settings.settings.lockFlash === "flash" &&
     stack.flashTime >= 50 &&
