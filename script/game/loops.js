@@ -8357,9 +8357,8 @@ export const loops = {
 	  }
 	  lastPieces = game.stat.piece
       const x = game.stat.level
-      const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
-	  let gravityMultiplier = Math.max(0, 100 - (game.stat.level * 12.5))
-      game.piece.gravity = Math.max(gravityEquation * gravityMultiplier, framesToMs(1))
+	  let gravityDivider = 1 + (game.stat.level / 24)
+      game.piece.gravity = Math.max(framesToMs(1/gravityDivider), framesToMs(1/2))
       game.piece.lockDelayLimit = 500
       updateFallSpeed(game)
 	  game.piece.ghostIsVisible = false

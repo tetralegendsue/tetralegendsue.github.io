@@ -18,7 +18,7 @@
     },
 	{
       "label": "SPECIAL",
-      "description": "Your grade will depend on how well you play.",
+      "description": "Your grade will depend on how well you play!",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/special"
@@ -32,28 +32,28 @@
     },
     {
       "label": "NOVICE-TI",
-      "description": "A slow game for beginners.",
+      "description": "Similar to Novice, but it's 100 levels shorter in exchange for a challenging end roll!",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/noviceti"
     },
 	{
       "label": "SPECIAL-TI",
-      "description": "Your grade will depend on how well you play.",
+      "description": "Similar to Special, but slowing down reduces your grade!",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/specialti"
     },
     {
       "label": "SUDDEN-TI",
-      "description": "The pieces spawn on the ground and only get faster!",
+      "description": "Similar to Sudden, but its 300 levels longer and it throws crazy things at you!",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/suddenti"
     },
 	{
       "label": "PRESSURE",
-      "description": "You have a time limit that cannot be reset nor extended. How many levels can you reach?",
+      "description": "You have a time limit that cannot be extended. Can you reach the end?",
 	  "fixedText": true,
       "action": "submenu",
       "submenu": "mode/asuka"
@@ -67,14 +67,14 @@
     },
 	{
       "label": "SUDDEN-AE",
-      "description": "The ultimate test of block stacking skills. Only top-level players can reach far. (WIP)",
+      "description": "The ultimate test of block stacking skills! Only top-level players can reach far! How far can you reach? (WIP)",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/rounds"
     },
 	{
       "label": "SPECIAL-AE 2.1",
-      "description": "Congratulations! You have found a secret mode!",
+      "description": "Secret mode! Similar to Sudden, but the pieces are faster!",
       "fixedText": true,
 	  "secretA": true,
       "action": "submenu",
@@ -82,7 +82,7 @@
     },
 	{
       "label": "SPECIAL-AE 3.1",
-      "description": "Congratulations! You have found a secret mode!",
+      "description": "Secret mode! Similar to Sudden-TI, but its 700 levels longer and the already crazy things are even crazier!",
       "fixedText": true,
 	  "secretA": true,
       "action": "submenu",

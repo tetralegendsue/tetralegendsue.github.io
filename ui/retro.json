@@ -37,8 +37,8 @@
 	{
       "fixedText": true,
 	  "secretA": true,
-      "label": "Cabinet+",
-      "description": "Congratulations! You have found a secret mode!",
+      "label": "Cabinet-EX",
+      "description": "Secret mode! Cabinet's hardest difficulty but on steroids!",
       "action": "submenu",
       "submenu": "mode/sega2"
     }

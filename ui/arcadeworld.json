@@ -10,25 +10,25 @@
     },
 	{
       "label": "NOVICE",
-      "description": "Not available in World Rule!",
+      "description": "(Not available in World Rule) A slow game for beginners.",
       "fixedText": true,
       "disabled": true
     },
 	{
       "label": "SPECIAL",
-      "description": "Not available in World Rule!",
+      "description": "(Not available in World Rule) Your grade will depend on how well you play!",
       "fixedText": true,
       "disabled": true
     },
     {
       "label": "SUDDEN",
-      "description": "Not available in World Rule!",
+      "description": "(Not available in World Rule) The pieces spawn on the ground and only get faster!",
       "fixedText": true,
       "disabled": true
     },
     {
       "label": "NOVICE-TI",
-      "description": "A slow game for beginners.",
+      "description": "Similar to Novice, but it's 100 levels shorter in exchange for a challenging end roll!",
       "fixedText": true,
       "default": true,
       "action": "submenu",
@@ -36,21 +36,21 @@
     },
 	{
       "label": "SPECIAL-TI",
-      "description": "Your grade will depend on how well you play.",
+      "description": "Similar to Special, but slowing down reduces your grade!",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/specialworld"
     },
 	{
       "label": "SUDDEN-TI",
-      "description": "The pieces spawn on the ground and only get faster!",
+      "description": "Similar to Sudden, but its 300 levels longer and it throws crazy things at you!",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/suddenworld"
     },
 	{
       "label": "PRESSURE",
-      "description": "You have a time limit that cannot be reset nor extended. How many levels can you reach?",
+      "description": "You have a time limit that cannot be extended. Can you reach the end?",
 	  "fixedText": true,
       "action": "submenu",
       "submenu": "mode/asukaworld"
@@ -64,22 +64,23 @@
     },
 	{
       "label": "SUDDEN-AE",
-      "description": "The ultimate test of block stacking skills. Only top-level players can reach far. (WIP)",
+      "description": "The ultimate test of block stacking skills! Only top-level players can reach far! How far can you reach? (WIP)",
       "fixedText": true,
       "action": "submenu",
       "submenu": "mode/roundsworld"
     },
 	{
       "label": "SPECIAL-AE 2.1",
-      "description": "Congratulations! You have found a secret mode!",
+      "description": "(Not available in World Rule) Secret mode! Similar to Sudden, but the pieces are faster!",
       "fixedText": true,
 	  "secretA": true,
+	  "disabled": true,
       "action": "submenu",
       "submenu": "mode/normal21world"
     },
 	{
       "label": "SPECIAL-AE 3.1",
-      "description": "Congratulations! You have found a secret mode!",
+      "description": "Secret mode! Similar to Sudden-TI, but its 700 levels longer and the already crazy things are even crazier!",
       "fixedText": true,
 	  "secretA": true,
       "action": "submenu",
