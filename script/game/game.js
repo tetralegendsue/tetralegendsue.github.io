@@ -1117,6 +1117,7 @@ export default class Game {
             })
 			if (game.rotationSystem === "arsae" && input.getGameDown("specialKey")) {
 				game.piece.areLimit = 0
+				game.piece.areLimitLineModifier = 0
 			}
 			if (game.rotationSystem === "drs" && 
 			(
@@ -1133,6 +1134,7 @@ export default class Game {
 			}
 			if (game.rotationSystem === "ds") {
 				game.piece.areLimit = 0
+				game.piece.areLimitLineModifier = 0
 			}
           }
           game.particle.update(msPassed)
