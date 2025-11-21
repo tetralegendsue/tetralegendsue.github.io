@@ -8386,41 +8386,13 @@ export const loops = {
       game.piece.lockDelayLimit = 500
       updateFallSpeed(game)
 	  game.piece.ghostIsVisible = false
-	  let musicProgressionTable = [
-        [8, 1],
-        [16, 2],
-        [24, 3],
-      ]
+	  let musicProgressionTable = []
 	  if (game.settings.rotationSystem === "heboris") {
 		  musicProgressionTable = []
 	  }
 	  if (settings.settings.soundbank === "heboris") {
 		  musicProgressionTable = []
 	  }
-	  for (const pair of musicProgressionTable) {
-        const level = pair[0]
-        const entry = pair[1]
-        if (game.stat.level >= level && game.musicProgression < entry) {
-          switch (entry) {
-            case 1:
-			  sound.loadBgm(["sega2"], "sega")
-              sound.killBgm()
-              sound.playBgm(["sega2"], "sega")
-              break
-            case 2:
-              sound.loadBgm(["sega3"], "sega")
-              sound.killBgm()
-              sound.playBgm(["sega3"], "sega")
-              break
-			case 3:
-              sound.loadBgm(["sega4"], "sega")
-			  sound.killBgm()
-			  sound.playBgm(["sega4"], "sega")
-			  break
-             }
-          game.musicProgression = entry
-        }
-      }
 	  levelUpdateSega(game)
     },
     onInit: (game) => {

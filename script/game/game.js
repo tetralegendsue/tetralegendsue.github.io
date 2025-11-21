@@ -1128,7 +1128,7 @@ export default class Game {
               hold: game.hold,
               particle: game.particle,
             })
-			if (game.rotationSystem === "arsae") {
+			if (game.rotationSystem === "arsae" && game.type !== "sega" && game.type !== "sega2") {
 				if (input.getGameDown("specialKey")) {
 					game.piece.areLimit = 0
 					if (game.piece.areLimitLineModifier <= 0) {
@@ -1141,7 +1141,7 @@ export default class Game {
 					}
 				}
 			}
-			if (game.rotationSystem === "drs") {
+			if (game.rotationSystem === "drs" && game.type !== "sega" && game.type !== "sega2") {
 				if (
 				input.getGameDown("specialKey") ||
 				input.getGameDown("moveLeft") ||
@@ -1156,7 +1156,7 @@ export default class Game {
 					settings.settings.stillShowFullActionTextDespiteZeroLineClearAre = true
 				}
 			}
-			if (game.rotationSystem === "ds") {
+			if (game.rotationSystem === "ds" && game.type !== "sega" && game.type !== "sega2") {
 				game.piece.areLimit = 0
 				if (game.piece.areLimitLineModifier <= 0) {
 					if (game.areLineModified === false) {
