@@ -5133,7 +5133,7 @@ export const SOUND_SETS = {
   newcentury: "newcentury",
   tonline: "tonline",
   krs: "tetrax",
-  drs: "heboris",
+  drs: "nullpomino",
   heboris: "heboris",
   toj: "toj",
   party: "party",
