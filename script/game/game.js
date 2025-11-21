@@ -110,8 +110,10 @@ export default class Game {
 	this.timePassedOffset = 0
     this.timePassedAre = 0
 	this.nonSingleClears = 0
-	this.bufferAre = null
-	this.bufferAreLine = null
+	this.bufferAre = -1
+	this.bufferAreLine = -1
+	this.areBuffered = true
+	this.areLineBuffered = true
     loadGameType(gametype)
       .then((gameData) => {
         gtag("event", "play", {
@@ -267,8 +269,8 @@ export default class Game {
 
         this.loop = loops[gametype].update
         this.onPieceSpawn = loops[gametype].onPieceSpawn
-		this.bufferAre = null
-		this.bufferAreLine = null
+		this.bufferAre = -1
+		this.bufferAreLine = -1
         for (const element of ["piece", "stack", "next", "hold"]) {
           if (gameData[element] != null) {
             for (const property of Object.keys(gameData[element])) {
@@ -1129,11 +1131,13 @@ export default class Game {
             })
 			if (game.rotationSystem === "arsae") {
 				if (input.getGameDown("specialKey")) {
+					game.areBuffered = false
 					game.piece.areLimit = 0
 					game.piece.areLimitLineModifier = game.piece.areLineLimit
 				} else {
-					if (game.bufferAre !== null) {
+					if (game.bufferAre > -1 && game.areBuffered === false) {
 						game.piece.areLimit = game.bufferAre
+						game.areBuffered = true
 					}
 				}
 			}
@@ -1149,11 +1153,15 @@ export default class Game {
 					game.piece.areLimit = 0
 					game.piece.areLineLimit = 0
 					settings.settings.stillShowFullActionTextDespiteZeroLineClearAre = true
+					game.areBuffered = false
+					game.areLineBuffered = false
 				} else {
-					if (game.bufferAre !== null) {
+					if (game.bufferAre > -1 && game.areBuffered === false) {
+						game.areBuffered = true
 						game.piece.areLimit = game.bufferAre
 					}
-					if (game.bufferAreLine !== null) {
+					if (game.bufferAreLine > -1 && game.areLineBuffered === false) {
+						game.areLineBuffered = true
 						game.piece.areLineLimit = game.bufferAreLine
 					}
 				}

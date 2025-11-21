@@ -16,7 +16,6 @@
     "isHardMode": false
   },
   "piece": {
-    "areLimit": 100,
     "xSpawnOffset": -3,
     "spinDetectionType": "3corner"
   },

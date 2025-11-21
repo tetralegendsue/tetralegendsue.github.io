@@ -17,7 +17,6 @@
   "piece": {
     "areLimit": 432,
     "areLineLimit": 640,
-    "dasLimit": 272,
     "arrLimit": 17,
     "lockDelayLimit": 500
   },
