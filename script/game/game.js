@@ -241,6 +241,7 @@ export default class Game {
 				this.colors = PIECE_COLORS.handheld
 			} else {
 				this.colors = PIECE_COLORS.standard
+				this.stack.flashLineClear = true
 			}
 		}
 		if (
@@ -251,6 +252,7 @@ export default class Game {
 				this.colors = PIECE_COLORS.deluxe
 			} else {
 				this.colors = PIECE_COLORS.standard
+				this.stack.flashLineClear = true
 			}
 		}
 
