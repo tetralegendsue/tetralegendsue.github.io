@@ -2,20 +2,19 @@
   "files": [
 	"collapse",
     "endingstart",
-    "erase4",
-	"erasenot4",
+    "dtet_erase4",
+	"dtet_erasenot4",
 	"excellent",
 	"ko",
 	"gameover",
 	"land",
 	"levelup",
-	"lock",
+	"dtet_lock",
     "move",
 	"pause",
 	"ready",
 	"rotate",
-    "step",
-	"tspin"
+    "step"
   ],
   "ren": []
 }
