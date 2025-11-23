@@ -161,7 +161,7 @@ export default class Stack extends GameModule {
     sound.add("lock")
 	if (sound.sounds["dtet_lock"] !== null) {
 		sound.sounds["dtet_lock"].rate(
-		1 - Math.max(0, 0.5 * ( (this.passedY + 1) / (this.parent.settings.height) ) )
+		1 - Math.max(0, 0.5 * ( (passedY + 1) / (this.parent.settings.height) ) )
 		)
 		sound.add("dtet_lock")
 	}
