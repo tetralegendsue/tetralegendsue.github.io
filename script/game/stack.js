@@ -347,12 +347,12 @@ export default class Stack extends GameModule {
 	  }
 	  if (this.lineClear < 4) {
 		if (sound.sounds["dtet_erasenot4"] !== null) {
-			sound.sounds["dtet_erasenot4"].rate( 1 + Math.min(0, (this.parent.combo+1)*0.1) )
+			sound.sounds["dtet_erasenot4"].rate( 1 + Math.max(0, (this.parent.combo+1)*0.1) )
 			sound.add("dtet_erasenot4")
 		}
 	  } else {
 		if (sound.sounds["dtet_erase4"] !== null) {
-			sound.sounds["dtet_erase4"].rate( 1 + Math.min(0, (this.parent.combo+1)*0.1) )
+			sound.sounds["dtet_erase4"].rate( 1 + Math.max(0, (this.parent.combo+1)*0.1) )
 			sound.add("dtet_erase4")
 		}
 	  }
