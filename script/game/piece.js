@@ -125,19 +125,18 @@ export default class Piece extends GameModule {
     }
     this.parent.onPieceSpawn(this.parent)
 	if (game.rotationSystem === "arsae") {
-		if (game.bufferAre > -1 && input.getGameDown("specialKey") === false) {
-			game.piece.areLimit = game.bufferAre
+		if (game.cachedAre > -1 && input.getGameDown("specialKey") === false) {
+			game.piece.areLimit = game.cachedAre
 		}
 	}
 	if (game.rotationSystem === "drs") {
-		if (game.bufferAre > -1) {
-			game.piece.areLimit = game.bufferAre
+		if (game.cachedAre > -1) {
+			game.piece.areLimit = game.cachedAre
 		}
-		if (game.bufferAreLine > -1) {
-			game.piece.areLineLimit = game.bufferAreLine
+		if (game.cachedAreLine > -1) {
+			game.piece.areLineLimit = game.cachedAreLine
 		}
 	}
-	this.parent.areLineModified = false
     this.parent.updateMusic()
     this.parent.updateStats()
     $("#delay").innerHTML = `${this.lockDelayLimit} <b>ms</b>`

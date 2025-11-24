@@ -110,9 +110,9 @@ export default class Game {
 	this.timePassedOffset = 0
     this.timePassedAre = 0
 	this.nonSingleClears = 0
-	this.bufferAre = -1
-	this.bufferAreLine = -1
-	this.areLineModified = false
+	this.cachedAre = -1
+	this.cachedAreLine = -1
+	this.useFullAreLine = true
     loadGameType(gametype)
       .then((gameData) => {
         gtag("event", "play", {
@@ -272,17 +272,17 @@ export default class Game {
 
         this.loop = loops[gametype].update
         this.onPieceSpawn = loops[gametype].onPieceSpawn
-		this.bufferAre = -1
-		this.bufferAreLine = -1
+		this.cachedAre = -1
+		this.cachedAreLine = -1
         for (const element of ["piece", "stack", "next", "hold"]) {
           if (gameData[element] != null) {
             for (const property of Object.keys(gameData[element])) {
               this[element][property] = gameData[element][property]
 			  if (element === "piece" && property === "areLimit") {
-				  this.bufferAre = gameData[element][property]
+				  this.cachedAre = gameData[element][property]
 			  }
 			  if (element === "piece" && property === "areLineLimit") {
-				  this.bufferAreLine = gameData[element][property]
+				  this.cachedAreLine = gameData[element][property]
 			  }
             }
           }
@@ -1136,16 +1136,16 @@ export default class Game {
 				if (input.getGameDown("specialKey")) {
 					game.piece.areLimit = 0
 					if (game.piece.areLimitLineModifier <= 0) {
-						if (game.areLineModified === false) {
-							game.areLineModified = true
-							game.piece.areLimitLineModifier += game.piece.areLineLimit
-						}
+						game.useFullAreLine = false
+						game.piece.areLimitLineModifier += game.piece.areLineLimit
 					} else {
-						game.piece.areLimitLineModifier = game.piece.areLineLimit
+						if (game.useFullAreLine) {
+							game.piece.areLimitLineModifier = game.piece.areLineLimit
+						}
 					}
 				}
 			}
-			if (game.rotationSystem === "drs") {
+			if (game.rotationSystem === "drs" && game.type !== "sega" && game.type !== "sega2") {
 				if (
 				game.piece.inAre &&
 				(
@@ -1163,12 +1163,12 @@ export default class Game {
 			if (game.rotationSystem === "ds" && game.type !== "sega" && game.type !== "sega2") {
 				game.piece.areLimit = 0
 				if (game.piece.areLimitLineModifier <= 0) {
-					if (game.areLineModified === false) {
-						game.areLineModified = true
-						game.piece.areLimitLineModifier += game.piece.areLineLimit
-					}
+					game.useFullAreLine = false
+					game.piece.areLimitLineModifier += game.piece.areLineLimit
 				} else {
-					game.piece.areLimitLineModifier = game.piece.areLineLimit
+					if (game.useFullAreLine) {
+						game.piece.areLimitLineModifier = game.piece.areLineLimit
+					}
 				}
 			}
           }
