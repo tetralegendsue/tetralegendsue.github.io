@@ -1145,11 +1145,14 @@ export default class Game {
 					}
 				}
 			}
-			if (game.rotationSystem === "drs" && game.type !== "sega" && game.type !== "sega2") {
+			if (game.rotationSystem === "drs") {
 				if (
+				game.piece.inAre &&
+				(
 				input.getGameDown("specialKey") ||
 				input.getGameDown("moveLeft") ||
 				input.getGameDown("moveRight")
+				)
 				) {
 					game.piece.areLimit = 0
 					game.piece.areLineLimit = 0
