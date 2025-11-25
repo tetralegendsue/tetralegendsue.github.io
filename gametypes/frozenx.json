@@ -4,20 +4,21 @@
     "height": 20,
     "hiddenHeight": 20,
     "pieces": "standard",
-    "unfavored": "standardUnfavored",
+    "unfavored": null,
     "randomizer": "tetrax",
     "rotationSystem": "tetrax",
     "skin": "tetrax",
     "soundbank": "tetrax",
-    "music": ["../standardx/standard","../standardx/standard-middle","../standardx/standard-last"],
+    "music": ["../prox/pro", "../prox/pro-last"],
     "scoreTable": "tetrax",
-    "background": "marathon.jpg"
+    "background": "marathon.jpg",
+    "isHardMode": true
   },
   "piece": {
-    "areLimit": 100,
-    "areLineLimit": 166.666666667,
-    "areLimitLineModifier": 166.666666667,
+    "areLimit": 75,
+    "areLineLimit": 75,
+    "areLimitLineModifier": 125,
     "spinDetectionType": "immobile"
   },
-  "stats": ["score", "level", "fallspeed", "line", "piece"]
+  "stats": ["score", "level", "line", "piece"]
 }
