@@ -246,6 +246,7 @@ export default class Stack extends GameModule {
 			}
           }
 		  this.lastPlacedBlocks.push([xLocation, yLocation])
+		  console.log(this.lastPlacedBlocks)
 		  //this.lastPlacedBlocks[xLocation][yLocation] = this.grid[xLocation][yLocation]
           this.dirtyCells.push([xLocation, yLocation])
           this.flashX.unshift(xLocation)
