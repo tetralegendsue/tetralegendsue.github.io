@@ -786,6 +786,7 @@ export default class Stack extends GameModule {
 			//this.resetLastPlacedBlocks()
 			for (let index = 0; index < this.lastPlacedBlocks.length; index++) {
 				if (
+				this.lastPlacedBlocks[index][0] === x &&
 				this.lastPlacedBlocks[index][1] === shiftY
 				) {
 					this.lastPlacedBlocks[index][1] = shiftY + 1
@@ -805,6 +806,7 @@ export default class Stack extends GameModule {
 			//this.resetLastPlacedBlocks()
 			for (let index = 0; index < this.lastPlacedBlocks.length; index++) {
 				if (
+				this.lastPlacedBlocks[index][0] === x &&
 				this.lastPlacedBlocks[index][1] === shiftY
 				) {
 					this.lastPlacedBlocks[index][1] = shiftY + 1
@@ -837,6 +839,7 @@ export default class Stack extends GameModule {
 		  //this.resetLastPlacedBlocks()
 		  for (let index = 0; index < this.lastPlacedBlocks.length; index++) {
 				if (
+				this.lastPlacedBlocks[index][0] === x &&
 				this.lastPlacedBlocks[index][1] === shiftY
 				) {
 					this.lastPlacedBlocks[index][1] = shiftY + 1
