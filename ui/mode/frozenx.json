@@ -1,0 +1,47 @@
+{
+  "properties": {
+    "parent": "tetrax",
+    "langOverride": "mode-options",
+    "game": "frozenx",
+    "pgmusic": "pg-prox"
+  },
+  "data": [
+    {
+      "label": "Freezer X",
+      "description": "",
+      "fixedText": true,
+      "type": "header"
+    },
+    {
+      "string": "startingLevelLabel",
+      "stringDesc": "startingLevelDescription",
+      "type": "slider",
+      "action": "slider",
+      "max": 10,
+      "min": 1,
+      "discrete": 1,
+      "setting": "startingLevel",
+      "gameName": "prox",
+      "settingType": "game"
+    },
+	{
+      "string": "lockdownModeLabel",
+      "stringDesc": "lockdownModeDescription",
+      "type": "select",
+      "action": "select",
+      "selectOptions": [
+	    {
+          "string": "classicLdOption",
+          "value": "classic"
+        },
+        {
+          "string": "extendedLdOption",
+          "value": "extended"
+        }
+      ],
+      "setting": "lockdownMode",
+      "gameName": "prox",
+      "settingType": "game"
+    }
+  ]
+}

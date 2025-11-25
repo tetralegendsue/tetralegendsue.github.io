@@ -7811,6 +7811,11 @@ export const loops = {
       game.smallStats.level = true
       game.resize()
       updateFallSpeed(game)
+	  if (game.type === "frozenx") {
+		  game.stack.isFrozen = true
+	  } else {
+		  game.stack.isFrozen = false
+	  }
       game.updateStats()
     },
   },
@@ -8445,6 +8450,7 @@ export const loops = {
     },
   },
 }
+loops.frozenx = loops.prox
 loops.beatx = loops.beat
 loops.beattgm = loops.beat
 loops.normal21 = loops.sudden

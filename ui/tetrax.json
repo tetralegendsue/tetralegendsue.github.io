@@ -27,6 +27,14 @@
       "stringDesc": "nightOfNightsXDescription",
       "action": "submenu",
       "submenu": "mode/nontwo"
+    },
+	{
+      "label": "Freezer X",
+      "description": "The board is on a freezer. How long can you last?",
+	  "secretA": true,
+	  "fixedText": true,
+      "action": "submenu",
+      "submenu": "mode/nontwo"
     }
   ]
 }
