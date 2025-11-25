@@ -782,7 +782,7 @@ export default class Stack extends GameModule {
           if (this.noFrozenMinos() === true) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 			//this.resetLastPlacedBlocks()
-			for (let index = 0; x < this.lastPlacedBlocks.length; index++) {
+			for (let index = 0; index < this.lastPlacedBlocks.length; index++) {
 				if (
 				this.lastPlacedBlocks[index][0] === x &&
 				this.lastPlacedBlocks[index][1] === shiftY
@@ -800,7 +800,7 @@ export default class Stack extends GameModule {
 		  } else if (y === bottomLine && this.lineClear >= 4) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 			//this.resetLastPlacedBlocks()
-			for (let index = 0; x < this.lastPlacedBlocks.length; index++) {
+			for (let index = 0; index < this.lastPlacedBlocks.length; index++) {
 				if (
 				this.lastPlacedBlocks[index][0] === x &&
 				this.lastPlacedBlocks[index][1] === shiftY
@@ -831,7 +831,7 @@ export default class Stack extends GameModule {
         for (let shiftY = y; shiftY >= 0; shiftY--) {
           this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 		  //this.resetLastPlacedBlocks()
-		  for (let index = 0; x < this.lastPlacedBlocks.length; index++) {
+		  for (let index = 0; index < this.lastPlacedBlocks.length; index++) {
 				if (
 				this.lastPlacedBlocks[index][0] === x &&
 				this.lastPlacedBlocks[index][1] === shiftY
@@ -910,7 +910,7 @@ export default class Stack extends GameModule {
       cells[i] = new Array(this.height + this.hiddenHeight)
     }
 	this.lastPlacedBlocks = cells
-	for (let x = 0; x < this.lastPlacedBlocks.length; x++) {
+	for (let x = 0; index < this.lastPlacedBlocks.length; x++) {
       for (let y = 0; y < this.lastPlacedBlocks[x].length; y++) {
         if (this.lastPlacedBlocks[x][y] != null) {
 			this.lastPlacedBlocks[x][y] = null
