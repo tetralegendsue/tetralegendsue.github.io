@@ -29,9 +29,8 @@
       "submenu": "mode/nontwo"
     },
 	{
-      "label": "Freezer X",
-      "description": "The board is on a freezer. How long can you last?",
-	  "secretA": true,
+      "label": "Cold Divinity X",
+      "description": "The pieces are slowly freezing! Blink and the whole board might be frozen!",
 	  "fixedText": true,
       "action": "submenu",
       "submenu": "mode/frozenx"

@@ -7782,7 +7782,7 @@ export const loops = {
         resetAnimation("#message", "dissolve")
         shown20GMessage = true
       }
-      if (calcLevel >= 8 && !game.hold.isDisabled && game.type !== "frozenx") {
+      if (calcLevel >= 8 && !game.hold.isDisabled) {
 		if (game.stat.piece > 0) {
           sound.killBgm()
           sound.playBgm(game.settings.music[1], game.type)
