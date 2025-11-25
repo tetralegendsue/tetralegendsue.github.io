@@ -872,7 +872,7 @@ export default class Stack extends GameModule {
   isLastPlacedBlock(x, y) {
 	  let result = false
 	  for (const block of this.lastPlacedBlocks) {
-		  if (if block[0] === x && block[1] === y) {
+		  if (block[0] === x && block[1] === y) {
 			  result = true
 		  }			  
 	  }
