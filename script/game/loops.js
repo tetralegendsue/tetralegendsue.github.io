@@ -7771,14 +7771,19 @@ export const loops = {
       game.piece.gravity = framesToMs(SPEED_TABLE[calcLevel])
       const DELAY_TABLE = [500, 475, 450, 375, 350, 325, 300, 275, 250, 225]
       game.piece.lockDelayLimit = DELAY_TABLE[calcLevel]
-      const NEXT_TABLE = [6, 5, 4, 3, 2, 1, 1, 1, 1, 1]
+      let NEXT_TABLE = []
+	  if (game.type === "frozenx") {
+		  NEXT_TABLE = [6, 6, 6, 6, 5, 4, 3, 2, 1, 1]
+	  } else {
+		  NEXT_TABLE = [6, 5, 4, 3, 2, 1, 1, 1, 1, 1]
+	  }
       game.next.nextLimit = NEXT_TABLE[calcLevel]
-      if (calcLevel >= 3 && !shown20GMessage) {
+      if (calcLevel >= 3 && !shown20GMessage && game.type === "prox") {
         $("#message").textContent = "20G"
         resetAnimation("#message", "dissolve")
         shown20GMessage = true
       }
-      if (calcLevel >= 8 && !game.hold.isDisabled) {
+      if (calcLevel >= 8 && !game.hold.isDisabled && game.type === "prox") {
 		if (game.stat.piece > 0) {
           sound.killBgm()
           sound.playBgm(game.settings.music[1], game.type)
@@ -7787,13 +7792,25 @@ export const loops = {
         game.hold.isDisabled = true
         game.hold.isDirty = true
       }
+	  if (calcLevel >= 3 && !shown20GMessage && game.type === "frozenx") {
+        $("#message").textContent = "20G"
+        resetAnimation("#message", "dissolve")
+        shown20GMessage = true
+      }
+	  if (calcLevel >= 5 && !game.useAltMusic && game.type === "frozenx") {
+		if (game.stat.piece > 0) {
+          sound.killBgm()
+          sound.playBgm(game.settings.music[1], game.type)
+        }
+        game.useAltMusic = true
+      }
       // if (game.stat.level > 1 && !shownHoldWarning) {
       //   $('#hold-disappear-message').textContent = locale.getString('ui', 'watchOutWarning');
       // }
       levelUpdate(game)
     },
     onInit: (game) => {
-	  if (settings.game.prox.startingLevel - 1 >= 8) {
+	  if (settings.game.prox.startingLevel - 1 >= 8 && game.type === "prox") {
 		  sound.playMenuSe("hardstart4")
 	  } else {
 		  sound.playMenuSe("hardstart3")
@@ -7801,9 +7818,14 @@ export const loops = {
       shown20GMessage = settings.game.prox.startingLevel > 3 ? true : false
       shownHoldWarning = false
       game.lineGoal = 200
+	  game.useAltMusic = false
       game.stat.level = settings.game.prox.startingLevel
       lastLevel = parseInt(settings.game.prox.startingLevel)
-      game.prefixes.level = "MACH "
+      if (game.type === "frozenx") {
+		  game.prefixes.level = "CD"
+	  } else {
+		  game.prefixes.level = "MACH "
+	  }
       game.smallStats.level = true
       game.resize()
       updateFallSpeed(game)
