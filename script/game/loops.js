@@ -4476,7 +4476,9 @@ export const loops = {
 			  sound.killBgm()
 			  break
 			case 7:
-			  sound.killBgm()
+			  if (settings.game.ace.lineGoal >= 0) {
+				sound.killBgm()
+			  }
 			  break
             case 2:
 				switch (difficulty) {
@@ -5162,7 +5164,9 @@ export const loops = {
 			  sound.killBgm()
 			  break
 			case 7:
-			  sound.killBgm()
+			  if (settings.game.aceworld.lineGoal >= 0) {
+				sound.killBgm()
+			  }
 			  break
             case 2:
 				switch (difficulty) {
