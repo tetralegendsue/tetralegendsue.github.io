@@ -1,7 +1,6 @@
 # Tetra Legends UE
 - Tetra Legends UE (Unofficial Expansion) is a Tetra Legends fork that adds new content to the game.
-- Play here: https://tetralegendsue.netlify.app/
-- Alternate link if above link doesnt work: https://krstacker.github.io/tetralegendsue/
+- Play here: https://tetralegendsue.github.io/
 
 # Additions
 - New Tetra-X mode [Cold Divinity X]
@@ -14,4 +13,4 @@
 # Notes
 - (Pressure) Backpedalling was impossible to replicate on Tetra Legends.
 - (Sudden-AE) Cyclone was impossible to replicate on Tetra Legends. To compensate, Master Pikii II (frozen minos from level 1300+) has been made harsher than the original.
-- If Alternate link says 404 site not found, the site is not down, just updating.
+- If link says 404 site not found, the site is not down, just updating.
