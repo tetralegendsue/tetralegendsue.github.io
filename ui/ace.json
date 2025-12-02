@@ -20,7 +20,6 @@
       "label": "ARCADE RULE",
       "description": "The ruleset used in the arcade games.",
       "fixedText": true,
-      "default": true,
       "action": "submenu",
       "submenu": "mode/aceclassic"
     },
