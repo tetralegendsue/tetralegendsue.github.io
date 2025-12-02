@@ -1,7 +1,7 @@
 import menu from "./menu/menu.js"
 import sound from "./sound.js"
 import locale from "./lang.js"
-const SETTINGS_VERSION = 5
+const SETTINGS_VERSION = 1
 class Settings {
   constructor() {
     this.defaultSettings = {
@@ -185,7 +185,6 @@ class Settings {
 	  ace: {
         lineGoal: 150,
         difficulty: 1,
-		arstype: "acears",
       },
     }
     this.settings = {}

@@ -4080,11 +4080,11 @@ export const loops = {
         shifting(arg)
       }
       gravity(arg)
-      if (settings.game.ace.arstype === "acears") {
+      if (game.type === "ace") {
 		tgmSoftDrop(arg)
 		hardDrop(arg)
 	  }
-	  else if (settings.game.ace.arstype === "acears2") {
+	  else if (game.type === "aceclassic") {
 		sonicDrop(arg)
         tgmFirmDrop(arg)
 	  }
@@ -4502,9 +4502,6 @@ export const loops = {
 						break
 					}
 					case 6: {
-						sound.loadBgm(["kachusha-hard"], "ace")
-						sound.killBgm()
-						sound.playBgm(["kachusha-hard"], "ace")
 						break
 					}
 				}
@@ -5190,9 +5187,6 @@ export const loops = {
 						break
 					}
 					case 6: {
-						sound.loadBgm(["kachusha-hard"], "ace")
-						sound.killBgm()
-						sound.playBgm(["kachusha-hard"], "ace")
 						break
 					}
 				}
@@ -8577,6 +8571,7 @@ export const loops = {
     },
   },
 }
+loops.aceclassic = loops.ace
 loops.beatx = loops.beat
 loops.beattgm = loops.beat
 loops.normal21 = loops.sudden

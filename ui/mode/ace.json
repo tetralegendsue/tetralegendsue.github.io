@@ -1,0 +1,80 @@
+{
+  "properties": {
+    "parent": "ace",
+    "langOverride": "mode-options",
+    "game": "ace"
+  },
+  "data": [
+    {
+      "label": "Ace",
+      "fixedText": true,
+      "type": "header"
+    },
+    {
+      "string": "lineGoalLabel",
+      "stringDesc": "lineGoalDescription",
+      "type": "select",
+      "action": "select",
+      "selectOptions": [
+        {
+          "string": "linesUnit",
+          "replace": ["150"],
+          "value": 150
+        },
+        {
+          "string": "linesUnit",
+          "replace": ["200"],
+          "value": 200
+        },
+		{
+          "string": "endlessOption",
+          "value": -1
+        }
+      ],
+      "setting": "lineGoal",
+      "gameName": "ace",
+      "settingType": "game"
+    },
+    {
+      "string": "difficultyLabel",
+      "stringDesc": "difficultyDescription",
+      "type": "select",
+      "action": "select",
+      "selectOptions": [
+        {
+          "label": "NOVICE",
+		  "description": "",
+          "fixedText": true,
+          "value": 1
+        },
+        {
+          "label": "SPECIAL",
+		  "description": "",
+          "fixedText": true,
+          "value": 2
+        },
+		{
+          "label": "SPECIAL 2",
+		  "description": "",
+          "fixedText": true,
+          "value": 3
+        },
+        {
+          "label": "SUDDEN",
+		  "description": "",
+          "fixedText": true,
+          "value": 4
+        },
+		{
+          "label": "SUDDEN 2",
+		  "description": "",
+          "fixedText": true,
+          "value": 5
+        }
+      ],
+      "setting": "difficulty",
+      "gameName": "ace",
+      "settingType": "game"
+    }
+  ]
+}

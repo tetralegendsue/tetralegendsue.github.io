@@ -1,6 +1,6 @@
 {
   "properties": {
-    "parent": "guideline"
+    "parent": "root"
   },
   "data": [
     {
@@ -8,20 +8,28 @@
       "fixedText": true,
       "type": "header"
     },
+	{
+      "label": "ACE RULE",
+      "description": "A balanced mashup of Arcade Rule and Guideline Rule.",
+      "fixedText": true,
+      "default": true,
+      "action": "submenu",
+      "submenu": "mode/ace"
+    },
     {
-      "label": "CLASSIC RULE",
+      "label": "ARCADE RULE",
       "description": "The ruleset used in the arcade games.",
       "fixedText": true,
       "default": true,
       "action": "submenu",
-      "submenu": "aceclassic"
+      "submenu": "mode/aceclassic"
     },
 	{
-      "label": "WORLD RULE",
+      "label": "GUIDELINE RULE",
       "description": "The ruleset used in the guideline games.",
       "fixedText": true,
       "action": "submenu",
-      "submenu": "aceworld"
+      "submenu": "mode/aceworld"
     }
   ]
 }

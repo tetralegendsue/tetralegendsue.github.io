@@ -47,11 +47,20 @@
       "submenu": "arcade"
     },
 	{
+      "fixedText": true,
+      "label": "Ace",
+      "description": "Each level has a time limit! Good luck!",
+      "action": "submenu",
+	  "width": "half",
+      "submenu": "ace"
+    },
+	{
       "label": "Beat",
       "description": "PPS is forced to the beat of the music! Good luck!",
       "fixedText": true,
       "action": "submenu",
-      "submenu": "beatmode"
+	  "width": "half",
+      "submenu": "beat"
     },
     {
       "fixedText": true,

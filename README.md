@@ -8,6 +8,7 @@
 - New Retro mode [Cabinet (System 16)]
 - New Skins [PPT, T99, TOJ, Friends, Party, Pyramidal, DTET, KRS]
 - New Beat mode song [Gas Gas Gas (180BPM)]
+- New Ace mode [Novice (ACE Normal), Special (ACE HiSpeed), Special 2 (ACE HiSpeed 2), Sudden (ACE Another), Sudden 2 (ACE Another 2)]
 - New secret modes [Can you find them?]
 
 # Notes

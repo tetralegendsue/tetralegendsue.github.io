@@ -1,13 +1,13 @@
 {
   "properties": {
-    "parent": "beatmode",
+    "parent": "beat",
     "parentSecret": true,
     "langOverride": "mode-options",
     "game": "beat"
   },
   "data": [
     {
-      "label": "Beat Mode",
+      "label": "Beat",
       "description": "",
       "fixedText": true,
       "type": "header"

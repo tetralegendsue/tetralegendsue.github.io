@@ -45,14 +45,6 @@
       "stringDesc": "comboDescription",
       "action": "submenu",
       "submenu": "mode/combo"
-    },
-	{
-      "fixedText": true,
-      "label": "Ace",
-      "description": "Secret mode! Marathon, but each level has a time limit! Can you reach the goal?",
-      "action": "submenu",
-	  "secretA": true,
-      "submenu": "ace"
     }
   ]
 }

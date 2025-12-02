@@ -2,7 +2,7 @@
   "properties": {
     "parent": "ace",
     "langOverride": "mode-options",
-    "game": "ace"
+    "game": "aceclassic"
   },
   "data": [
     {
@@ -73,30 +73,6 @@
         }
       ],
       "setting": "difficulty",
-      "gameName": "ace",
-      "settingType": "game"
-    },
-	{
-      "label": "Drop Behavior",
-      "description": "Choose how the pieces drop",
-      "fixedText": true,
-      "type": "select",
-      "action": "select",
-      "selectOptions": [
-        {
-          "label": "Hard Drop",
-		  "description": "",
-          "fixedText": true,
-          "value": "acears"
-        },
-        {
-          "label": "Sonic Drop",
-		  "description": "",
-          "fixedText": true,
-          "value": "acears2"
-        }
-      ],
-      "setting": "arstype",
       "gameName": "ace",
       "settingType": "game"
     }
