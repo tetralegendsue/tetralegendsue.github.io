@@ -24,9 +24,9 @@
       "settingType": "game"
     },
     {
-      "label": "Music",
-      "description": "Choose which music plays during the game",
-      "fixedText": true,
+      "string": "musicLabel",
+	  "stringDesc": "musicDescription",
+      "langOverride": "ue_additions",
       "type": "select",
       "action": "select",
       "selectOptions": [

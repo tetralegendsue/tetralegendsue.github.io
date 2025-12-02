@@ -1,0 +1,158 @@
+{
+  "songLabel": {
+    "message": "歌"
+  },
+  "songDescription": {
+    "message": "ゲーム中に再生する曲を選択してください"
+  },
+  "musicLabel": {
+    "message": "音楽"
+  },
+  "musicDescription": {
+    "message": "ゲーム中に再生する音楽を選択してください"
+  },
+  "garbageCapLabel": {
+    "message": "ごみキャップ"
+  },
+  "garbageCapDescription": {
+    "message": "一度にマトリックスに入力できる壊れた行（ゴミ行）の数を制限する"
+  },
+  "worldRuleLabel": {
+    "message": "WORLDルール"
+  },
+  "worldRuleDescription": {
+    "message": "ガイドラインゲームで使用されるルールセット"
+  },
+  "classicRuleLabel": {
+    "message": "CLASSICルール"
+  },
+  "classicRuleDescription": {
+    "message": "アーケードゲームで使用されるルールセット"
+  },
+  "guidelineRuleLabel": {
+    "message": "ガイドラインルール"
+  },
+  "guidelineRuleDescription": {
+    "message": "ガイドラインゲームで使用されるルールセット"
+  },
+  "arcadeRuleLabel": {
+    "message": "アーケードルール"
+  },
+  "arcadeRuleDescription": {
+    "message": "アーケードゲームで使用されるルールセット"
+  },
+  "tetraXRuleLabel": {
+    "message": "TETRA-Xルール"
+  },
+  "tetraXRuleDescription": {
+    "message": "TETRA-Xで使用されるルールセット"
+  },
+  "aceRuleLabel": {
+    "message": "エースルール"
+  },
+  "aceRuleDescription": {
+    "message": "アーケードゲームで使用されるルールセットとガイドラインゲームで使用されるルールセットの混合"
+  },
+  "frozenXLabel": {
+    "message": "コールドディヴィニティー X"
+  },
+  "frozenXDescription": {
+    "message": "駒が徐々に凍りついている！瞬きする間に盤面全体が凍りつくかもしれない！"
+  },
+  "noviceLabel": {
+    "message": "EASY"
+  },
+  "noviceDescription": {
+    "message": "初心者向けのゆっくりとしたゲーム。"
+  },
+  "specialLabel": {
+    "message": "MASTER"
+  },
+  "specialDescription": {
+    "message": "しっかりやれば、成績は上がる！ペースを落とせば、成績は停滞する…"
+  },
+  "suddenLabel": {
+    "message": "DEATH"
+  },
+  "suddenDescription": {
+    "message": "ピースは地面に生成され、どんどん速くなる！"
+  },
+  "noviceTiLabel": {
+    "message": "EASY-TI"
+  },
+  "noviceTiDescription": {
+    "message": "初心者向けの短いゲーム。"
+  },
+  "specialTiLabel": {
+    "message": "MASTER-TI"
+  },
+  "specialTiDescription": {
+    "message": "うまくやれば、成績は上がる！ペースを落とせば、成績は下がる…"
+  },
+  "suddenTiLabel": {
+    "message": "SHIRASE"
+  },
+  "suddenTIDescription": {
+    "message": "超高速の積み上げとクレイジーな邪魔！ついていけるか？"
+  },
+  "asukaLabel": {
+    "message": "KAMUI"
+  },
+  "asukaDescription": {
+    "message": "延長できない時間制限があります。最後までたどり着けますか？"
+  },
+  "konohaLabel": {
+    "message": "KONOHA"
+  },
+  "konohaDescription": {
+    "message": "完全クリアを達成すると制限時間が延長されます！いったい何回の完全クリアができるかな？"
+  },
+  "roundsLabel": {
+    "message": "ROUNDS"
+  },
+  "roundsDescription": {
+    "message": "ブロック積み上げ技術の究極の試練！頂点に立つプレイヤーだけが遠くまで到達できる！君はどこまで行ける？"
+  },
+  "normal21Label": {
+    "message": "DEATH EX"
+  },
+  "normal21Description": {
+    "message": "ピースは地面に生成され、どんどん速くなる！"
+  },
+  "normal31Label": {
+    "message": "SHIRASE EX"
+  },
+  "normal31Description": {
+    "message": "超高速の積み上げとクレイジーな邪魔！ついていけるか？"
+  },
+  "aceNormal": {
+    "message": "NORMAL"
+  },
+  "aceHiSpeed": {
+    "message": "HISPEED"
+  },
+  "aceHiSpeed2": {
+    "message": "HISPEED 2"
+  },
+  "aceAnother": {
+    "message": "ANOTHER"
+  },
+  "aceAnother2": {
+    "message": "ANOTHER 2"
+  },
+  "segaEasy": {
+    "message": "EASY"
+  },
+  "segaNormal": {
+    "message": "NORMAL"
+  },
+  "segaHard": {
+    "message": "HARD"
+  },
+  "segaHardest": {
+    "message": "HARDEST"
+  },
+  "footerLabel": {
+    "message": ""
+  }
+}

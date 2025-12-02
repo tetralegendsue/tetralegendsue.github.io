@@ -1,6 +1,7 @@
 {
   "properties": {
-    "parent": "tuning"
+    "parent": "tuning",
+    "langOverride": "menu_daspresets"
   },
   "data": [
     {
@@ -11,6 +12,13 @@
       "isShort": true,
       "delay": 170,
       "rate": 30
+    },
+    {
+      "label": "Default 2",
+      "description": "The default chosen for Tetra Legends Ultimate",
+      "fixedText": true,
+      "action": "daspreset",
+      "isShort": true
     },
     {
       "string": "guidelineLabel",

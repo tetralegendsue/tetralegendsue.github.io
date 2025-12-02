@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "New Century",
-      "description": "",
-      "fixedText": true,
+      "label": "newCenturyLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

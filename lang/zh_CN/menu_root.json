@@ -82,5 +82,32 @@
   },
   "discordDescription": {
     "message": "加入Discord来讨论游戏，获得更新并提供意见和翻译。如果您在中国大陆，您可能无法访问该服务。"
+  },
+  "aceLabel": {
+    "message": "王牌"
+  },
+  "aceDescription": {
+    "message": "每个关卡都有时间限制！祝你好运！"
+  },
+  "beatLabel": {
+    "message": "节拍"
+  },
+  "beatDescription": {
+    "message": "PPS被迫跟随音乐的节奏！祝你好运！"
+  },
+  "zenLabel": {
+    "message": "禅"
+  },
+  "zenDescription": {
+    "message": "放松，没有任何限制！"
+  },
+  "repoLabel": {
+    "message": "GitHub 代码仓库"
+  },
+  "repoDescription": {
+    "message": "前往《Tetra Legends UE》的GitHub代码库"
+  },
+  "footerLabel": {
+    "message": ""
   }
 }

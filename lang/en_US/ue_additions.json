@@ -1,0 +1,158 @@
+{
+  "songLabel": {
+    "message": "Song"
+  },
+  "songDescription": {
+    "message": "Choose which song plays during the game"
+  },
+  "musicLabel": {
+    "message": "Music"
+  },
+  "musicDescription": {
+    "message": "Choose which music plays during the game"
+  },
+  "garbageCapLabel": {
+    "message": "Garbage Cap"
+  },
+  "garbageCapDescription": {
+    "message": "Limit how many broken lines (lines of garbage) may enter the Matrix at a time"
+  },
+  "worldRuleLabel": {
+    "message": "World Rule"
+  },
+  "worldRuleDescription": {
+    "message": "The ruleset used in the guideline games"
+  },
+  "classicRuleLabel": {
+    "message": "Classic Rule"
+  },
+  "classicRuleDescription": {
+    "message": "The ruleset used in the arcade games"
+  },
+  "guidelineRuleLabel": {
+    "message": "Guideline Rule"
+  },
+  "guidelineRuleDescription": {
+    "message": "The ruleset used in the guideline games"
+  },
+  "arcadeRuleLabel": {
+    "message": "Arcade Rule"
+  },
+  "arcadeRuleDescription": {
+    "message": "The ruleset used in the arcade games"
+  },
+  "tetraXRuleLabel": {
+    "message": "Tetra-X Rule"
+  },
+  "tetraXRuleDescription": {
+    "message": "The ruleset used in Tetra-X"
+  },
+  "aceRuleLabel": {
+    "message": "Ace Rule"
+  },
+  "aceRuleDescription": {
+    "message": "A mixture of the ruleset used in the arcade games and the ruleset used in the guideline games"
+  },
+  "frozenXLabel": {
+    "message": "Cold Divinity X"
+  },
+  "frozenXDescription": {
+    "message": "The pieces are slowly freezing! Blink and the whole board might be frozen!"
+  },
+  "noviceLabel": {
+    "message": "Novice"
+  },
+  "noviceDescription": {
+    "message": "A slow game for beginners."
+  },
+  "specialLabel": {
+    "message": "Special"
+  },
+  "specialDescription": {
+    "message": "Play well, and your grade will go up! Slow down, and your grade will get stuck..."
+  },
+  "suddenLabel": {
+    "message": "Sudden"
+  },
+  "suddenDescription": {
+    "message": "The pieces spawn on the ground and only get faster!"
+  },
+  "noviceTiLabel": {
+    "message": "Novice-TI"
+  },
+  "noviceTiDescription": {
+    "message": "A short game for beginners."
+  },
+  "specialTiLabel": {
+    "message": "Special-TI"
+  },
+  "specialTiDescription": {
+    "message": "Play well, and your grade will go up! Slow down, and your grade will go down..."
+  },
+  "suddenTiLabel": {
+    "message": "Sudden-TI"
+  },
+  "suddenTIDescription": {
+    "message": "Extremely fast stacking and crazy distractions! Can you keep up?"
+  },
+  "asukaLabel": {
+    "message": "Novice-AE"
+  },
+  "asukaDescription": {
+    "message": "You have a time limit that cannot be extended. Can you reach the end?"
+  },
+  "konohaLabel": {
+    "message": "Special-AE"
+  },
+  "konohaDescription": {
+    "message": "Getting a perfect clear extends the time limit! How many perfect clears can you get?"
+  },
+  "roundsLabel": {
+    "message": "Sudden-AE"
+  },
+  "roundsDescription": {
+    "message": "The ultimate test of block stacking skills! Only top-level players can reach far! How far can you reach?"
+  },
+  "normal21Label": {
+    "message": "Sudden EX"
+  },
+  "normal21Description": {
+    "message": "The pieces spawn on the ground and only get faster!"
+  },
+  "normal31Label": {
+    "message": "Sudden-TI EX"
+  },
+  "normal31Description": {
+    "message": "Extremely fast stacking and crazy distractions! Can you keep up?"
+  },
+  "aceNormal": {
+    "message": "Normal"
+  },
+  "aceHiSpeed": {
+    "message": "High Speed"
+  },
+  "aceHiSpeed2": {
+    "message": "High Speed 2"
+  },
+  "aceAnother": {
+    "message": "Another"
+  },
+  "aceAnother2": {
+    "message": "Another 2"
+  },
+  "segaEasy": {
+    "message": "Easy"
+  },
+  "segaNormal": {
+    "message": "Normal"
+  },
+  "segaHard": {
+    "message": "Hard"
+  },
+  "segaHardest": {
+    "message": "Hardest"
+  },
+  "footerLabel": {
+    "message": ""
+  }
+}

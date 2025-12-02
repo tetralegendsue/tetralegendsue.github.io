@@ -89,22 +89,22 @@
           "value": "srsx"
         },
 		{
-          "label": "Arika-TAP",
+          "label": "ARS",
           "fixedText": true,
           "value": "tap"
         },
         {
-          "label": "Arika-TI",
+          "label": "ARS-TI",
           "fixedText": true,
           "value": "arika"
         },
 		{
-          "label": "Arika-ACE",
+          "label": "ARS-ACE",
           "fixedText": true,
           "value": "ace"
         },
 		{
-          "label": "Arika-AE",
+          "label": "ARS-AE",
           "fixedText": true,
           "value": "ae"
         },
@@ -127,18 +127,18 @@
           "value": "dshock"
         },
         {
-          "label": "Retro",
-          "fixedText": true,
+          "string": "retroLabel",
+		  "langOverride": "menu_retro",
           "value": "retro"
         },
         {
-          "label": "Handheld",
-          "fixedText": true,
+          "string": "handheldLabel",
+		  "langOverride": "menu_retro",
           "value": "handheld"
         },
 		{
-          "label": "Handheld DX",
-          "fixedText": true,
+          "string": "deluxeLabel",
+		  "langOverride": "menu_retro",
           "value": "deluxe"
         },
         {
@@ -167,8 +167,8 @@
           "value": "pyramidal"
         },
 		{
-          "label": "Sega",
-          "fixedText": true,
+          "string": "segaLabel",
+		  "langOverride": "menu_retro",
           "value": "sega"
         },
 		{
@@ -177,7 +177,7 @@
           "value": "dtet"
         },
 		{
-          "label": "KRS",
+          "label": "KRStacker",
           "fixedText": true,
           "value": "krs"
         },
@@ -190,8 +190,8 @@
       "settingType": "setting"
     },
 	{
-      "label": "OUTLINE",
-	  "description": "",
+      "string": "outlineLabel",
+      "stringDesc": "outlineDescription",
       "fixedText": true,
       "type": "toggle",
       "action": "toggle",

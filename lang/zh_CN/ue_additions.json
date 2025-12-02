@@ -1,0 +1,158 @@
+{
+  "songLabel": {
+    "message": "歌"
+  },
+  "songDescription": {
+    "message": "选择游戏过程中播放的歌曲"
+  },
+  "musicLabel": {
+    "message": "音乐"
+  },
+  "musicDescription": {
+    "message": "选择游戏过程中播放的音乐"
+  },
+  "garbageCapLabel": {
+    "message": "垃圾盖"
+  },
+  "garbageCapDescription": {
+    "message": "限制每次进入矩阵的断行（垃圾行）数量"
+  },
+  "worldRuleLabel": {
+    "message": "World 规则"
+  },
+  "worldRuleDescription": {
+    "message": "指南游戏中使用的规则集"
+  },
+  "classicRuleLabel": {
+    "message": "Classic 规则"
+  },
+  "classicRuleDescription": {
+    "message": "街机游戏中使用的规则集"
+  },
+  "guidelineRuleLabel": {
+    "message": "标准 规则"
+  },
+  "guidelineRuleDescription": {
+    "message": "指南游戏中使用的规则集"
+  },
+  "arcadeRuleLabel": {
+    "message": "街机 规则"
+  },
+  "arcadeRuleDescription": {
+    "message": "街机游戏中使用的规则集"
+  },
+  "tetraXRuleLabel": {
+    "message": "Tetra-X 规则"
+  },
+  "tetraXRuleDescription": {
+    "message": "Tetra-X中使用的规则集"
+  },
+  "aceRuleLabel": {
+    "message": "王牌 规则"
+  },
+  "aceRuleDescription": {
+    "message": "街机游戏规则集与指导性游戏规则集的混合体"
+  },
+  "frozenXLabel": {
+    "message": "冷冽神性 X"
+  },
+  "frozenXDescription": {
+    "message": "棋子正在慢慢冻结！眨眼间整个棋盘都可能被冻结！"
+  },
+  "noviceLabel": {
+    "message": "新手"
+  },
+  "noviceDescription": {
+    "message": "适合初学者的慢节奏游戏。"
+  },
+  "specialLabel": {
+    "message": "分级"
+  },
+  "specialDescription": {
+    "message": "Play well, and your grade will go up! Slow down, and your grade will get stuck..."
+  },
+  "suddenLabel": {
+    "message": "突然"
+  },
+  "suddenDescription": {
+    "message": "碎片在地面上生成，速度只会越来越快！"
+  },
+  "noviceTiLabel": {
+    "message": "新手-TI"
+  },
+  "noviceTiDescription": {
+    "message": "一款适合初学者的简短游戏。"
+  },
+  "specialTiLabel": {
+    "message": "分级-TI"
+  },
+  "specialTiDescription": {
+    "message": "表现出色，成绩自然提升！放慢脚步，成绩便会下滑..."
+  },
+  "suddenTiLabel": {
+    "message": "突然-TI"
+  },
+  "suddenTIDescription": {
+    "message": "极快的叠加速度和疯狂的干扰！你能跟上吗？"
+  },
+  "asukaLabel": {
+    "message": "新手-AE"
+  },
+  "asukaDescription": {
+    "message": "你面临着无法延长的时限。你能抵达终点吗？"
+  },
+  "konohaLabel": {
+    "message": "分级-AE"
+  },
+  "konohaDescription": {
+    "message": "完美通关可延长时限！你能达成多少次完美通关？"
+  },
+  "roundsLabel": {
+    "message": "突然-AE"
+  },
+  "roundsDescription": {
+    "message": "堆叠方块的终极考验！唯有顶尖玩家才能攀登至远！你能达到多远？"
+  },
+  "normal21Label": {
+    "message": "突然 EX"
+  },
+  "normal21Description": {
+    "message": "碎片在地面上生成，速度只会越来越快！"
+  },
+  "normal31Label": {
+    "message": "突然-TI EX"
+  },
+  "normal31Description": {
+    "message": "极快的叠加速度和疯狂的干扰！你能跟上吗？"
+  },
+  "aceNormal": {
+    "message": "正常"
+  },
+  "aceHiSpeed": {
+    "message": "高速"
+  },
+  "aceHiSpeed2": {
+    "message": "高速2"
+  },
+  "aceAnother": {
+    "message": "另一个"
+  },
+  "aceAnother2": {
+    "message": "另外2"
+  },
+  "segaEasy": {
+    "message": "简单"
+  },
+  "segaNormal": {
+    "message": "正常"
+  },
+  "segaHard": {
+    "message": "硬的"
+  },
+  "segaHardest": {
+    "message": "最难的"
+  },
+  "footerLabel": {
+    "message": ""
+  }
+}

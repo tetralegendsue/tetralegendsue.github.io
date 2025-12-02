@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Sudden EX",
-      "description": "",
-      "fixedText": true,
+      "label": "normal21Label",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Cold Divinity X",
-      "description": "",
-      "fixedText": true,
+      "label": "frozenXLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     },
     {

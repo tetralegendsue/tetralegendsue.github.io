@@ -47,25 +47,22 @@
       "submenu": "arcade"
     },
 	{
-      "fixedText": true,
-      "label": "Ace",
-      "description": "Each level has a time limit! Good luck!",
+      "string": "aceLabel",
+      "stringDesc": "aceDescription",
       "action": "submenu",
 	  "width": "half",
       "submenu": "ace"
     },
 	{
-      "label": "Beat",
-      "description": "PPS is forced to the beat of the music! Good luck!",
-      "fixedText": true,
+      "string": "beatLabel",
+      "stringDesc": "beatDescription",
       "action": "submenu",
 	  "width": "half",
       "submenu": "beat"
     },
     {
-      "fixedText": true,
-      "label": "Zen",
-      "description": "Relax, there are no restrictions!",
+      "string": "zenLabel",
+      "stringDesc": "zenDescription",
       "action": "submenu",
       "submenu": "mode/zen"
     },
@@ -99,24 +96,22 @@
       "action": "submenu",
       "submenu": "video"
     },
-    {
-      "fixedText": true,
-      "label": "Settings",
-      "description": "Import and export your settings here",
-      "action": "submenu",
-      "submenu": "settings"
-    },
 	{
       "string": "miscOverline",
       "label": "Misc",
       "type": "overline"
     },
 	{
-      "fixedText": true,
-      "label": "GitHub Repository",
-      "description": "Go to the GitHub Repository of Tetra Legends Enhanced",
+      "string": "soundtrackLabel",
+      "stringDesc": "soundtrackDescription",
       "action": "link",
-      "url": "https://github.com/krsofficial/tetralegends/"
+      "url": "https://github.com/tetralegendsue/tetralegendsue.github.io/tree/master/bgm/"
+    },
+	{
+      "string": "repoLabel",
+      "stringDesc": "repoDescription",
+      "action": "link",
+      "url": "https://github.com/tetralegendsue/tetralegendsue.github.io/"
     }
   ]
 }

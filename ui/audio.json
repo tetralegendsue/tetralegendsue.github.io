@@ -85,7 +85,7 @@
           "value": "tgm3"
         },
         {
-          "label": "TGM ACE",
+          "label": "TGMA",
           "fixedText": true,
           "value": "ace"
         },
@@ -125,18 +125,18 @@
           "value": "battle"
         },
         {
-          "label": "Retro",
-          "fixedText": true,
+          "string": "retroLabel",
+		  "langOverride": "menu_retro",
           "value": "nes"
         },
 		 {
-          "label": "Handheld",
-          "fixedText": true,
+          "string": "handheldLabel",
+		  "langOverride": "menu_retro",
           "value": "handheld"
         },
         {
-          "label": "Handheld DX",
-          "fixedText": true,
+          "string": "deluxeLabel",
+		  "langOverride": "menu_retro",
           "value": "deluxe"
         },
         {
@@ -155,8 +155,8 @@
           "value": "dshock"
         },
 		{
-          "label": "Sega",
-          "fixedText": true,
+          "string": "segaLabel",
+		  "langOverride": "menu_retro",
           "value": "sega"
         },
 		{
@@ -215,11 +215,6 @@
       "action": "select",
       "selectOptions": [
         {
-          "label": "[DE] Talon",
-          "fixedText": true,
-          "value": "talonde"
-        },
-        {
           "label": "[EN] Ariahivo",
           "fixedText": true,
           "value": "ariahivo"
@@ -228,11 +223,6 @@
           "label": "[EN] Sora",
           "fixedText": true,
           "value": "soraen"
-        },
-        {
-          "label": "[EN] Talon",
-          "fixedText": true,
-          "value": "talonen"
         },
         {
           "label": "[JA] Nina",

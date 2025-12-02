@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Sudden-TI",
-      "description": "",
-      "fixedText": true,
+      "label": "suddenTiLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

@@ -18,27 +18,27 @@
       "action": "select",
       "selectOptions": [
         {
-          "label": "EASY",
-		  "description": "",
-          "fixedText": true,
+          "string": "segaEasy",
+		  "omitDescription": true,
+          "langOverride": "ue-additions",
           "value": 1
         },
         {
-          "label": "NORMAL",
-		  "description": "",
-          "fixedText": true,
+          "string": "segaNormal",
+		  "omitDescription": true,
+          "langOverride": "ue-additions",
           "value": 2
         },
 		{
-          "label": "HARD",
-		  "description": "",
-          "fixedText": true,
+          "string": "segaHard",
+		  "omitDescription": true,
+          "langOverride": "ue-additions",
           "value": 3
         },
         {
-          "label": "HARDEST",
-		  "description": "",
-          "fixedText": true,
+          "string": "segaHardest",
+		  "omitDescription": true,
+          "langOverride": "ue-additions",
           "value": 4
         }
       ],

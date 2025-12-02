@@ -1,7 +1,7 @@
 import menu from "./menu/menu.js"
 import sound from "./sound.js"
 import locale from "./lang.js"
-const SETTINGS_VERSION = 1
+const SETTINGS_VERSION = 8
 class Settings {
   constructor() {
     this.defaultSettings = {
@@ -64,50 +64,25 @@ class Settings {
       voicebank: "off",
     }
     switch (navigator.language.substr(0, 2)) {
-      case "fr":
-        this.defaultSettings.language = "fr_FR"
-        break
-      case "nl":
-        this.defaultSettings.language = "nl_NL"
-        break
-      case "de":
-        this.defaultSettings.language = "de_DE"
-        break
-      case "vi":
-        this.defaultSettings.language = "vi_VN"
-        break
-      case "it":
-        this.defaultSettings.language = "it_IT"
-        break
       case "zh":
         this.defaultSettings.language = "zh_CN"
-        break
-      case "es":
-        this.defaultSettings.language = "es_ES"
         break
       case "ja":
         this.defaultSettings.language = "ja_JP"
         break
-      case "ko":
-        this.defaultSettings.language = "ko_KR"
-        break
-      case "pl":
-        this.defaultSettings.language = "pl_PL"
-        break
-      case "ru":
-        this.defaultSettings.language = "ru_RU"
-        break
+	  default:
+		this.defaultSettings.language = "en_US"
+		break
     }
     switch (this.defaultSettings.language) {
-      case "en_GB":
       case "en_US":
         this.defaultSettings.voicebank = "off"
         break
-      case "de_DE":
+	  case "zh_CN":
         this.defaultSettings.voicebank = "off"
         break
       case "ja_JP":
-        this.defaultSettings.voicebank = "off"
+        this.defaultSettings.voicebank = "nina"
         break
     }
     this.defaultControls = {
@@ -122,7 +97,7 @@ class Settings {
       hold: ["KeyC"],
       retry: ["KeyR"],
       pause: ["Escape"],
-	  testModeKey: ["Pause", "F4"],
+	  testModeKey: ["F4"],
     }
     this.defaultGame = {
       marathon: {

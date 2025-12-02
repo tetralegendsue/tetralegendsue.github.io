@@ -82,5 +82,32 @@
   },
   "discordDescription": {
     "message": "ゲームについて話し合ったり、アイデアを提案したり、翻訳に協力したりできます。"
+  },
+  "aceLabel": {
+    "message": "エース"
+  },
+  "aceDescription": {
+    "message": "各レベルには制限時間があります！がんばってください！"
+  },
+  "beatLabel": {
+    "message": "ビート"
+  },
+  "beatDescription": {
+    "message": "PPSは音楽のリズムに強制される！がんばれ！"
+  },
+  "zenLabel": {
+    "message": "禅"
+  },
+  "zenDescription": {
+    "message": "リラックスしてください、制限はありません！"
+  },
+  "repoLabel": {
+    "message": "GITHUBリポジトリ"
+  },
+  "repoDescription": {
+    "message": "TETRA LEGENDS UEのGITHUBリポジトリへ移動"
+  },
+  "footerLabel": {
+    "message": ""
   }
 }

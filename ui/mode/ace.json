@@ -6,8 +6,8 @@
   },
   "data": [
     {
-      "label": "Ace",
-      "fixedText": true,
+      "string": "aceLabel",
+      "langOverride": "menu_root",
       "type": "header"
     },
     {
@@ -42,33 +42,33 @@
       "action": "select",
       "selectOptions": [
         {
-          "label": "NOVICE",
-		  "description": "",
-          "fixedText": true,
+          "string": "aceNormal",
+		  "omitDescription": true,
+          "langOverride": "ue_additions",
           "value": 1
         },
         {
-          "label": "SPECIAL",
-		  "description": "",
-          "fixedText": true,
+          "string": "aceHiSpeed",
+		  "omitDescription": true,
+          "langOverride": "ue_additions",
           "value": 2
         },
 		{
-          "label": "SPECIAL 2",
-		  "description": "",
-          "fixedText": true,
+          "string": "aceHiSpeed2",
+		  "omitDescription": true,
+          "langOverride": "ue_additions",
           "value": 3
         },
         {
-          "label": "SUDDEN",
-		  "description": "",
-          "fixedText": true,
+          "string": "aceAnother",
+		  "omitDescription": true,
+          "langOverride": "ue_additions",
           "value": 4
         },
 		{
-          "label": "SUDDEN 2",
-		  "description": "",
-          "fixedText": true,
+          "string": "aceAnother2",
+		  "omitDescription": true,
+          "langOverride": "ue_additions",
           "value": 5
         }
       ],

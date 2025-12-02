@@ -9,79 +9,79 @@
       "type": "header"
     },
 	{
-      "label": "NOVICE",
-      "description": "(Not available in World Rule) A slow game for beginners.",
-      "fixedText": true,
+      "string": "noviceLabel",
+	  "stringDesc": "noviceDescription"
+      "langOverride": "ue_additions",
       "disabled": true
     },
 	{
-      "label": "SPECIAL",
-      "description": "(Not available in World Rule) Your grade will depend on how well you play!",
-      "fixedText": true,
-      "disabled": true
+      "string": "specialLabel",
+	  "stringDesc": "specialDescription"
+      "langOverride": "ue_additions",
+	  "disabled": true
     },
     {
-      "label": "SUDDEN",
-      "description": "(Not available in World Rule) The pieces spawn on the ground and only get faster!",
-      "fixedText": true,
-      "disabled": true
+      "string": "suddenLabel",
+	  "stringDesc": "suddenDescription"
+      "langOverride": "ue_additions",
+	  "disabled": true
     },
     {
-      "label": "NOVICE-TI",
-      "description": "Similar to Novice, but it's 100 levels shorter in exchange for a challenging end roll!",
-      "fixedText": true,
-      "default": true,
+      "string": "noviceTiLabel",
+	  "stringDesc": "noviceTiDescription"
+      "langOverride": "ue_additions",
+	  "default": true,
       "action": "submenu",
       "submenu": "mode/noviceworld"
     },
 	{
-      "label": "SPECIAL-TI",
-      "description": "Similar to Special, but slowing down reduces your grade!",
-      "fixedText": true,
+      "string": "specialTiLabel",
+	  "stringDesc": "specialTiDescription"
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/specialworld"
     },
-	{
-      "label": "SUDDEN-TI",
-      "description": "Similar to Sudden, but its 300 levels longer and it throws crazy things at you!",
-      "fixedText": true,
+    {
+      "string": "suddenTiLabel",
+	  "stringDesc": "suddenTiDescription"
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/suddenworld"
     },
 	{
-      "label": "PRESSURE",
-      "description": "You have a time limit that cannot be extended. Can you reach the end?",
-	  "fixedText": true,
+      "string": "asukaLabel",
+	  "stringDesc": "asukaDescription"
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/asukaworld"
     },
 	{
-      "label": "RALLY",
-      "description": "Getting a perfect clear extends the time limit! How many perfect clears can you get?",
-      "fixedText": true,
+      "string": "konohaLabel",
+	  "stringDesc": "konohaDescription"
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/konohaworld"
     },
 	{
-      "label": "SUDDEN-AE",
-      "description": "The ultimate test of block stacking skills! Only top-level players can reach far! How far can you reach? (WIP)",
-      "fixedText": true,
+      "string": "roundsLabel",
+	  "stringDesc": "roundsDescription"
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/roundsworld"
     },
 	{
-      "label": "SUDDEN EX",
-      "description": "(Not available in World Rule) Secret mode! Similar to Sudden, but the pieces are faster!",
-      "fixedText": true,
-	  "secretA": true,
 	  "disabled": true,
+      "string": "normal21Label",
+	  "stringDesc": "normal21Description"
+      "langOverride": "ue_additions",
+	  "secretA": true,
       "action": "submenu",
       "submenu": "mode/normal21world"
     },
 	{
-      "label": "SUDDEN-TI EX",
-      "description": "Secret mode! Similar to Sudden-TI, but its 700 levels longer and the already crazy things are even crazier!",
-      "fixedText": true,
+      "string": "normal31Label",
+	  "stringDesc": "normal31Description"
+      "langOverride": "ue_additions",
 	  "secretA": true,
       "action": "submenu",
       "submenu": "mode/normal31world"

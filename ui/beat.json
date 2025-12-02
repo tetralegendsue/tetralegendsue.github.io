@@ -4,29 +4,29 @@
   },
   "data": [
     {
-      "label": "Beat",
-      "fixedText": true,
+      "label": "beatLabel",
+      "langOverride": "menu_root",
       "type": "header"
     },
 	{
-      "label": "GUIDELINE RULE",
-      "description": "The ruleset used in the guideline games.",
-      "fixedText": true,
+      "string": "guidelineRuleLabel",
+      "stringDesc": "guidelineRuleDescription",
+	  "langOverride": "ue_additions",
 	  "default": true,
       "action": "submenu",
       "submenu": "mode/beat"
     },
 	{
-      "label": "ARCADE RULE",
-      "description": "The ruleset used in the arcade games.",
-      "fixedText": true,
+      "string": "arcadeRuleLabel",
+      "stringDesc": "arcadeRuleDescription",
+	  "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/beattgm"
     },
 	{
-      "label": "TETRA-X RULE",
-      "description": "The ruleset used in Tetra-X.",
-      "fixedText": true,
+      "string": "tetraXRuleLabel",
+      "stringDesc": "tetraXRuleDescription",
+	  "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/beatx"
     }

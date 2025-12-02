@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Sudden-AE",
-      "description": "",
-      "fixedText": true,
+      "label": "roundsLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

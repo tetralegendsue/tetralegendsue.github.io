@@ -29,9 +29,9 @@
       "submenu": "mode/nontwo"
     },
 	{
-      "label": "Cold Divinity X",
-      "description": "The pieces are slowly freezing! Blink and the whole board might be frozen!",
-	  "fixedText": true,
+      "string": "frozenXLabel",
+      "stringDesc": "frozenXDescription",
+	  "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/frozenx"
     }

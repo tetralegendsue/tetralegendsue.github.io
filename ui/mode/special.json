@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Special",
-      "description": "",
-      "fixedText": true,
+      "label": "specialLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

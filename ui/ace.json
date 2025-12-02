@@ -4,29 +4,30 @@
   },
   "data": [
     {
-      "label": "Ace",
-      "fixedText": true,
+      "string": "aceLabel",
+      "langOverride": "menu_root",
       "type": "header"
     },
 	{
-      "label": "ACE RULE",
-      "description": "A balanced mashup of Arcade Rule and Guideline Rule.",
+      "string": "aceRuleLabel",
+	  "stringDesc": "aceRuleDescription",
+      "langOverride": "ue_additions",
       "fixedText": true,
       "default": true,
       "action": "submenu",
       "submenu": "mode/ace"
     },
     {
-      "label": "ARCADE RULE",
-      "description": "The ruleset used in the arcade games.",
-      "fixedText": true,
+      "string": "arcadeRuleLabel",
+	  "stringDesc": "arcadeRuleDescription",
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/aceclassic"
     },
 	{
-      "label": "GUIDELINE RULE",
-      "description": "The ruleset used in the guideline games.",
-      "fixedText": true,
+      "string": "guidelineRuleLabel",
+	  "stringDesc": "guidelineRuleDescription",
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/aceworld"
     }

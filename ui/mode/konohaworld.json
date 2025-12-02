@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Rally",
-      "description": "",
-      "fixedText": true,
+      "label": "konohaLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

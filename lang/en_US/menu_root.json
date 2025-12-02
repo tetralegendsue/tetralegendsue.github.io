@@ -82,5 +82,32 @@
   },
   "discordDescription": {
     "message": "Join the Discord to discuss the game, get updated and contribute ideas and translations"
+  },
+  "aceLabel": {
+    "message": "Ace"
+  },
+  "aceDescription": {
+    "message": "Each level has a time limit! Good luck!"
+  },
+  "beatLabel": {
+    "message": "Beat"
+  },
+  "beatDescription": {
+    "message": "PPS is forced to the beat of the music! Good luck!"
+  },
+  "zenLabel": {
+    "message": "Zen"
+  },
+  "zenDescription": {
+    "message": "Relax, there are no restrictions!"
+  },
+  "repoLabel": {
+    "message": "Github Repository"
+  },
+  "repoDescription": {
+    "message": "Go to the GitHub Repository of Tetra Legends UE"
+  },
+  "footerLabel": {
+    "message": ""
   }
 }

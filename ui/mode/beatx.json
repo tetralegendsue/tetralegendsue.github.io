@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Beat",
-      "description": "",
-      "fixedText": true,
+      "label": "beatLabel",
+      "langOverride": "menu_root",
       "type": "header"
     },
     {

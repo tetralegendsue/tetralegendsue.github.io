@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Special-TI",
-      "description": "",
-      "fixedText": true,
+      "label": "specialTiLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

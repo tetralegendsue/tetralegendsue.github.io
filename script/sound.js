@@ -178,9 +178,7 @@ class Sound {
         })
       }
       if (
-        settings.settings.voicebank !== "off" &&
-        (settings.settings.voicebank == "talonen" ||
-          settings.settings.voicebank == "talonde")
+        settings.settings.voicebank !== "off"
       ) {
         for (const voxName of [
           "ready",
@@ -229,42 +227,6 @@ class Sound {
           "jspin3",
           "minijspin",
           "b2b_jspin",
-          "tspin0",
-          "tspin1",
-          "tspin2",
-          "tspin3",
-          "minitspin",
-          "b2b_tspin",
-          "perfectclear",
-          "ren1",
-          "ren2",
-          "ren3",
-          "blockout",
-          "lockout",
-          "topout",
-          "timeup",
-          "excellent",
-          "gameover",
-        ]) {
-          this.files.push(`vox${voxName}`)
-          this.sounds[`vox${voxName}`] = new Howl({
-            src: [`./vox/${settings.settings.voicebank}/${voxName}.ogg`],
-            volume: settings.settings.voiceVolume / 100,
-          })
-        }
-      } else if (
-        settings.settings.voicebank !== "off" &&
-        settings.settings.voicebank !== "talonen" &&
-        settings.settings.voicebank !== "talonde"
-      ) {
-        for (const voxName of [
-          "ready",
-          "start",
-          "go",
-          "erase2",
-          "erase3",
-          "erase4",
-          "b2b_erase4",
           "tspin0",
           "tspin1",
           "tspin2",

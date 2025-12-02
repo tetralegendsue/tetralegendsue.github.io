@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Novice-TI",
-      "description": "",
-      "fixedText": true,
+      "label": "noviceTiLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

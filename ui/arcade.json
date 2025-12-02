@@ -10,17 +10,17 @@
       "type": "header"
     },
     {
-      "label": "CLASSIC RULE",
-      "description": "The ruleset used in the arcade games.",
+      "string": "classicRuleLabel",
+	  "stringDesc": "classicRuleDescription",
+      "langOverride": "ue_additions",
 	  "default": true,
-      "fixedText": true,
       "action": "submenu",
       "submenu": "arcadeclassic"
     },
 	{
-      "label": "WORLD RULE",
-      "description": "The ruleset used in the guideline games.",
-      "fixedText": true,
+      "string": "worldRuleLabel",
+	  "stringDesc": "worldRuleDescription",
+      "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "arcadeworld"
     }

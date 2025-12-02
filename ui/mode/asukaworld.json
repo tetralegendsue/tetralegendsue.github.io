@@ -7,9 +7,8 @@
   },
   "data": [
     {
-      "label": "Pressure",
-      "description": "",
-      "fixedText": true,
+      "string": "asukaLabel",
+      "langOverride": "ue_additions",
       "type": "header"
     }
   ]

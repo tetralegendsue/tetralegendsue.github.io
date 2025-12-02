@@ -962,6 +962,16 @@ export const loops = {
 		[380, 540],
 		[390, 580],
 		[400, 600],
+		[410, 625],
+		[420, 650],
+		[430, 675],
+		[440, 700],
+		[450, 725],
+		[460, 750],
+		[470, 775],
+		[480, 800],
+		[490, 900],
+		[500, 1000],
       ]
       const lockDelayTable = [
         [101, 30],
@@ -1082,7 +1092,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.level < 400) {
+	  if (game.stat.level < 500) {
 		  game.piece.ghostIsVisible = game.stat.level < 100
 		  game.piece.gravity = framesToMs(256 / gravityDenominator)
 	  } else {
@@ -1579,7 +1589,9 @@ export const loops = {
         [1000, 8],
       ]
 	  let gravityDenominator = 1
-      const gravityTable = [
+      let gravityTable = []
+	  if (regretsPenalty <= 0) {
+	  gravityTable = [
         [8, 4],
         [19, 5],
         [35, 6],
@@ -1606,12 +1618,91 @@ export const loops = {
         [232, 208],
         [244, 224],
         [256, 240],
-        [267, 340],
-        [277, 440],
-        [287, 540],
-        [295, 640],
-        [300, 740],
+        [267, 260],
+        [277, 280],
+		[280, 300],
+        [287, 450],
+        [295, 600],
+        [300, 750],
+		[310, -1],
+		[320, -1],
+		[330, -1],
+		[340, -1],
+		[350, -1],
+		[360, -1],
+		[370, -1],
+		[380, -1],
+		[390, -1],
+		[400, -1],
+		[410, -1],
+		[420, -1],
+		[430, -1],
+		[440, -1],
+		[450, -1],
+		[460, -1],
+		[470, -1],
+		[480, -1],
+		[490, -1],
+		[500, -1],
+		[2600, -1],
       ]
+	  } else {
+	  gravityTable = [
+        [8, 4],
+        [19, 5],
+        [35, 6],
+        [40, 8],
+        [50, 10],
+        [60, 12],
+        [70, 16],
+        [80, 32],
+        [90, 48],
+        [100, 64],
+        [108, 4],
+        [119, 5],
+        [125, 6],
+        [131, 8],
+        [139, 12],
+        [149, 32],
+        [156, 48],
+        [164, 80],
+        [174, 112],
+        [180, 128],
+        [200, 144],
+        [212, 176],
+        [221, 192],
+        [232, 208],
+        [244, 224],
+        [256, 240],
+        [267, 260],
+        [277, 280],
+		[280, 290],
+        [287, 300],
+        [295, 320],
+        [300, 340],
+		[310, 360],
+		[320, 380],
+		[330, 400],
+		[340, 420],
+		[350, 440],
+		[360, 480],
+		[370, 500],
+		[380, 540],
+		[390, 580],
+		[400, 600],
+		[410, 625],
+		[420, 650],
+		[430, 675],
+		[440, 700],
+		[450, 725],
+		[460, 750],
+		[470, 775],
+		[480, 800],
+		[490, 900],
+		[500, 1000],
+		[2600, -1],
+      ]
+	  }
       const lockDelayTable = [
         [101, 30],
         [400, 26],
@@ -1738,7 +1829,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.level < 300) {
+	  if (gravityDenominator >= 0) {
 		  game.piece.ghostIsVisible = game.stat.level < 100
 		  game.piece.gravity = framesToMs(256 / gravityDenominator)
 	  } else {
@@ -1786,7 +1877,7 @@ export const loops = {
 	  if (game.stat.level >= 200) {
 		  if (isEndRoll === false) {
 			isEndRoll = true
-			game.stack.isFading = true
+			//game.stack.isFading = true
 			game.stack.endRollStart()
 			rtaGoal = game.rta + 55000
 			if (game.useHeboMusic) {
@@ -2262,7 +2353,10 @@ export const loops = {
         [1000, 8],
       ]
 	  let gravityDenominator = 1
-      const gravityTable = [
+      let gravityDenominator = 1
+      let gravityTable = []
+	  if (regretsPenalty <= 0) {
+	  gravityTable = [
         [8, 4],
         [19, 5],
         [35, 6],
@@ -2289,12 +2383,91 @@ export const loops = {
         [232, 208],
         [244, 224],
         [256, 240],
-        [267, 340],
-        [277, 440],
-        [287, 540],
-        [295, 640],
-        [300, 740],
+        [267, 260],
+        [277, 280],
+		[280, 300],
+        [287, 450],
+        [295, 600],
+        [300, 750],
+		[310, -1],
+		[320, -1],
+		[330, -1],
+		[340, -1],
+		[350, -1],
+		[360, -1],
+		[370, -1],
+		[380, -1],
+		[390, -1],
+		[400, -1],
+		[410, -1],
+		[420, -1],
+		[430, -1],
+		[440, -1],
+		[450, -1],
+		[460, -1],
+		[470, -1],
+		[480, -1],
+		[490, -1],
+		[500, -1],
+		[2600, -1],
       ]
+	  } else {
+	  gravityTable = [
+        [8, 4],
+        [19, 5],
+        [35, 6],
+        [40, 8],
+        [50, 10],
+        [60, 12],
+        [70, 16],
+        [80, 32],
+        [90, 48],
+        [100, 64],
+        [108, 4],
+        [119, 5],
+        [125, 6],
+        [131, 8],
+        [139, 12],
+        [149, 32],
+        [156, 48],
+        [164, 80],
+        [174, 112],
+        [180, 128],
+        [200, 144],
+        [212, 176],
+        [221, 192],
+        [232, 208],
+        [244, 224],
+        [256, 240],
+        [267, 260],
+        [277, 280],
+		[280, 290],
+        [287, 300],
+        [295, 320],
+        [300, 340],
+		[310, 360],
+		[320, 380],
+		[330, 400],
+		[340, 420],
+		[350, 440],
+		[360, 480],
+		[370, 500],
+		[380, 540],
+		[390, 580],
+		[400, 600],
+		[410, 625],
+		[420, 650],
+		[430, 675],
+		[440, 700],
+		[450, 725],
+		[460, 750],
+		[470, 775],
+		[480, 800],
+		[490, 900],
+		[500, 1000],
+		[2600, -1],
+      ]
+	  }
       const lockDelayTable = [
         [101, 30],
         [400, 26],
@@ -2421,7 +2594,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.level < 300) {
+	  if (gravityDenominator >= 0) {
 		  game.piece.ghostIsVisible = game.stat.level < 100
 		  game.piece.gravity = framesToMs(256 / gravityDenominator)
 	  } else {
@@ -2469,7 +2642,7 @@ export const loops = {
 	  if (game.stat.level >= 200) {
 		  if (isEndRoll === false) {
 			isEndRoll = true
-			game.stack.isFading = true
+			//game.stack.isFading = true
 			game.stack.endRollStart()
 			rtaGoal = game.rta + 55000
 			if (game.useHeboMusic !== true) {
@@ -2653,7 +2826,7 @@ export const loops = {
       arcadeScore(arg)
       linesToLevel(arg, 2000, 100)
       game.endSectionLevel =
-        game.stat.level >= 1800
+        game.stat.level >= 1900
           ? 2000
           : Math.floor(game.stat.level / 100 + 1) * 100
       game.appends.level = `<span class="small">/${game.endSectionLevel}</span>`
@@ -2878,7 +3051,7 @@ export const loops = {
       arcadeScore(arg)
       linesToLevel(arg, 2000, 100)
       game.endSectionLevel =
-        game.stat.level >= 1800
+        game.stat.level >= 1900
           ? 2000
           : Math.floor(game.stat.level / 100 + 1) * 100
       game.appends.level = `<span class="small">/${game.endSectionLevel}</span>`
@@ -4116,28 +4289,43 @@ export const loops = {
     onPieceSpawn: (game) => {
       game.stat.level = Math.floor(game.stat.line / 10 + 1)
       const x = game.stat.level
-      const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
 	  const difficulty = parseInt(settings.game.ace.difficulty)
+	  let gravityTable = []
+	  let calcLevel = x - 1
       switch (difficulty) {
 		  case 1: {
-			  if (game.stat.level <= 10) {
-				  if (game.stat.level <= 5) {
-					  game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 5), 1), framesToMs(1 / 20))
-				  }
-				  else {
-					  game.piece.gravity = Math.max((gravityEquation * 1000) / 20, framesToMs(1 / 20)) 
-			      }
-			  }
-			  else {
+			  gravityTable = [
+				60,
+				30,
+				10,
+				5,
+				2,
+				1,
+				1/2,
+				1/4,
+				1/8,
+				1/16,
+				1/20,
+			  ]
+			  if (game.stat.level <= gravityTable.length) {
+				  game.piece.gravity = framesToMs(gravityTable[calcLevel])
+			  } else {
 				  game.piece.gravity = framesToMs(1 / 20)
 			  }
 			  break
 		  }
 		  case 2: {
-			  if (game.stat.level <= 5) {
-				  game.piece.gravity = Math.max(framesToMs(1 / game.stat.level), framesToMs(1 / 20))
-			  }
-			  else {
+			  gravityTable = [
+				1,
+				1/2,
+				1/4,
+				1/8,
+				1/16,
+				1/20,
+			  ]
+			  if (game.stat.level <= gravityTable.length) {
+				  game.piece.gravity = framesToMs(gravityTable[calcLevel])
+			  } else {
 				  game.piece.gravity = framesToMs(1 / 20)
 			  }
 			  break
@@ -4342,13 +4530,15 @@ export const loops = {
 		[100, 28],
 		[125, 26],
 		[150, 24],
-		[162, 22],
-		[188, 20],
-		[200, 18],
-		[212, 16],
-		[225, 14],
-		[238, 12],
-		[250, 10],
+		[200, 24],
+		[210, 22],
+		[220, 20],
+		[230, 18],
+		[240, 16],
+		[250, 14],
+		[260, 12],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableHiSpeed = [
 		[25, 30],
@@ -4357,13 +4547,15 @@ export const loops = {
 		[100, 24],
 		[125, 22],
 		[150, 20],
-		[162, 18],
-		[188, 16],
-		[200, 14],
-		[212, 12],
-		[225, 10],
-		[238, 10],
+		[200, 20],
+		[210, 18],
+		[220, 16],
+		[230, 14],
+		[240, 12],
 		[250, 10],
+		[260, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableHiSpeed2 = [
 		[25, 24],
@@ -4372,13 +4564,15 @@ export const loops = {
 		[100, 18],
 		[125, 16],
 		[150, 14],
-		[162, 12],
-		[188, 10],
-		[200, 10],
-		[212, 10],
-		[225, 10],
-		[238, 10],
+		[200, 14],
+		[210, 12],
+		[220, 10],
+		[230, 10],
+		[240, 10],
 		[250, 10],
+		[260, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableAnother = [
 		[25, 18],
@@ -4387,13 +4581,8 @@ export const loops = {
 		[100, 12],
 		[125, 10],
 		[150, 10],
-		[162, 10],
-		[188, 10],
-		[200, 10],
-		[212, 10],
-		[225, 10],
-		[238, 10],
-		[250, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableAnother2 = [
 		[25, 10],
@@ -4402,13 +4591,8 @@ export const loops = {
 		[100, 10],
 		[125, 10],
 		[150, 10],
-		[162, 10],
-		[188, 10],
-		[200, 10],
-		[212, 10],
-		[225, 10],
-		[238, 10],
-		[250, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  for (const pair of lockDelayTable) {
         const line = pair[0]
@@ -4799,30 +4983,44 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-      game.stat.level = Math.floor(game.stat.line / 10 + 1)
       const x = game.stat.level
-      const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
-	  let difficulty = parseInt(settings.game.ace.difficulty)
+	  const difficulty = parseInt(settings.game.ace.difficulty)
+	  let gravityTable = []
+	  let calcLevel = x - 1
       switch (difficulty) {
 		  case 1: {
-			  if (game.stat.level <= 10) {
-				  if (game.stat.level <= 5) {
-					  game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 5), 1), framesToMs(1 / 20))
-				  }
-				  else {
-					  game.piece.gravity = Math.max((gravityEquation * 1000) / 20, framesToMs(1 / 20)) 
-			      }
-			  }
-			  else {
+			  gravityTable = [
+				60,
+				30,
+				10,
+				5,
+				2,
+				1,
+				1/2,
+				1/4,
+				1/8,
+				1/16,
+				1/20,
+			  ]
+			  if (game.stat.level <= gravityTable.length) {
+				  game.piece.gravity = framesToMs(gravityTable[calcLevel])
+			  } else {
 				  game.piece.gravity = framesToMs(1 / 20)
 			  }
 			  break
 		  }
 		  case 2: {
-			  if (game.stat.level <= 5) {
-				  game.piece.gravity = Math.max(framesToMs(1 / game.stat.level), framesToMs(1 / 20))
-			  }
-			  else {
+			  gravityTable = [
+				1,
+				1/2,
+				1/4,
+				1/8,
+				1/16,
+				1/20,
+			  ]
+			  if (game.stat.level <= gravityTable.length) {
+				  game.piece.gravity = framesToMs(gravityTable[calcLevel])
+			  } else {
 				  game.piece.gravity = framesToMs(1 / 20)
 			  }
 			  break
@@ -5027,13 +5225,15 @@ export const loops = {
 		[100, 28],
 		[125, 26],
 		[150, 24],
-		[162, 22],
-		[188, 20],
-		[200, 18],
-		[212, 16],
-		[225, 14],
-		[238, 12],
-		[250, 10],
+		[200, 24],
+		[210, 22],
+		[220, 20],
+		[230, 18],
+		[240, 16],
+		[250, 14],
+		[260, 12],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableHiSpeed = [
 		[25, 30],
@@ -5042,13 +5242,15 @@ export const loops = {
 		[100, 24],
 		[125, 22],
 		[150, 20],
-		[162, 18],
-		[188, 16],
-		[200, 14],
-		[212, 12],
-		[225, 10],
-		[238, 10],
+		[200, 20],
+		[210, 18],
+		[220, 16],
+		[230, 14],
+		[240, 12],
 		[250, 10],
+		[260, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableHiSpeed2 = [
 		[25, 24],
@@ -5057,13 +5259,15 @@ export const loops = {
 		[100, 18],
 		[125, 16],
 		[150, 14],
-		[162, 12],
-		[188, 10],
-		[200, 10],
-		[212, 10],
-		[225, 10],
-		[238, 10],
+		[200, 14],
+		[210, 12],
+		[220, 10],
+		[230, 10],
+		[240, 10],
 		[250, 10],
+		[260, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableAnother = [
 		[25, 18],
@@ -5072,13 +5276,8 @@ export const loops = {
 		[100, 12],
 		[125, 10],
 		[150, 10],
-		[162, 10],
-		[188, 10],
-		[200, 10],
-		[212, 10],
-		[225, 10],
-		[238, 10],
-		[250, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  const lockDelayTableAnother2 = [
 		[25, 10],
@@ -5087,13 +5286,8 @@ export const loops = {
 		[100, 10],
 		[125, 10],
 		[150, 10],
-		[162, 10],
-		[188, 10],
-		[200, 10],
-		[212, 10],
-		[225, 10],
-		[238, 10],
-		[250, 10],
+		[270, 10],
+		[1000, 10],
       ]
 	  for (const pair of lockDelayTable) {
         const line = pair[0]
@@ -7608,16 +7802,8 @@ export const loops = {
         400, 376, 353, 332, 312, 294, 276, 259, 244, 229, 215, 203, 190, 179,
         168, 158, 149, 140, 131, 123, 116, 109, 103, 96, 91, 85, 80, 75, 71, 65,
       ]
-      if (settings.settings.useAre) {
-		  game.piece.areLimit = ARE_TABLE[calcLevel]
-	  } else {
-		  game.piece.areLimit = 0
-	  }
-	  if (settings.settings.useAre || settings.settings.useLineClearAre) {
-		  game.piece.areLineLimit = ARE_TABLE[calcLevel]
-	  } else {
-		  game.piece.areLineLimit = 0
-	  }
+      game.piece.areLimit = ARE_TABLE[calcLevel]
+	  game.piece.areLineLimit = ARE_TABLE[calcLevel]
       game.stat.entrydelay = `${ARE_TABLE[calcLevel]}ms`
       levelUpdate(game)
     },

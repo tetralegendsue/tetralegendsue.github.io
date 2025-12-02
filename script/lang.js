@@ -5,6 +5,7 @@ import $ from "./shortcuts.js"
 
 class Locale {
   constructor() {
+	/*
     this.languages = [
       "en_US",
       "en_GB",
@@ -20,6 +21,11 @@ class Locale {
       "ko_KR",
       "pl_PL",
       "ru_RU",
+    ]*/
+	this.languages = [
+      "en_US",
+      "ja_JP",
+      "zh_CN",
     ]
     // this.languages = ['en_US'];
     this.files = [
@@ -36,6 +42,7 @@ class Locale {
       "menu_video",
       "action-text",
       "mode-options",
+	  "ue_additions",
     ]
     this.test = new Promise(function (resolve, reject) {
       resolve("test")
