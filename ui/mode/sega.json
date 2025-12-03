@@ -20,25 +20,25 @@
         {
           "string": "segaEasy",
 		  "omitDescription": true,
-          "langOverride": "ue-additions",
+          "langOverride": "ue_additions",
           "value": 1
         },
         {
           "string": "segaNormal",
 		  "omitDescription": true,
-          "langOverride": "ue-additions",
+          "langOverride": "ue_additions",
           "value": 2
         },
 		{
           "string": "segaHard",
 		  "omitDescription": true,
-          "langOverride": "ue-additions",
+          "langOverride": "ue_additions",
           "value": 3
         },
         {
           "string": "segaHardest",
 		  "omitDescription": true,
-          "langOverride": "ue-additions",
+          "langOverride": "ue_additions",
           "value": 4
         }
       ],
