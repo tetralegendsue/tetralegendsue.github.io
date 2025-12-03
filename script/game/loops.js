@@ -4982,6 +4982,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
+	  game.stat.level = Math.floor(game.stat.line / 10 + 1)
       const x = game.stat.level
 	  const difficulty = parseInt(settings.game.ace.difficulty)
 	  let gravityTable = []
