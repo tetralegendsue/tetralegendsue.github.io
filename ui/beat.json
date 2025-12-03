@@ -5,7 +5,7 @@
   },
   "data": [
     {
-      "label": "beatLabel",
+      "string": "beatLabel",
       "langOverride": "menu_root",
       "type": "header"
     },
