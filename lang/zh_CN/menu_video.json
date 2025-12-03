@@ -131,6 +131,12 @@
   "colorOverrideDescription": {
     "message": "覆盖方块的颜色"
   },
+  "outlineLabel": {
+    "message": "大纲"
+  },
+  "outlineDescription": {
+    "message": "在堆栈周围画一个轮廓"
+  },
   "redOption": {
     "message": "红色",
     "description": "Please base your translation off the reference image"

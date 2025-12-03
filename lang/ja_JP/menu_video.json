@@ -131,6 +131,12 @@
   "colorOverrideDescription": {
     "message": "ピースの色の割り当てを変更します。"
   },
+  "outlineLabel": {
+    "message": "概要"
+  },
+  "outlineDescription": {
+    "message": "スタックの周囲に輪郭線を描画する"
+  },
   "redOption": {
     "message": "赤色",
     "description": "Please base your translation off the reference image"

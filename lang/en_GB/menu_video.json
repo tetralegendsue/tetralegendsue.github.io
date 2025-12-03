@@ -131,6 +131,12 @@
   "colorOverrideDescription": {
     "message": "Overrides the piece colour assignments"
   },
+  "outlineLabel": {
+    "message": "Outline"
+  },
+  "outlineDescription": {
+    "message": "Draw an outline around the stack"
+  },
   "redOption": {
     "message": "Red",
     "description": "Please base your translation off the reference image"
