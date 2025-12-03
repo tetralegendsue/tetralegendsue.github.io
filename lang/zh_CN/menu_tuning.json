@@ -60,6 +60,18 @@
   "rotSysDescription": {
     "message": "选择要使用的方块旋转系统"
   },
+  "entryDelayLabel": {
+    "message": "入场延迟"
+  },
+  "entryDelayDescription": {
+    "message": "亦称ARE，每次生成新部件时都会产生延迟（某些模式下可能强制执行）"
+  },
+  "lineDelayLabel": {
+    "message": "行清除延迟"
+  },
+  "lineDelayDescription": {
+    "message": "亦称行清除ARE，每次清除行时产生延迟（某些模式下可能强制执行）"
+  },
   "originalOption": {
     "message": "原始",
     "description": "As in 'Original Rotation System', the one used by the first version of the game"

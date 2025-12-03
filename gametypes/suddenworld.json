@@ -9,7 +9,7 @@
     "rotationSystem": "world",
     "skin": "arika",
     "soundbank": "tgm3",
-    "music": "../arcade/arcade3",
+    "music": "../ti/arcade3",
     "hasDangerBgm": false,
     "scoreTable": "tgm",
     "background": "marathon.jpg",

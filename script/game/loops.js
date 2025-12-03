@@ -1421,19 +1421,19 @@ export const loops = {
 			  sound.killBgm()
 			  break
             case 2:
-              sound.loadBgm(["arcade4"], "arcade")
+              sound.loadBgm(["arcade4"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade4"], "arcade")
+              sound.playBgm(["arcade4"], "ti")
               break
             case 4:
-              sound.loadBgm(["arcade5"], "arcade")
+              sound.loadBgm(["arcade5"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade5"], "arcade")
+              sound.playBgm(["arcade5"], "ti")
 			  break
 			case 6:
-			  sound.loadBgm(["arcade6"], "arcade")
+			  sound.loadBgm(["arcade6"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade6"], "arcade")
+              sound.playBgm(["arcade6"], "ti")
           }
           game.musicProgression = entry
         }
@@ -1512,9 +1512,9 @@ export const loops = {
 			}
 			rtaGoal = game.rta + 55000
 			if (game.musicProgression > 0) {
-				sound.loadBgm(["ending2"], "arcade")
+				sound.loadBgm(["ending2"], "ti")
 				sound.killBgm()
-				sound.playBgm(["ending2"], "arcade")
+				sound.playBgm(["ending2"], "ti")
 			}
 		} else if (isEndRoll === true) {
 			if (game.rta >= rtaGoal) {
@@ -1797,14 +1797,14 @@ export const loops = {
               sound.killBgm()
               break
             case 2:
-              sound.loadBgm(["arcade2"], "arcade")
+              sound.loadBgm(["arcade2"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade2"], "arcade")
+              sound.playBgm(["arcade2"], "ti")
               break
             case 4:
-              sound.loadBgm(["arcade3"], "arcade")
+              sound.loadBgm(["arcade3"], "ti")
 			  sound.killBgm()
-			  sound.playBgm(["arcade3"], "arcade")
+			  sound.playBgm(["arcade3"], "ti")
              }
           game.musicProgression = entry
         }
@@ -1881,9 +1881,9 @@ export const loops = {
 			game.stack.endRollStart()
 			rtaGoal = game.rta + 55000
 			if (game.useHeboMusic) {
-				sound.loadBgm(["ending1"], "arcade")
+				sound.loadBgm(["ending1"], "ti")
 				sound.killBgm()
-				sound.playBgm(["ending1"], "arcade")
+				sound.playBgm(["ending1"], "ti")
 			}
 		  } else if (isEndRoll === true) {
 			if (game.rta >= rtaGoal) {
@@ -2186,19 +2186,19 @@ export const loops = {
 			  sound.killBgm()
 			  break
             case 2:
-              sound.loadBgm(["arcade4"], "arcade")
+              sound.loadBgm(["arcade4"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade4"], "arcade")
+              sound.playBgm(["arcade4"], "ti")
               break
             case 4:
-              sound.loadBgm(["arcade5"], "arcade")
+              sound.loadBgm(["arcade5"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade5"], "arcade")
+              sound.playBgm(["arcade5"], "ti")
 			  break
 			case 6:
-			  sound.loadBgm(["arcade6"], "arcade")
+			  sound.loadBgm(["arcade6"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade6"], "arcade")
+              sound.playBgm(["arcade6"], "ti")
           }
           game.musicProgression = entry
         }
@@ -2276,9 +2276,9 @@ export const loops = {
 			}
 			rtaGoal = game.rta + 55000
 			if (game.musicProgression > 0) {
-				sound.loadBgm(["ending2"], "arcade")
+				sound.loadBgm(["ending2"], "ti")
 				sound.killBgm()
-				sound.playBgm(["ending2"], "arcade")
+				sound.playBgm(["ending2"], "ti")
 			}
 		} else if (isEndRoll === true) {
 			if (game.rta >= rtaGoal) {
@@ -2561,14 +2561,14 @@ export const loops = {
               sound.killBgm()
               break
             case 2:
-              sound.loadBgm(["arcade2"], "arcade")
+              sound.loadBgm(["arcade2"], "ti")
               sound.killBgm()
-              sound.playBgm(["arcade2"], "arcade")
+              sound.playBgm(["arcade2"], "ti")
               break
             case 4:
-              sound.loadBgm(["arcade3"], "arcade")
+              sound.loadBgm(["arcade3"], "ti")
 			  sound.killBgm()
-			  sound.playBgm(["arcade3"], "arcade")
+			  sound.playBgm(["arcade3"], "ti")
              }
           game.musicProgression = entry
         }
@@ -2645,9 +2645,9 @@ export const loops = {
 			game.stack.endRollStart()
 			rtaGoal = game.rta + 55000
 			if (game.useHeboMusic !== true) {
-				sound.loadBgm(["ending1"], "arcade")
+				sound.loadBgm(["ending1"], "ti")
 				sound.killBgm()
-				sound.playBgm(["ending1"], "arcade")
+				sound.playBgm(["ending1"], "ti")
 			}
 		  } else if (isEndRoll === true) {
 			if (game.rta >= rtaGoal) {

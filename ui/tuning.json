@@ -38,6 +38,22 @@
       "setting": "ARR",
       "settingType": "setting"
     },
+	{
+      "string": "entryDelayLabel",
+      "stringDesc": "entryDelayDescription",
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "useAre",
+      "settingType": "setting"
+    },
+    {
+      "string": "lineDelayLabel",
+      "stringDesc": "lineDelayDescription",
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "useLineClearAre",
+      "settingType": "setting"
+    },
     {
       "string": "dasPreloadLabel",
       "stringDesc": "dasPreloadDescription",

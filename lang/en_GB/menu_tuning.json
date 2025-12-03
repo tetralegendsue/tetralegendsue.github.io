@@ -60,6 +60,18 @@
   "rotSysDescription": {
     "message": "Select a rotation system to use in place of the default for the mode"
   },
+  "entryDelayLabel": {
+    "message": "Entry Delay"
+  },
+  "entryDelayDescription": {
+    "message": "Also known as ARE, produce a delay every time a new piece spawns (may be enforced in some modes)"
+  },
+  "lineDelayLabel": {
+    "message": "Line Clear Delay"
+  },
+  "lineDelayDescription": {
+    "message": "Also known as Line Clear ARE, produce a delay every time a line is cleared (may be enforced in some modes)"
+  },
   "originalOption": {
     "message": "Original",
     "description": "As in 'Original Rotation System', the one used by the first version of the game"
