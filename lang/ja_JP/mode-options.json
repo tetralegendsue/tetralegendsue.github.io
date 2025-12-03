@@ -167,6 +167,24 @@
   "ruleSelectDescription": {
     "message": "ゲームルールを選択します"
   },
+  "songLabel": {
+    "message": "歌"
+  },
+  "songDescription": {
+    "message": "ゲーム中に再生する曲を選択してください"
+  },
+  "musicLabel": {
+    "message": "音楽"
+  },
+  "musicDescription": {
+    "message": "ゲーム中に再生する音楽を選択してください"
+  },
+  "garbageCapLabel": {
+    "message": "ごみキャップ"
+  },
+  "garbageCapDescription": {
+    "message": "一度にマトリックスに入力できる壊れた行（ゴミ行）の数を制限する"
+  },
   "classicRuleOption": {
     "message": "CLASSIC RULE",
     "description": "Used in some arcade modes"

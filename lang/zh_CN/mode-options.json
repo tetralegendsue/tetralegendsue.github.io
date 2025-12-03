@@ -167,6 +167,24 @@
   "ruleSelectDescription": {
     "message": "选择一个游戏规则。这会影响游戏机制。"
   },
+  "songLabel": {
+    "message": "歌"
+  },
+  "songDescription": {
+    "message": "选择游戏过程中播放的歌曲"
+  },
+  "musicLabel": {
+    "message": "音乐"
+  },
+  "musicDescription": {
+    "message": "选择游戏过程中播放的音乐"
+  },
+  "garbageCapLabel": {
+    "message": "垃圾盖"
+  },
+  "garbageCapDescription": {
+    "message": "限制每次进入矩阵的断行（垃圾行）数量"
+  },
   "classicRuleOption": {
     "message": "Classic 规则",
     "description": "Used in some arcade modes"

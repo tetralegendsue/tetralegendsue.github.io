@@ -1,22 +1,4 @@
 {
-  "songLabel": {
-    "message": "Song"
-  },
-  "songDescription": {
-    "message": "Choose which song plays during the game"
-  },
-  "musicLabel": {
-    "message": "Music"
-  },
-  "musicDescription": {
-    "message": "Choose which music plays during the game"
-  },
-  "garbageCapLabel": {
-    "message": "Garbage Cap"
-  },
-  "garbageCapDescription": {
-    "message": "Limit how many broken lines (lines of garbage) may enter the Matrix at a time"
-  },
   "worldRuleLabel": {
     "message": "World Rule"
   },

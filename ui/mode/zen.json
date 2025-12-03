@@ -37,7 +37,7 @@
       "action": "select",
       "selectOptions": [
         {
-          "label": "zenLabel",
+          "string": "zenLabel",
 		  "langOverride": "menu_root",
           "value": "zen"
         },
@@ -61,7 +61,6 @@
     {
       "string": "garbageCapLabel",
       "stringDesc": "garbageCapDescription",
-	  "langOverride": "ue_additions",
       "type": "slider",
       "action": "slider",
       "max": 40,

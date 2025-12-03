@@ -26,7 +26,6 @@
     {
       "string": "musicLabel",
 	  "stringDesc": "musicDescription",
-      "langOverride": "ue_additions",
       "type": "select",
       "action": "select",
       "selectOptions": [

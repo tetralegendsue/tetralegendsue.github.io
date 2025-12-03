@@ -14,7 +14,6 @@
     {
       "string": "songLabel",
 	  "stringDesc": "songDescription",
-      "langOverride": "ue_additions",
       "type": "select",
       "action": "select",
       "selectOptions": [
