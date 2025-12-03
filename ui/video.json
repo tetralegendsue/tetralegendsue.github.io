@@ -191,7 +191,6 @@
 	{
       "string": "outlineLabel",
       "stringDesc": "outlineDescription",
-      "fixedText": true,
       "type": "toggle",
       "action": "toggle",
       "setting": "outline",
