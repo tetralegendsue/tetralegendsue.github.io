@@ -97,6 +97,12 @@
       "submenu": "video"
     },
 	{
+	  "string": "settingsLabel",
+      "stringDesc": "settingsDescription",
+      "action": "submenu",
+      "submenu": "settings"
+    },
+	{
       "string": "miscOverline",
       "label": "Misc",
       "type": "overline"

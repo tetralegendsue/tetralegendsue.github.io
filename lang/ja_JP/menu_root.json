@@ -107,6 +107,12 @@
   "repoDescription": {
     "message": "TETRA LEGENDS UEのGITHUBリポジトリへ移動"
   },
+  "settingsLabel": {
+    "message": "構成"
+  },
+  "settingsDescription": {
+    "message": "設定のインポートとエクスポートはこちらで行ってください"
+  },
   "footerLabel": {
     "message": ""
   }

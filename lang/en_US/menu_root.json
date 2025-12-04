@@ -107,6 +107,12 @@
   "repoDescription": {
     "message": "Go to the GitHub Repository of Tetra Legends UE"
   },
+  "settingsLabel": {
+    "message": "Configuration"
+  },
+  "settingsDescription": {
+    "message": "Import and export your settings here"
+  },
   "footerLabel": {
     "message": ""
   }

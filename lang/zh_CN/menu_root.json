@@ -107,6 +107,12 @@
   "repoDescription": {
     "message": "前往《Tetra Legends UE》的GitHub代码库"
   },
+  "settingsLabel": {
+    "message": "配置"
+  },
+  "settingsDescription": {
+    "message": "在此导入和导出您的设置"
+  },
   "footerLabel": {
     "message": ""
   }
