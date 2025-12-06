@@ -2,8 +2,8 @@
   "properties": {
     "parent": "guideline",
     "langOverride": "mode-options",
-    "game": "survival",
-    "pgmusic": "pg-survival"
+    "game": "versus",
+    "pgmusic": "pg-versus"
   },
   "data": [
     {
