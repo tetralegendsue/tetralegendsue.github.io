@@ -8,7 +8,7 @@
       "string": "defaultLabel",
       "stringDesc": "defaultDescription",
       "action": "daspreset",
-      "isShort": true
+      "isShort": true,
 	  "delay": 150,
       "rate": 17
     },
