@@ -47,6 +47,7 @@
       "submenu": "mode/combo"
     },
 	{
+	  "secretA": true,
       "string": "masterClassicLabel",
       "stringDesc": "masterClassicDescription",
 	  "langOverride": "ue_additions",
