@@ -9011,7 +9011,7 @@ export const loops = {
 	  game.openerUsed = false
 	  game.openerGarbage = 0
 	  game.garbageInterval = 0
-	  switch parseInt(game.cpuTier) {
+	  switch (parseInt(game.cpuTier)) {
 		  case 1:
 			game.openerGarbage = 2
 			game.garbageInterval = 8*1000
