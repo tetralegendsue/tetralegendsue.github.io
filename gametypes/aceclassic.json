@@ -6,7 +6,7 @@
     "pieces": "standard",
     "unfavored": "standardUnfavored",
     "randomizer": "bag",
-    "rotationSystem": "ace",
+    "rotationSystem": "arsx",
     "skin": "arika",
     "soundbank": "ace",
     "music": ["../ace/loading"],
