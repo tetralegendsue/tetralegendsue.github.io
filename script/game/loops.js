@@ -7665,9 +7665,54 @@ export const loops = {
 		settings.game.standardx.startingLevel,
 		Math.floor(game.stat.line / 10 + 1)
 	  )
-      const x = game.stat.level
+      /*
+	  const x = game.stat.level
       const gravityEquation = (0.9 - (x - 1) * 0.001) ** (x - 1)
       game.piece.gravity = Math.max(gravityEquation * 1000, framesToMs(1 / 20))
+	  */
+	  let gravityTable = [
+		60,
+		56,
+		52,
+		48,
+		44,
+		40,
+		36,
+		32,
+		28,
+		24,
+		20,
+		16,
+		14,
+		12,
+		10,
+		8,
+		6,
+		4,
+		2,
+		1,
+		1/2,
+		1/3,
+		1/4,
+		1/5,
+		1/6,
+		1/7,
+		1/8,
+		1/9,
+		1/10,
+		1/11,
+		1/12,
+		1/13,
+		1/14,
+		1/15,
+		1/16,
+		1/17,
+		1/18,
+		1/19,
+		1/20,
+	  ]
+	  let gravityIndex = Math.min(game.stat.level - 1, gravityTable.length - 1)
+	  game.piece.gravity = framesToMs(gravityTable[gravityIndex])
       if (game.stat.level >= 40) {
         game.piece.lockDelayLimit = ~~framesToMs(
           30 * Math.pow(0.93, Math.pow(game.stat.level - 40, 0.8))
@@ -7675,14 +7720,14 @@ export const loops = {
       } else {
         game.piece.lockDelayLimit = 500
       }
-	  if (game.stat.level >= 16 && game.musicProgression < 1) {
+	  if (game.stat.level >= 10 && game.musicProgression < 1) {
 		if (game.stat.piece > 0  || game.timePassed > 0) {
           sound.killBgm()
           sound.playBgm(game.settings.music[1], game.type)
 		  game.musicProgression = 1
         }
       }
-	  if (game.stat.level >= 32 && game.musicProgression < 2) {
+	  if (game.stat.level >= 20 && game.musicProgression < 2) {
 		if (game.stat.piece > 0 || game.timePassed > 0) {
           sound.killBgm()
           sound.playBgm(game.settings.music[2], game.type)
