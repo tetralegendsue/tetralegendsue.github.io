@@ -9037,6 +9037,7 @@ export const loops = {
       updateLasts(arg)
 	  if (
         arg.piece.startingAre >= arg.piece.startingAreLimit &&
+		game.stack.waitingGarbage <= 0 &&
 		settings.game.versus.regulationMode
       ) {
         garbageSendTimer += arg.ms
