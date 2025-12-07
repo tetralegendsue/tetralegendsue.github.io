@@ -56,6 +56,7 @@ import locale from "../lang.js"
 import rotateReverse from "./loop-modules/rotate-reverse.js"
 let lastLevel = 0
 let garbageTimer = 0
+let garbageSendTimer = 0
 let shown20GMessage = false
 let shownHoldWarning = false
 let lastSeenI = 0
@@ -8989,11 +8990,18 @@ export const loops = {
       }
       lockFlash(arg)
       updateLasts(arg)
-      if (
+	  if (
         arg.piece.startingAre >= arg.piece.startingAreLimit &&
-        game.marginTime < game.marginTimeLimit
+		settings.game.versus.regulationMode
       ) {
-        game.marginTime += arg.ms
+        garbageSendTimer += arg.ms
+		if (garbageSendTimer > 16) {
+			garbageSendTimer -= 16
+			if (game.stack.waitingGarbage <= 0) {
+				game.cpuGarbageCounter += Math.abs(game.stack.waitingGarbage)
+				game.stack.waitingGarbage = 0
+			}
+		}
       }
 	  if (game.cpuGarbage >= 20) {
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
@@ -9013,7 +9021,7 @@ export const loops = {
 		  game.piece.areLineLimit = 166.666666667
 		  game.piece.areLimitLineModifier = 166.666666667
 	  }
-	  if (game.stack.waitingGarbage <= 0) {
+	  if (game.stack.waitingGarbage <= 0 && !settings.game.versus.regulationMode) {
 		  game.cpuGarbageCounter += Math.abs(game.stack.waitingGarbage)
 		  game.stack.waitingGarbage = 0
 	  }
@@ -9078,6 +9086,7 @@ export const loops = {
 	  game.copyBottomForGarbage = false
       game.garbageRate = 0
       garbageTimer = 0
+	  garbageSendTimer = 0
       game.piece.gravity = 1000
       updateFallSpeed(game)
       game.updateStats()
