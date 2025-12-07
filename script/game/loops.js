@@ -9028,10 +9028,12 @@ export const loops = {
 	  game.openerUsed = false
 	  game.openerGarbage = 0
 	  game.garbageInterval = 0
+	  let openerAttacks = [2, 4, 6, 10, 12, 15]
+	  let openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
 	  switch (game.cpuTier) {
 		  case 1:
-			let openerAttacks = [2, 4]
-			let openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
+			openerAttacks = [2, 4]
+			openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
 			game.openerGarbage = openerAttacks[openerIndex]
 			if (settings.game.versus.regulationMode) {
 				game.garbageInterval = 10*1000
@@ -9040,8 +9042,8 @@ export const loops = {
 			}
 			break
 		  case 2:
-			let openerAttacks = [4, 6]
-			let openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
+			openerAttacks = [4, 6]
+			openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
 			game.openerGarbage = openerAttacks[openerIndex]
 			if (settings.game.versus.regulationMode) {
 				game.garbageInterval = 8*1000
@@ -9050,8 +9052,8 @@ export const loops = {
 			}
 			break
 		  case 3:
-			let openerAttacks = [4, 6, 10]
-			let openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
+			openerAttacks = [4, 6, 10]
+			openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
 			game.openerGarbage = openerAttacks[openerIndex]
 			if (settings.game.versus.regulationMode) {
 				game.garbageInterval = 4*1000
@@ -9060,8 +9062,8 @@ export const loops = {
 			}
 			break
 		  case 4:
-			let openerAttacks = [4, 6, 10, 12, 15]
-			let openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
+			openerAttacks = [4, 6, 10, 12, 15]
+			openerIndex = Math.max(0, Math.floor(Math.random() * openerAttacks.length) - 1)
 			game.openerGarbage = openerAttacks[openerIndex]
 			if (settings.game.versus.regulationMode) {
 				game.garbageInterval = 2*1000
