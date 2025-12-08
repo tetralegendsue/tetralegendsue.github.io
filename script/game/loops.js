@@ -4558,8 +4558,8 @@ export const loops = {
 		[475, 3],
 		[500, 2],
 		[525, 1],
-		[550, 0],
-		[1000, 0],
+		[550, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableHiSpeed = [
 		[25, 30],
@@ -4581,8 +4581,8 @@ export const loops = {
 		[450, 2],
 		[475, 1],
 		[475, 1],
-		[500, 0],
-		[1000, 0],
+		[500, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableHiSpeed2 = [
 		[25, 24],
@@ -4601,8 +4601,8 @@ export const loops = {
 		[375, 3],
 		[400, 2],
 		[425, 1],
-		[450, 0],
-		[1000, 0],
+		[450, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableAnother = [
 		[25, 18],
@@ -4615,13 +4615,13 @@ export const loops = {
 		[200, 8],
 		[225, 7],
 		[300, 6],
-		[310, 5],
-		[320, 4],
-		[330, 3],
-		[340, 2],
-		[350, 1],
-		[360, 0],
-		[1000, 0],
+		[325, 5],
+		[350, 4],
+		[375, 3],
+		[400, 2],
+		[425, 1],
+		[450, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableAnother2 = [
 		[25, 10],
@@ -4634,13 +4634,13 @@ export const loops = {
 		[200, 8],
 		[225, 7],
 		[300, 6],
-		[310, 5],
-		[320, 4],
-		[330, 3],
-		[340, 2],
-		[350, 1],
-		[360, 0],
-		[1000, 0],
+		[325, 5],
+		[350, 4],
+		[375, 3],
+		[400, 2],
+		[425, 1],
+		[450, 1],
+		[1000, 1],
       ]
 	  for (const pair of lockDelayTable) {
         const line = pair[0]
@@ -5297,8 +5297,8 @@ export const loops = {
 		[475, 3],
 		[500, 2],
 		[525, 1],
-		[550, 0],
-		[1000, 0],
+		[550, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableHiSpeed = [
 		[25, 30],
@@ -5320,8 +5320,8 @@ export const loops = {
 		[450, 2],
 		[475, 1],
 		[475, 1],
-		[500, 0],
-		[1000, 0],
+		[500, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableHiSpeed2 = [
 		[25, 24],
@@ -5340,8 +5340,8 @@ export const loops = {
 		[375, 3],
 		[400, 2],
 		[425, 1],
-		[450, 0],
-		[1000, 0],
+		[450, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableAnother = [
 		[25, 18],
@@ -5354,13 +5354,13 @@ export const loops = {
 		[200, 8],
 		[225, 7],
 		[300, 6],
-		[310, 5],
-		[320, 4],
-		[330, 3],
-		[340, 2],
-		[350, 1],
-		[360, 0],
-		[1000, 0],
+		[325, 5],
+		[350, 4],
+		[375, 3],
+		[400, 2],
+		[425, 1],
+		[450, 1],
+		[1000, 1],
       ]
 	  const lockDelayTableAnother2 = [
 		[25, 10],
@@ -5373,13 +5373,13 @@ export const loops = {
 		[200, 8],
 		[225, 7],
 		[300, 6],
-		[310, 5],
-		[320, 4],
-		[330, 3],
-		[340, 2],
-		[350, 1],
-		[360, 0],
-		[1000, 0],
+		[325, 5],
+		[350, 4],
+		[375, 3],
+		[400, 2],
+		[425, 1],
+		[450, 1],
+		[1000, 1],
       ]
 	  for (const pair of lockDelayTable) {
         const line = pair[0]
@@ -9359,9 +9359,6 @@ export const loops = {
     update: (arg) => {
       collapse(arg)
       if (arg.piece.inAre) {
-        initialDas(arg)
-        initialRotation(arg)
-        initialHold(arg)
         arg.piece.are += arg.ms
       } else {
         respawnPiece(arg)
@@ -9399,9 +9396,10 @@ export const loops = {
 		6,
 	  ]
       game.piece.gravity = framesToMs(gravityTable[x])
-      game.piece.lockDelayLimit = 0
+      game.piece.lockDelayLimit = framesToMs(1)
 	  game.piece.boneColor = "green"
 	  game.piece.useBoneBlocks = true
+	  game.piece.ghostIsVisible = false
       updateFallSpeed(game)
       levelUpdate(game)
     },
@@ -9436,9 +9434,10 @@ export const loops = {
 			"whitebone",
 			"blackbone",
 		],
-		["mino", "stack"],
+		["mino", "stack", "ghost"],
 		"bone"
 	  )
+	  game.stack.updateGrid()
 	  game.colors = PIECE_COLORS.original
       game.updateStats()
     },
