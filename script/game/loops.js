@@ -32,6 +32,7 @@ import segaRotate from "./loop-modules/sega-rotate.js"
 import rotate180 from "./loop-modules/rotate-180.js"
 import shifting from "./loop-modules/shifting.js"
 import shiftingRetro from "./loop-modules/shifting-retro.js"
+import shiftingE60 from "./loop-modules/shifting-e60.js"
 import sonicDrop from "./loop-modules/sonic-drop.js"
 import softDrop from "./loop-modules/soft-drop.js"
 import softDropRetro from "./loop-modules/soft-drop-retro.js"
@@ -9351,6 +9352,93 @@ export const loops = {
 	  garbageSendTimer = 0
       game.piece.gravity = 1000
       updateFallSpeed(game)
+      game.updateStats()
+    },
+  },
+  terminal: {
+    update: (arg) => {
+      collapse(arg)
+      if (arg.piece.inAre) {
+        initialDas(arg)
+        initialRotation(arg)
+        initialHold(arg)
+        arg.piece.are += arg.ms
+      } else {
+        respawnPiece(arg)
+        rotate(arg)
+        shiftingE60(arg)
+      }
+      gravity(arg)
+      hardDrop(arg)
+      retroLockdown(arg)
+      lockFlash(arg)
+      updateLasts(arg)
+      /* Might use this code later
+      $('#das').max = arg.piece.dasLimit;
+      $('#das').value = arg.piece.das;
+      $('#das').style.setProperty('--opacity', ((arg.piece.arr >= arg.piece.arrLimit) || arg.piece.inAre) ? 1 : 0);
+      */
+    },
+    onPieceSpawn: (game) => {
+      game.stat.level = Math.min(9, 
+	  Math.max(
+        settings.game.terminal.startingLevel,
+        Math.floor(game.stat.line / 10)
+      ))
+      const x = game.stat.level
+      const gravityTable = [
+		60,
+		54,
+		48,
+		42,
+		36,
+		30,
+		24,
+		18,
+		12,
+		6,
+	  ]
+      game.piece.gravity = framesToMs(gravityTable[x])
+      game.piece.lockDelayLimit = 0
+	  game.piece.boneColor = "green"
+	  game.piece.useBoneBlocks = true
+      updateFallSpeed(game)
+      levelUpdate(game)
+    },
+    onInit: (game) => {
+      if (settings.game.terminal.lineGoal >= 0) {
+        game.lineGoal = settings.game.terminal.lineGoal
+      }
+	  game.piece.boneColor = "green"
+	  game.piece.useBoneBlocks = true
+      game.stat.level = settings.game.terminal.startingLevel
+      lastLevel = parseInt(settings.game.terminal.startingLevel)
+      game.piece.gravity = framesToMs(60)
+      updateFallSpeed(game)
+	  game.makeSprite(
+		colors = [
+			"red",
+			"orange",
+			"yellow",
+			"green",
+			"lightBlue",
+			"blue",
+			"purple",
+			"white",
+			"black",
+			"redbone",
+			"orangebone",
+			"yellowbone",
+			"greenbone",
+			"lightBluebone",
+			"bluebone",
+			"purplebone",
+			"whitebone",
+			"blackbone",
+		],
+		["mino", "stack"],
+		"bone"
+	  )
       game.updateStats()
     },
   },

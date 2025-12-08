@@ -140,6 +140,12 @@
   "newCenturyDescription": {
     "message": "内阁，但带有指导性控制"
   },
+  "terminalLabel": {
+    "message": "终端"
+  },
+  "terminalDescription": {
+    "message": "谜题的最初版本，一切由此开始"
+  },
   "masterClassicLabel": {
     "message": "传承大师"
   },

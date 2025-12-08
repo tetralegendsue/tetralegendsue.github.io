@@ -28,6 +28,13 @@
       "action": "submenu",
       "submenu": "mode/deluxe"
     },
+	{
+      "string": "terminalLabel",
+      "stringDesc": "terminalDescription",
+	  "langOverride": "ue_additions",
+      "action": "submenu",
+      "submenu": "mode/terminal"
+    },
     {
       "string": "segaLabel",
       "stringDesc": "segaDescription",

@@ -140,6 +140,12 @@
   "newCenturyDescription": {
     "message": "Cabinet, but with guideline controls"
   },
+  "terminalLabel": {
+    "message": "Terminal"
+  },
+  "terminalDescription": {
+    "message": "The very first version of the puzzle, where it all started"
+  },
   "masterClassicLabel": {
     "message": "Master Legacy"
   },
