@@ -7859,7 +7859,7 @@ export const loops = {
         Math.floor(game.timePassed / 10000 + 1)
       )
 	  const x = game.stat.level
-      const gravityEquation = (0.96 - (x - 1) * 0.007) ** (x - 1)
+      const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
       game.piece.gravity = Math.max(gravityEquation * 1000, framesToMs(1 / 20))
       game.piece.lockDelayLimit = 500
 	  game.garbageRate =
