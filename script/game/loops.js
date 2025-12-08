@@ -9365,12 +9365,9 @@ export const loops = {
         rotate(arg)
         shiftingE60(arg)
       }
-      gravity(arg)
+      classicGravity(arg)
       hardDrop(arg)
-      //retroLockdown(arg)
-	  if (gameHandler.game.piece.isLanded) {
-		  gameHandler.game.piece.mustLock = true
-	  }
+      retroLockdown(arg)
       lockFlash(arg)
       updateLasts(arg)
       /* Might use this code later
