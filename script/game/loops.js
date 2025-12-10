@@ -7819,7 +7819,7 @@ export const loops = {
       game.piece.gravity = Math.max(gravityEquation * 1000, framesToMs(1 / 20))
       if (game.stat.level >= 40) {
         game.piece.lockDelayLimit = ~~framesToMs(
-          40 * Math.pow(0.93, Math.pow(game.stat.level - 40, 0.8))
+          30 * Math.pow(0.93, Math.pow(game.stat.level - 40, 0.8))
         )
       } else {
         game.piece.lockDelayLimit = 500
