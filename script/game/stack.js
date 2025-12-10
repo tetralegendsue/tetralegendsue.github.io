@@ -330,7 +330,7 @@ export default class Stack extends GameModule {
 		resetAnimation("#stack", "tetris-flash")
 	  }
     }
-	if (this.lineClear >= 1 && this.isSpin && this.flashOnSpin) {
+	if (this.lineClear >= 1 && isSpin && this.flashOnSpin) {
 	  if (this.isFading || this.isHidden) {
 		resetAnimation("#stack", "tetris-flash-invis")
 	  } else if (this.parent.piece.useBoneBlocks || settings.settings.outline !== true) {
