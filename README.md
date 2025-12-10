@@ -4,7 +4,7 @@
 
 # Additions
 - New Tetra-X mode [Cold Divinity X]
-- New Arcade modes [Special (TGM2 Master), Novice-TI (TGM3 Easy), Special-TI (TGM3 Master), Sudden-TI (TGM3 Shirase), Novice-AE (TGM4 Asuka), Special-AE (TGM4 Konoha), Sudden-AE (TGM4 Master)]
+- New Arcade modes [Special (TGM2 Master), Advance (TAP TGM+), Novice-TI (TGM3 Easy), Special-TI (TGM3 Master), Sudden-TI (TGM3 Shirase), Novice-AE (TGM4 Normal), Advance-AE (TGM4 Asuka), Special-AE (TGM4 Konoha), Sudden-AE (TGM4 Master)]
 - New Retro mode [Cabinet (System 16)]
 - New Skins [PPT, T99, TOJ, Friends, Party, Pyramidal, DTET, KRS]
 - New Beat mode song [Gas Gas Gas (180BPM)]

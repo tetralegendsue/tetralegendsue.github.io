@@ -77,8 +77,20 @@
   "suddenTiDescription": {
     "message": "Extremely fast stacking and crazy distractions! Can you keep up?"
   },
-  "asukaLabel": {
+  "advanceLabel": {
+    "message": "Advance"
+  },
+  "advanceDescription": {
+    "message": "Starts off slow, but broken lines spawn from the ground. Can you reach the end?"
+  },
+  "normalAELabel": {
     "message": "Novice-AE"
+  },
+  "normalAEDescription": {
+    "message": "A standard game for beginners. Score high, and your grade will go up!"
+  },
+  "asukaLabel": {
+    "message": "Advance-AE"
   },
   "asukaDescription": {
     "message": "The pieces spawn on the ground, but you have a forgiving lockdown. Can you reach the end before the time limit ends?"

@@ -207,8 +207,8 @@ export default class Game {
 				gametype.includes("retro") ||
 				gametype.includes("handheld") ||
 				gametype === "deluxe") {
-				sound.load("hebooldstyle")
-				this.loadedSounbank = "hebooldstyle"
+				sound.load("heboris-oldstyle")
+				this.loadedSounbank = "heboris-oldstyle"
 				} else if (gametype === "terminal") {
 				sound.load("e60")
 				this.loadedSounbank = "e60"

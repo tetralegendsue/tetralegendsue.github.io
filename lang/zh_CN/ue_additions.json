@@ -77,8 +77,20 @@
   "suddenTiDescription": {
     "message": "极快的叠加速度和疯狂的干扰！你能跟上吗？"
   },
-  "asukaLabel": {
+  "advanceLabel": {
+    "message": "预付"
+  },
+  "advanceDescription": {
+    "message": "起初缓慢，但断裂的线条从地面蔓延而出。你能抵达终点吗？"
+  },
+  "normalAELabel": {
     "message": "新手-AE"
+  },
+  "normalAEDescription": {
+    "message": "一款适合初学者的标准游戏。得分越高，你的等级就越高！"
+  },
+  "asukaLabel": {
+    "message": "预付-AE"
   },
   "asukaDescription": {
     "message": "碎片散落在地面，但你拥有宽容的锁定机制。你能赶在时间限制结束前抵达终点吗？"

@@ -26,6 +26,7 @@ export default class Stack extends GameModule {
     this.levelUpAnimation = 0
     this.levelUpAnimationLimit = 0
     this.flashOnTetris = false
+	this.flashOnSpin = false
     this.alarmIsOn = false
     this.isInvisible = false
     this.waitingGarbage = 0
@@ -319,6 +320,17 @@ export default class Stack extends GameModule {
     }
     const version = isMini ? "mini" : ""
     if (this.lineClear >= 4 && this.flashOnTetris) {
+	  if (this.isFading || this.isHidden) {
+		resetAnimation("#stack", "tetris-flash-invis")
+	  } else if (this.parent.piece.useBoneBlocks || settings.settings.outline !== true) {
+		resetAnimation("#stack", "tetris-flash-outlineoff")
+	  } else if (this.alarmIsOn) {
+		resetAnimation("#stack", "tetris-flash-outlineon-danger")
+	  } else {
+		resetAnimation("#stack", "tetris-flash")
+	  }
+    }
+	if (this.lineClear >= 1 && this.isSpin && this.flashOnSpin) {
 	  if (this.isFading || this.isHidden) {
 		resetAnimation("#stack", "tetris-flash-invis")
 	  } else if (this.parent.piece.useBoneBlocks || settings.settings.outline !== true) {

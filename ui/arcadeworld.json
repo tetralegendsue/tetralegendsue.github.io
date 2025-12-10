@@ -16,6 +16,12 @@
       "disabled": true
     },
 	{
+      "string": "advanceLabel",
+	  "stringDesc": "advanceDescription",
+      "langOverride": "ue_additions",
+      "disabled": true
+    },
+	{
       "string": "specialLabel",
 	  "stringDesc": "specialDescription",
       "langOverride": "ue_additions",
@@ -48,6 +54,14 @@
       "langOverride": "ue_additions",
       "action": "submenu",
       "submenu": "mode/suddenworld"
+    },
+	{
+      "string": "normalAELabel",
+	  "stringDesc": "normalAEDescription",
+      "langOverride": "ue_additions",
+      "action": "submenu",
+	  "submenu": "mode/normalaeworld"
+      "disabled": true
     },
 	{
       "string": "asukaLabel",

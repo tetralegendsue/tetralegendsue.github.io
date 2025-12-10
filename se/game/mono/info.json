@@ -1,0 +1,25 @@
+{
+  "files": [
+	"alarm",
+    "collapse",
+    "erase4",
+    "erasenot4",
+	"excellent",
+    "gameover",
+	"garbage",
+    "ko",
+    "levelup",
+    "lock",
+    "move",
+    "pause",
+    "rotate",
+	"hold",
+	"land",
+	"step",
+	"ready",
+	"start",
+	"tspin",
+	"tspin0"
+  ],
+  "ren": []
+}

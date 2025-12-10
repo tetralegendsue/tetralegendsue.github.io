@@ -8,7 +8,7 @@
     "randomizer": "bag",
     "rotationSystem": "srs",
     "skin": "handheld",
-    "soundbank": "handheld",
+    "soundbank": "mono",
     "music": ["mono", "mono-last"],
     "scoreTable": "guideline",
 	"disableDefaultSkinLoad": true,
@@ -27,6 +27,7 @@
     "flashLineClear": true,
     "flashClearRate": 200,
     "flashOnTetris": true
+	"flashOnSpin": true
   },
   "stats": ["score", "level", "line"]
 }
