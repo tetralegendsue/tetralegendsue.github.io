@@ -23,5 +23,10 @@
   "next": {
     "nextLimit": 3
   },
-  "stats": ["score", "level", "fallspeed", "line", "piece"]
+  "stack": {
+    "flashLineClear": true,
+    "flashClearRate": 200,
+    "flashOnTetris": true
+  },
+  "stats": ["score", "level", "line"]
 }
