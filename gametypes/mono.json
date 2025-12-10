@@ -26,7 +26,7 @@
   "stack": {
     "flashLineClear": true,
     "flashClearRate": 200,
-    "flashOnTetris": true
+    "flashOnTetris": true,
 	"flashOnSpin": true
   },
   "stats": ["score", "level", "line"]
