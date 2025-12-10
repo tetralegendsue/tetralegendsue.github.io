@@ -65,6 +65,14 @@ export default class Game {
       line: 0,
       piece: 0,
       maxcombo: 0,
+	  erase1: 0,
+	  erase2: 0,
+	  erase3: 0,
+	  erase4: 0,
+	  spin1: 0,
+	  spin2: 0,
+	  spin3: 0,
+	  spin4: 0,
     }
     this.appends = {}
     this.prefixes = {}
@@ -109,10 +117,15 @@ export default class Game {
     this.timePassed = 0
 	this.timePassedOffset = 0
     this.timePassedAre = 0
-	this.nonSingleClears = 0
 	this.cachedAre = 0
 	this.cachedAreLine = 0
 	this.cachedAreLineModifier = 0
+	this.trackAESections = false
+	this.goodAESections = 0
+	this.tetraAESections = 0
+	this.trackTAPGrade = false
+	this.internalTAPGrade = 0
+	this.gaugeTAPGrade = 0
 	//this.useFullAreLine = true
     loadGameType(gametype)
       .then((gameData) => {

@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "parent": "arcadeclassic",
+    "langOverride": "mode-options",
+    "game": "advance",
+    "pgmusic": "pg-arcade"
+  },
+  "data": [
+    {
+      "string": "advanceLabel",
+      "langOverride": "ue_additions",
+      "type": "header"
+    }
+  ]
+}

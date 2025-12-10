@@ -355,10 +355,72 @@ export default class Stack extends GameModule {
     }
     if (this.lineClear > 0) {
       // TODO mini tspin and clean this up
-	  if (this.lineClear >= 2) {
-		  this.parent.nonSingleClears += this.lineClear
-	  } else if (isSpin) {
-		  this.parent.nonSingleClears += this.lineClear
+	  if (isSpin) {
+		  switch (this.lineClear) {
+			case 1:
+				this.parent.stat.spin1 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 4
+				}
+				break
+			case 2:
+				this.parent.stat.spin2 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 8
+				}
+				if (this.parent.trackAESections) {
+					this.parent.tetraAESections += 1
+				}
+				break
+			case 3:
+				this.parent.stat.spin3 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 16
+				}
+				if (this.parent.trackAESections) {
+					this.parent.tetraAESections += 1
+				}
+				break
+			default:
+				this.parent.stat.spin4 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 32
+				}
+				if (this.parent.trackAESections) {
+					this.parent.tetraAESections += 1
+				}
+				break
+		  }
+	  } else {
+		  switch (this.lineClear) {
+			case 1:
+				this.parent.stat.erase1 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 2
+				}
+				break
+			case 2:
+				this.parent.stat.erase2 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 4
+				}
+				break
+			case 3:
+				this.parent.stat.erase3 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 8
+				}
+				break
+			default:
+				this.parent.stat.erase4 += 1
+				if (this.parent.trackTAPGrade) {
+					this.parent.gaugeTAPGrade += 16
+				}
+				if (this.parent.trackAESections) {
+					this.parent.tetraAESections += 1
+				}
+				break
+		  }
 	  }
 	  if (this.lineClear < 4) {
 		if (this.parent.loadedSoundbank === "dtet") {
@@ -1256,6 +1318,12 @@ export default class Stack extends GameModule {
       Math.floor(newLevel / levelsPerSection)
     ) {
       if (newLevel !== levelLimit) {
+		  if (this.parent.trackAESections) {
+			  if (this.parent.tetraAESections >= 6) {
+				  this.parent.goodAESections += 1
+			  }
+			  this.parent.tetraAESections = 0
+		  }
 		  sound.add("levelup")
 		  sound.add("levelupmajor")
 	  }

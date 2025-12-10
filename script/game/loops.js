@@ -81,7 +81,8 @@ let coolPacing = 50
 let shiraseTargetLevel = 1300
 let segaSkin = "sega"
 let openerAttacks = []
-let openerIndex = 0
+let internalTIGrade = 0
+let gaugeTimer = 0
 let bpm
 const levelUpdate = (game) => {
   let returnValue = false
@@ -209,46 +210,78 @@ const updateSegaBg = (game) => {
 	else if (game.stat.level >= 0) {document.getElementById("arcadeBackground").style.setProperty("background-image", `url('bgs/back0.png')`)}
 }
 const updateTAPGrade = (game) => {
-	  if (game.stat.level >= 999 && game.nonSingleClears >= 180 && game.stack.isHidden && endRollPassed && endRollLines >= 32)
+	  /*
+	  if (game.stat.level >= 999 && (game.stat.line - game.stat.erase1) >= 180 && game.stack.isHidden && endRollPassed && endRollLines >= 32)
 		game.stat.grade = "GM"
-	  else if (game.stat.level >= 999 && game.nonSingleClears >= 180)
+	  else if (game.stat.level >= 999 && (game.stat.line - game.stat.erase1) >= 180)
         game.stat.grade = "M"
-      else if (game.nonSingleClears >= 170)
+      else if ((game.stat.line - game.stat.erase1) >= 170)
         game.stat.grade = "S9"
-	  else if (game.nonSingleClears >= 160)
+	  else if ((game.stat.line - game.stat.erase1) >= 160)
         game.stat.grade = "S8"
-	  else if (game.nonSingleClears >= 150)
+	  else if ((game.stat.line - game.stat.erase1) >= 150)
         game.stat.grade = "S7"
-	  else if (game.nonSingleClears >= 140)
+	  else if ((game.stat.line - game.stat.erase1) >= 140)
         game.stat.grade = "S6"
-	  else if (game.nonSingleClears >= 130)
+	  else if ((game.stat.line - game.stat.erase1) >= 130)
         game.stat.grade = "S5"
-	  else if (game.nonSingleClears >= 120)
+	  else if ((game.stat.line - game.stat.erase1) >= 120)
         game.stat.grade = "S4"
-	  else if (game.nonSingleClears >= 110)
+	  else if ((game.stat.line - game.stat.erase1) >= 110)
         game.stat.grade = "S3"
-	  else if (game.nonSingleClears >= 110)
+	  else if ((game.stat.line - game.stat.erase1) >= 110)
         game.stat.grade = "S2"
-	  else if (game.nonSingleClears >= 95)
+	  else if ((game.stat.line - game.stat.erase1) >= 95)
         game.stat.grade = "S1"
-	  else if (game.nonSingleClears >= 80)
+	  else if ((game.stat.line - game.stat.erase1) >= 80)
         game.stat.grade = "1"
-	  else if (game.nonSingleClears >= 70)
+	  else if ((game.stat.line - game.stat.erase1) >= 70)
         game.stat.grade = "2"
-	  else if (game.nonSingleClears >= 60)
+	  else if ((game.stat.line - game.stat.erase1) >= 60)
         game.stat.grade = "3"
-	  else if (game.nonSingleClears >= 50)
+	  else if ((game.stat.line - game.stat.erase1) >= 50)
         game.stat.grade = "4"
-	  else if (game.nonSingleClears >= 40)
+	  else if ((game.stat.line - game.stat.erase1) >= 40)
         game.stat.grade = "5"
-	  else if (game.nonSingleClears >= 30)
+	  else if ((game.stat.line - game.stat.erase1) >= 30)
         game.stat.grade = "6"
-	  else if (game.nonSingleClears >= 20)
+	  else if ((game.stat.line - game.stat.erase1) >= 20)
         game.stat.grade = "7"
-	  else if (game.nonSingleClears >= 10)
+	  else if ((game.stat.line - game.stat.erase1) >= 10)
         game.stat.grade = "8"
-	  else if (game.nonSingleClears >= 0)
+	  else if ((game.stat.line - game.stat.erase1) >= 0)
         game.stat.grade = "9"
+	  */
+	  let gradeTable = [
+		"9",
+		"8",
+		"7",
+		"6",
+		"5",
+		"4",
+		"3",
+		"2",
+		"1",
+		"S1",
+		"S2",
+		"S3",
+		"S4",
+		"S5",
+		"S6",
+		"S7",
+		"S8",
+		"S9",
+	  ]
+	  let maxInternalGrade = gradeTable.length - 1
+	  if (game.stat.level >= 999 && game.internalTAPGrade >= maxInternalGrade && game.stack.isHidden && endRollPassed && endRollLines >= 32) {
+		game.stat.grade = "GM"
+	  } else if (game.stat.level >= 999 && game.internalTAPGrade >= maxInternalGrade) {
+        game.stat.grade = "M"
+	  } else if (game.internalTAPGrade >= maxInternalGrade) {
+		game.stat.grade = "S9"
+	  } else {
+	    game.stat.grade = grade[game.internalTAPGrade]
+	  }
 	  if (lastGrade !== game.stat.grade && game.stat.grade !== "N/A") {
 		  if (game.stat.grade !== "9") {
 			  sound.add("gradeup")
@@ -401,7 +434,7 @@ const updateTIGrade = (game) => {
 		gradeIndex = 32
 	  else {
 	    for (const line of lineRequirementTable) {
-			if (game.nonSingleClears >= line) {
+			if ((game.stat.line - game.stat.erase1) >= line) {
 				if (game.stat.level >= 999 && endRollLines >= 32) {
 					gradeIndex = Math.max(
 						0, 
@@ -570,6 +603,30 @@ const updateRoundsGrade = (game) => {
         game.stat.grade = "M1"
 	  else if (game.stat.level >= 0)
         game.stat.grade = "N/A"
+}
+const updateAEGrade = (game) => {
+	  game.trackAESections = true
+	  let A = 0
+	  let B = 0
+	  if (endRollPassed) {
+		  B = 10
+	  } else if (game.stat.level >= 999) {
+		  B = 9
+	  } else {
+		  B = Math.floor(game.stat.level / 111)
+	  }
+	  if (endRollPassed && game.goodAESections >= 9) {
+		  A = 10
+	  } else {
+		  A = game.goodAESections
+	  }
+	  game.stat.grade = `${A} of ${B}`
+	  if (lastGrade !== game.stat.grade && game.stat.grade !== "N/A") {
+		  if (game.stat.grade !== "9") {
+			  sound.add("gradeup")
+		  }
+	  }
+	  lastGrade = game.stat.grade
 }
 const initMusicProgression = (game) => {
 	  game.musicProgression = 0
@@ -838,7 +895,7 @@ export const loops = {
 		  if (isEndRoll === false) {
 			  isEndRoll = true
 			  game.stack.endRollStart()
-			  if (game.rta <= 600000 && game.nonSingleClears >= 180) {
+			  if (game.rta <= 600000 && game.stat.grade === "S9") {
 				game.stack.isHidden = true
 				game.stack.isFading = false
 			  } else {
@@ -869,11 +926,30 @@ export const loops = {
 		sound.add("voxexcellent")
 		game.end(true)
 	  }
+	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
+        gaugeTimer += arg.ms
+        if (gaugeTimer > 1000) {
+		  gaugeTimer -= 1000
+          if (game.gaugeTAPGrade > 0) {
+			  game.gaugeTAPGrade -= 1
+		  }
+		  if (game.gaugeTAPGrade < 0) {
+			  game.gaugeTAPGrade = 0
+		  }
+        }
+      }
+	  if (game.gaugeTAPGrade >= 48) {
+		  game.gaugeTAPGrade = 0
+		  game.internalTAPGrade += 1
+	  }
 	  testModeUpdate()
     },
     onInit: (game) => {
       game.stat.level = 0
       game.isRaceMode = true
+	  game.trackTAPGrade = true
+	  game.internalTAPGrade = 0
+	  game.gaugeTAPGrade = 0
 	  isEndRoll = false
 	  endRollPassed = false
       game.stat.grade = "N/A"
@@ -889,6 +965,7 @@ export const loops = {
       game.endingStats.grade = true
       initMusicProgression(game)
       game.updateStats()
+	  gaugeTimer = 0
 	  updateFallSpeed(game)
     },
     onPieceSpawn: (game) => {
@@ -1068,7 +1145,7 @@ export const loops = {
               sound.loadBgm(["arcade3"], "tap")
 			  sound.killBgm()
 			  sound.playBgm(["arcade3"], "tap")
-			case 3:
+			case 6:
               sound.loadBgm(["arcade4"], "tap")
 			  sound.killBgm()
 			  sound.playBgm(["arcade4"], "tap")
@@ -1132,7 +1209,7 @@ export const loops = {
         shifting(arg)
       }
       gravity(arg)
-      sonicDrop(arg)
+      sonicDrop(arg, true)
       firmDrop(arg)
       classicLockdown(arg)
       if (!arg.piece.inAre) {
@@ -1280,8 +1357,8 @@ export const loops = {
 	  game.copyBottomForGarbage = true
 	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
         garbageTimer += arg.ms
-        if (garbageTimer > 10240) {
-          garbageTimer -= 10240
+        if (garbageTimer > 10000) {
+          garbageTimer -= 10000
           if (game.stat.level >= 500 && 
 		  (game.stat.level <= 1000 ||
 		  gameHandler.game.type === "normal31" ||
@@ -1508,7 +1585,7 @@ export const loops = {
 		if (isEndRoll === false) {
 			isEndRoll = true
 			game.stack.endRollStart()
-			if (regretsPenalty <= 0 && game.rta <= 600000 && game.nonSingleClears >= 240) {
+			if (regretsPenalty <= 0 && game.rta <= 600000 && internalTIGrade >= 24) {
 				game.stack.isHidden = true
 				game.stack.isFading = false
 			} else {
@@ -1542,6 +1619,7 @@ export const loops = {
 	  testModeUpdate()
     },
     onInit: (game) => {
+	  internalTIGrade = 0
       game.stat.level = 0
       game.isRaceMode = true
 	  isEndRoll = false
@@ -1871,7 +1949,7 @@ export const loops = {
         shifting(arg)
       }
       gravity(arg)
-      sonicDrop(arg)
+      sonicDrop(arg, true)
       firmDrop(arg)
       classicLockdown(arg)
       if (!arg.piece.inAre) {
@@ -2047,8 +2125,8 @@ export const loops = {
 	  game.copyBottomForGarbage = true
 	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
         garbageTimer += arg.ms
-        if (garbageTimer > 10240) {
-          garbageTimer -= 10240
+        if (garbageTimer > 10000) {
+          garbageTimer -= 10000
           if (game.stat.level >= 500 && 
 		  (game.stat.level <= 1000 ||
 		  gameHandler.game.type === "normal31" ||
@@ -2273,7 +2351,7 @@ export const loops = {
 		if (isEndRoll === false) {
 			isEndRoll = true
 			game.stack.endRollStart()
-			if (regretsPenalty <= 0 && game.rta <= 600000 && game.nonSingleClears >= 240) {
+			if (regretsPenalty <= 0 && game.rta <= 600000 && internalTIGrade >= 24) {
 				game.stack.isHidden = true
 				game.stack.isFading = false
 			} else {
@@ -2307,6 +2385,7 @@ export const loops = {
 	  testModeUpdate()
     },
     onInit: (game) => {
+	  internalTIGrade = 0
       game.stat.level = 0
       game.isRaceMode = true
 	  isEndRoll = false
@@ -2944,7 +3023,7 @@ export const loops = {
         tgmSoftDrop(arg)
 		hardDrop(arg)
       } else {
-		sonicDrop(arg)
+		sonicDrop(arg, true)
 		tgmFirmDrop(arg)
 	  }
       extendedLockdown(arg)
@@ -4374,7 +4453,7 @@ export const loops = {
 		hardDrop(arg)
 	  }
 	  else if (game.type === "aceclassic") {
-		sonicDrop(arg)
+		sonicDrop(arg, true)
         tgmFirmDrop(arg)
 	  }
       extendedLockdown(arg)
@@ -9561,6 +9640,899 @@ export const loops = {
       game.updateStats()
     },
   },
+  advance: {
+    update: (arg) => {
+      const game = gameHandler.game
+	  updateArcadeBg(game)
+      game.rta += arg.ms
+      arcadeScore(arg)
+      linesToLevel(arg, 999, 100)
+      game.endSectionLevel =
+        game.stat.level >= 900
+          ? 999
+          : Math.floor(game.stat.level / 100 + 1) * 100
+      game.appends.level = `<span class="small">/${game.endSectionLevel}</span>`
+      collapse(arg)
+      if (arg.piece.inAre) {
+        initialDas(arg)
+        initialRotation(arg)
+        initialHold(arg)
+        arg.piece.are += arg.ms
+      } else {
+        respawnPiece(arg)
+        rotate(arg)
+		rotate180(arg)
+        shifting(arg)
+      }
+      gravity(arg)
+      sonicDrop(arg, true)
+      tgmFirmDrop(arg)
+      //extendedLockdown(arg);
+      classicLockdown(arg)
+      if (!arg.piece.inAre) {
+        hold(arg)
+      }
+      lockFlash(arg)
+      updateLasts(arg)
+	  if (game.stat.level >= 999) {
+		game.stat.level = 999
+		$("#kill-message").textContent = locale.getString("ui", "excellent")
+		sound.killVox()
+		sound.add("voxexcellent")
+		game.end(true)
+	  }
+	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
+        garbageTimer += arg.ms
+        if (garbageTimer > 10000) {
+          garbageTimer -= 10000
+          arg.stack.addGarbageToCounter(1)
+        }
+      }
+	  testModeUpdate()
+    },
+    onInit: (game) => {
+      game.stat.level = 0
+      game.isRaceMode = true
+	  isEndRoll = false
+	  endRollPassed = false
+      //game.stat.grade = "N/A"
+	  //lastGrade = ""
+	  //game.arcadeCombo = 1;
+      game.rta = 0
+	  game.stack.redrawOnHidden = true
+	  game.stack.isHidden = false
+	  game.stack.isFading = false
+	  garbageTimer = 0
+	  game.stack.copyBottomForGarbage = false
+	  game.redrawOnLevelUp = true
+      game.torikanPassed = false
+      game.stat.initPieces = 2
+      //game.endingStats.grade = true
+      initMusicProgression(game)
+      game.updateStats()
+	  updateFallSpeed(game)
+    },
+    onPieceSpawn: (game) => {
+      const areTable = [
+		[100, 30],
+		[200, 24],
+		[300, 20],
+        [400, 18],
+        [500, 16],
+        [600, 14],
+        [800, 12],
+        [1000, 12],
+      ]
+      const areLineModifierTable = [
+        [400, -4],
+        [600, -6],
+        [800, 0],
+      ]
+      const areLineTable = [
+		[100, 30],
+		[200, 24],
+		[300, 20],
+		[400, 18],
+        [500, 16],
+        [600, 14],
+        [800, 12],
+        [1000, 12],
+      ]
+      const dasTable = [
+        [400, 12],
+        [600, 11],
+        [800, 10],
+        [1000, 8],
+      ]
+	  let gravityDenominator = 1
+      const gravityTable = [
+        [8, 4],
+        [19, 5],
+        [35, 6],
+        [40, 8],
+        [50, 10],
+        [60, 12],
+        [70, 16],
+        [80, 32],
+        [90, 48],
+        [100, 64],
+        [108, 4],
+        [119, 5],
+        [125, 6],
+        [131, 8],
+        [139, 12],
+        [149, 32],
+        [156, 48],
+        [164, 80],
+        [174, 112],
+        [180, 128],
+        [200, 144],
+        [212, 176],
+        [221, 192],
+        [232, 208],
+        [244, 224],
+        [256, 240],
+        [267, 260],
+        [277, 280],
+        [287, 300],
+        [295, 320],
+        [300, 340],
+		[310, 360],
+		[320, 380],
+		[330, 400],
+		[340, 420],
+		[350, 440],
+		[360, 480],
+		[370, 500],
+		[380, 540],
+		[390, 580],
+		[400, 600],
+		[410, 625],
+		[420, 650],
+		[430, 675],
+		[440, 700],
+		[450, 725],
+		[460, 750],
+		[470, 775],
+		[480, 800],
+		[490, 900],
+		[500, 1000],
+      ]
+      const lockDelayTable = [
+        [101, 30],
+        [400, 28],
+        [600, 26],
+        [800, 24],
+        [1000, 22],
+      ]
+      let musicProgressionTable = [
+        [479, 1],
+        [500, 2],
+        [679, 3],
+        [700, 4],
+		[879, 5],
+		[900, 6],
+		[979, 7],
+		[999, 8],
+      ]
+	  if (game.settings.rotationSystem === "heboris") {
+		  musicProgressionTable = []
+	  }
+	  if (settings.settings.soundbank === "heboris") {
+		  musicProgressionTable = []
+	  }
+      for (const pair of areTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.areLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of areLineModifierTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.areLimitLineModifier = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of areLineTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.areLineLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of dasTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.dasLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of lockDelayTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+		  if (isEndRoll) {
+			updateLockDelay(game, 30)
+		  } else {
+			updateLockDelay(game, entry)
+		  }
+          break
+        }
+      }
+      for (const pair of musicProgressionTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level >= level && game.musicProgression < entry) {
+          switch (entry) {
+            case 1:
+            case 3:
+              sound.killBgm()
+              break
+			case 5:
+              sound.killBgm()
+              break
+			case 7:
+              sound.killBgm()
+              break
+            case 2:
+              sound.loadBgm(["arcade2"], "tap")
+              sound.killBgm()
+              sound.playBgm(["arcade2"], "tap")
+              break
+            case 4:
+              sound.loadBgm(["arcade3"], "tap")
+			  sound.killBgm()
+			  sound.playBgm(["arcade3"], "tap")
+			case 3:
+              sound.loadBgm(["arcade4"], "tap")
+			  sound.killBgm()
+			  sound.playBgm(["arcade4"], "tap")
+             }
+          game.musicProgression = entry
+        }
+      }
+	  
+      if (
+        game.stat.initPieces === 0 &&
+        game.stat.level % 100 !== 99 &&
+        game.stat.level !== 998
+      ) {
+        game.stat.level = game.stat.level + 1
+      }
+      if (game.stat.initPieces > 0) {
+        game.stat.initPieces = game.stat.initPieces - 1
+      }
+	  
+	  for (const pair of gravityTable) {
+        const level = pair[0]
+        const denom = pair[1]
+        if (game.stat.level < level) {
+          gravityDenominator = denom
+          break
+        }
+      }
+	  if (game.stat.level < 500) {
+		  game.piece.ghostIsVisible = game.stat.level < 100
+		  game.piece.gravity = framesToMs(256 / gravityDenominator)
+	  } else {
+		  game.piece.ghostIsVisible = false
+		  game.piece.gravity = framesToMs(1 / 20)
+      }
+      updateFallSpeed(game)
+    },
+   },
+  normalae: {
+    update: (arg) => {
+      const game = gameHandler.game
+	  updateArcadeBg(game)
+      game.rta += arg.ms
+      arcadeScore(arg)
+      linesToLevel(arg, 999, 100)
+      game.endSectionLevel =
+        game.stat.level >= 900
+          ? 999
+          : Math.floor(game.stat.level / 100 + 1) * 100
+      game.appends.level = `<span class="small">/${game.endSectionLevel}</span>`
+      updateAEGrade(game)
+      collapse(arg)
+      if (arg.piece.inAre) {
+        initialDas(arg)
+        initialRotation(arg)
+        initialHold(arg)
+        arg.piece.are += arg.ms
+      } else {
+        respawnPiece(arg)
+        rotate(arg)
+		rotate180(arg)
+        shifting(arg)
+      }
+      gravity(arg)
+      if (input.getGameDown("specialKey")) {
+        tgmSoftDrop(arg)
+		hardDrop(arg)
+      } else {
+		sonicDrop(arg, true)
+		tgmFirmDrop(arg)
+	  }
+      extendedLockdown(arg)
+      if (!arg.piece.inAre) {
+        hold(arg)
+      }
+      lockFlash(arg)
+      updateLasts(arg)
+	  if (game.stat.level >= 999) {
+		  if (isEndRoll === false) {
+			  isEndRoll = true
+			  game.stack.endRollStart()
+			  game.stack.isFading = true
+			  game.stack.isHidden = false
+			  rtaGoal = game.rta + 55000
+			  if (game.musicProgression > 0) {
+				sound.loadBgm(["ending"], "normalae")
+				sound.killBgm()
+				sound.playBgm(["ending"], "normalae")
+			  }
+		  } else if (isEndRoll === true) {
+			  if (game.rta >= rtaGoal) {
+			  endRollPassed = true
+			  }
+		  }
+		  game.stat.level = 999
+		  endRollLines = Math.max(0, (game.stat.line - preEndRollLines))
+	  } else {
+		  preEndRollLines = game.stat.line
+		  endRollLines = 0
+	  }
+	  if (game.stat.level >= 999 && endRollPassed) {
+		game.stat.level = 999
+		$("#kill-message").textContent = locale.getString("ui", "excellent")
+		sound.killVox()
+		sound.add("voxexcellent")
+		game.end(true)
+	  }
+	  testModeUpdate()
+    },
+    onInit: (game) => {
+      game.stat.level = 0
+      game.isRaceMode = true
+	  isEndRoll = false
+	  endRollPassed = false
+      game.stat.grade = "N/A"
+	  lastGrade = ""
+	  //game.arcadeCombo = 1;
+      game.rta = 0
+	  game.trackAESections = true
+	  game.goodAESections = 0
+	  game.tetraAESections = 0
+	  game.stack.redrawOnHidden = true
+	  game.stack.isHidden = false
+	  game.stack.isFading = false
+	  game.redrawOnLevelUp = true
+      game.torikanPassed = false
+      game.stat.initPieces = 2
+      game.endingStats.grade = true
+      initMusicProgression(game)
+      game.updateStats()
+	  updateFallSpeed(game)
+    },
+    onPieceSpawn: (game) => {
+      const areTable = [
+		[100, 30],
+		[200, 24],
+		[300, 20],
+        [400, 18],
+        [500, 16],
+        [600, 14],
+        [800, 12],
+        [1000, 12],
+      ]
+      const areLineModifierTable = [
+        [400, -4],
+        [600, -6],
+        [800, 0],
+      ]
+      const areLineTable = [
+		[100, 30],
+		[200, 24],
+		[300, 20],
+		[400, 18],
+        [500, 16],
+        [600, 14],
+        [800, 12],
+        [1000, 12],
+      ]
+      const dasTable = [
+        [400, 12],
+        [600, 11],
+        [800, 10],
+        [1000, 8],
+      ]
+	  let gravityDenominator = 1
+      const gravityTable = [
+        [8, 4],
+        [19, 5],
+        [35, 6],
+        [40, 8],
+        [50, 10],
+        [60, 12],
+        [70, 16],
+        [80, 32],
+        [90, 48],
+        [100, 64],
+        [108, 4],
+        [119, 5],
+        [125, 6],
+        [131, 8],
+        [139, 12],
+        [149, 32],
+        [156, 48],
+        [164, 80],
+        [174, 112],
+        [180, 128],
+        [200, 144],
+        [212, 176],
+        [221, 192],
+        [232, 208],
+        [244, 224],
+        [256, 240],
+        [267, 260],
+        [277, 280],
+        [287, 300],
+        [295, 320],
+        [300, 340],
+		[310, 360],
+		[320, 380],
+		[330, 400],
+		[340, 420],
+		[350, 440],
+		[360, 480],
+		[370, 500],
+		[380, 540],
+		[390, 580],
+		[400, 600],
+		[410, 625],
+		[420, 650],
+		[430, 675],
+		[440, 700],
+		[450, 725],
+		[460, 750],
+		[470, 775],
+		[480, 800],
+		[490, 900],
+		[500, 1000],
+      ]
+      const lockDelayTable = [
+        [101, 30],
+        [400, 30],
+        [600, 30],
+        [800, 30],
+        [1000, 30],
+      ]
+      let musicProgressionTable = [
+        [279, 1],
+        [300, 2],
+        [479, 3],
+        [500, 4],
+      ]
+	  if (game.settings.rotationSystem === "heboris") {
+		  musicProgressionTable = []
+	  }
+	  if (settings.settings.soundbank === "heboris") {
+		  musicProgressionTable = []
+	  }
+	  for (const pair of areTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+		  if (input.getGameDown("specialKey")) {
+			  game.piece.areLimit = 0
+			  game.piece.areLimitLineModifier = framesToMs(entry)
+		  } else {
+			  game.piece.areLimit = framesToMs(entry)
+		  }
+          break
+        }
+      }
+      for (const pair of areLineTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+		  game.piece.areLineLimit = framesToMs(entry)
+          break
+        }
+      }
+	  for (const pair of areLineModifierTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          if (input.getGameDown("specialKey")) {
+			  game.piece.areLimitLineModifier += framesToMs(entry)
+		  } else {
+			  game.piece.areLimitLineModifier = framesToMs(entry)
+		  }
+          break
+        }
+      }
+      for (const pair of dasTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.dasLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of lockDelayTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+		  if (isEndRoll) {
+			updateLockDelay(game, 30)
+		  } else {
+			updateLockDelay(game, entry)
+		  }
+          break
+        }
+      }
+      for (const pair of musicProgressionTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level >= level && game.musicProgression < entry) {
+          switch (entry) {
+            case 1:
+            case 3:
+              sound.killBgm()
+              break
+			case 5:
+              sound.killBgm()
+              break
+			case 7:
+              sound.killBgm()
+              break
+            case 2:
+              sound.loadBgm(["normal2"], "normalae")
+              sound.killBgm()
+              sound.playBgm(["normal2"], "normalae")
+              break
+            case 4:
+              sound.loadBgm(["normal3"], "normalae")
+			  sound.killBgm()
+			  sound.playBgm(["normal3"], "normalae")
+             }
+          game.musicProgression = entry
+        }
+      }
+	  
+      if (
+        game.stat.initPieces === 0 &&
+        game.stat.level % 100 !== 99 &&
+        game.stat.level !== 998
+      ) {
+        game.stat.level = game.stat.level + 1
+      }
+      if (game.stat.initPieces > 0) {
+        game.stat.initPieces = game.stat.initPieces - 1
+      }
+	  
+	  for (const pair of gravityTable) {
+        const level = pair[0]
+        const denom = pair[1]
+        if (game.stat.level < level) {
+          gravityDenominator = denom
+          break
+        }
+      }
+	  if (game.stat.level < 500) {
+		  game.piece.ghostIsVisible = true
+		  game.piece.gravity = framesToMs(256 / gravityDenominator)
+	  } else {
+		  game.piece.ghostIsVisible = true
+		  game.piece.gravity = framesToMs(1 / 20)
+      }
+      updateFallSpeed(game)
+    },
+   },
+  normalaeworld: {
+    update: (arg) => {
+      const game = gameHandler.game
+	  updateArcadeBg(game)
+      game.rta += arg.ms
+      arcadeScore(arg)
+      linesToLevel(arg, 999, 100)
+      game.endSectionLevel =
+        game.stat.level >= 900
+          ? 999
+          : Math.floor(game.stat.level / 100 + 1) * 100
+      game.appends.level = `<span class="small">/${game.endSectionLevel}</span>`
+      updateAEGrade(game)
+      collapse(arg)
+      if (arg.piece.inAre) {
+        initialDas(arg)
+        initialRotation(arg)
+        initialHold(arg)
+        arg.piece.are += arg.ms
+      } else {
+        respawnPiece(arg)
+        rotate(arg)
+		rotate180(arg)
+        shifting(arg)
+      }
+      gravity(arg)
+      tgmSoftDrop(arg)
+	  hardDrop(arg)
+      extendedLockdown(arg)
+      if (!arg.piece.inAre) {
+        hold(arg)
+      }
+      lockFlash(arg)
+      updateLasts(arg)
+	  if (game.stat.level >= 999) {
+		  if (isEndRoll === false) {
+			  isEndRoll = true
+			  game.stack.endRollStart()
+			  game.stack.isFading = true
+			  game.stack.isHidden = false
+			  rtaGoal = game.rta + 55000
+			  if (game.musicProgression > 0) {
+				sound.loadBgm(["ending"], "normalae")
+				sound.killBgm()
+				sound.playBgm(["ending"], "normalae")
+			  }
+		  } else if (isEndRoll === true) {
+			  if (game.rta >= rtaGoal) {
+			  endRollPassed = true
+			  }
+		  }
+		  game.stat.level = 999
+		  endRollLines = Math.max(0, (game.stat.line - preEndRollLines))
+	  } else {
+		  preEndRollLines = game.stat.line
+		  endRollLines = 0
+	  }
+	  if (game.stat.level >= 999 && endRollPassed) {
+		game.stat.level = 999
+		$("#kill-message").textContent = locale.getString("ui", "excellent")
+		sound.killVox()
+		sound.add("voxexcellent")
+		game.end(true)
+	  }
+	  testModeUpdate()
+    },
+    onInit: (game) => {
+      game.stat.level = 0
+      game.isRaceMode = true
+	  isEndRoll = false
+	  endRollPassed = false
+      game.stat.grade = "N/A"
+	  lastGrade = ""
+	  //game.arcadeCombo = 1;
+      game.rta = 0
+	  game.trackAESections = true
+	  game.goodAESections = 0
+	  game.tetraAESections = 0
+	  game.stack.redrawOnHidden = true
+	  game.stack.isHidden = false
+	  game.stack.isFading = false
+	  game.redrawOnLevelUp = true
+      game.torikanPassed = false
+      game.stat.initPieces = 2
+      game.endingStats.grade = true
+      initMusicProgression(game)
+      game.updateStats()
+	  updateFallSpeed(game)
+    },
+    onPieceSpawn: (game) => {
+      const areTable = [
+		[100, 30],
+		[200, 24],
+		[300, 20],
+        [400, 18],
+        [500, 16],
+        [600, 14],
+        [800, 12],
+        [1000, 12],
+      ]
+      const areLineModifierTable = [
+        [400, -4],
+        [600, -6],
+        [800, 0],
+      ]
+      const areLineTable = [
+		[100, 30],
+		[200, 24],
+		[300, 20],
+		[400, 18],
+        [500, 16],
+        [600, 14],
+        [800, 12],
+        [1000, 12],
+      ]
+      const dasTable = [
+        [400, 12],
+        [600, 11],
+        [800, 10],
+        [1000, 8],
+      ]
+	  let gravityDenominator = 1
+      const gravityTable = [
+        [8, 4],
+        [19, 5],
+        [35, 6],
+        [40, 8],
+        [50, 10],
+        [60, 12],
+        [70, 16],
+        [80, 32],
+        [90, 48],
+        [100, 64],
+        [108, 4],
+        [119, 5],
+        [125, 6],
+        [131, 8],
+        [139, 12],
+        [149, 32],
+        [156, 48],
+        [164, 80],
+        [174, 112],
+        [180, 128],
+        [200, 144],
+        [212, 176],
+        [221, 192],
+        [232, 208],
+        [244, 224],
+        [256, 240],
+        [267, 260],
+        [277, 280],
+        [287, 300],
+        [295, 320],
+        [300, 340],
+		[310, 360],
+		[320, 380],
+		[330, 400],
+		[340, 420],
+		[350, 440],
+		[360, 480],
+		[370, 500],
+		[380, 540],
+		[390, 580],
+		[400, 600],
+		[410, 625],
+		[420, 650],
+		[430, 675],
+		[440, 700],
+		[450, 725],
+		[460, 750],
+		[470, 775],
+		[480, 800],
+		[490, 900],
+		[500, 1000],
+      ]
+      const lockDelayTable = [
+        [101, 30],
+        [400, 30],
+        [600, 30],
+        [800, 30],
+        [1000, 30],
+      ]
+      let musicProgressionTable = [
+        [279, 1],
+        [300, 2],
+        [479, 3],
+        [500, 4],
+      ]
+	  if (game.settings.rotationSystem === "heboris") {
+		  musicProgressionTable = []
+	  }
+	  if (settings.settings.soundbank === "heboris") {
+		  musicProgressionTable = []
+	  }
+      for (const pair of areTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.areLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of areLineModifierTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.areLimitLineModifier = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of areLineTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.areLineLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of dasTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+          game.piece.dasLimit = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of lockDelayTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level < level) {
+		  if (isEndRoll) {
+			updateLockDelay(game, 30)
+		  } else {
+			updateLockDelay(game, entry)
+		  }
+          break
+        }
+      }
+      for (const pair of musicProgressionTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level >= level && game.musicProgression < entry) {
+          switch (entry) {
+            case 1:
+            case 3:
+              sound.killBgm()
+              break
+			case 5:
+              sound.killBgm()
+              break
+			case 7:
+              sound.killBgm()
+              break
+            case 2:
+              sound.loadBgm(["normal2"], "normalae")
+              sound.killBgm()
+              sound.playBgm(["normal2"], "normalae")
+              break
+            case 4:
+              sound.loadBgm(["normal3"], "normalae")
+			  sound.killBgm()
+			  sound.playBgm(["normal3"], "normalae")
+             }
+          game.musicProgression = entry
+        }
+      }
+	  
+      if (
+        game.stat.initPieces === 0 &&
+        game.stat.level % 100 !== 99 &&
+        game.stat.level !== 998
+      ) {
+        game.stat.level = game.stat.level + 1
+      }
+      if (game.stat.initPieces > 0) {
+        game.stat.initPieces = game.stat.initPieces - 1
+      }
+	  
+	  for (const pair of gravityTable) {
+        const level = pair[0]
+        const denom = pair[1]
+        if (game.stat.level < level) {
+          gravityDenominator = denom
+          break
+        }
+      }
+	  if (game.stat.level < 500) {
+		  game.piece.ghostIsVisible = true
+		  game.piece.gravity = framesToMs(256 / gravityDenominator)
+	  } else {
+		  game.piece.ghostIsVisible = true
+		  game.piece.gravity = framesToMs(1 / 20)
+      }
+      updateFallSpeed(game)
+    },
+   },
 }
 loops.aceclassic = loops.ace
 loops.beatx = loops.beat

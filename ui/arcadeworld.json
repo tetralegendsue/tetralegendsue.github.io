@@ -60,8 +60,7 @@
 	  "stringDesc": "normalAEDescription",
       "langOverride": "ue_additions",
       "action": "submenu",
-	  "submenu": "mode/normalaeworld",
-      "disabled": true
+	  "submenu": "mode/normalaeworld"
     },
 	{
       "string": "asukaLabel",
@@ -85,7 +84,6 @@
       "submenu": "mode/roundsworld"
     },
 	{
-	  "disabled": true,
       "string": "normal21Label",
 	  "stringDesc": "normal21Description",
       "langOverride": "ue_additions",

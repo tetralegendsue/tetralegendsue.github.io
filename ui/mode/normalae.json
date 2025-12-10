@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "parent": "arcadeclassic",
+    "langOverride": "mode-options",
+    "game": "normalae",
+    "pgmusic": "pg-normalae"
+  },
+  "data": [
+    {
+      "string": "normalAELabel",
+      "langOverride": "ue_additions",
+      "type": "header"
+    }
+  ]
+}

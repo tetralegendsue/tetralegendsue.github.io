@@ -65,8 +65,7 @@
 	  "stringDesc": "normalAEDescription",
       "langOverride": "ue_additions",
       "action": "submenu",
-	  "submenu": "mode/normalae",
-      "disabled": true
+	  "submenu": "mode/normalae"
     },
 	{
       "string": "asukaLabel",

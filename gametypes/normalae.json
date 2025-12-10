@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "width": 10,
+    "height": 2,
+    "hiddenHeight": 20,
+    "pieces": "standard",
+    "unfavored": null,
+    "randomizer": "bag",
+    "rotationSystem": "arsae",
+    "skin": "arika",
+    "soundbank": "tgm4",
+    "music": "../normalae/normal1",
+    "hasDangerBgm": false,
+    "scoreTable": "tgm",
+    "background": "marathon.jpg",
+    "isHardMode": false
+  },
+  "piece": {
+    "spinDetectionType": "3corner"
+  },
+  "next": {
+    "nextLimit": 6
+  },
+  "hold": {
+    "isDisabled": false
+  },
+  "stats": ["score", "grade", "level", "line"]
+}
