@@ -65,7 +65,7 @@
 	  "stringDesc": "normalAEDescription",
       "langOverride": "ue_additions",
       "action": "submenu",
-	  "submenu": "mode/normalae"
+	  "submenu": "mode/normalae",
       "disabled": true
     },
 	{

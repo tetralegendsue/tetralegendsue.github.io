@@ -60,7 +60,7 @@
 	  "stringDesc": "normalAEDescription",
       "langOverride": "ue_additions",
       "action": "submenu",
-	  "submenu": "mode/normalaeworld"
+	  "submenu": "mode/normalaeworld",
       "disabled": true
     },
 	{
