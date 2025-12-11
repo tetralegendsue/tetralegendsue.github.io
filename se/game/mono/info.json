@@ -1,6 +1,7 @@
 {
   "files": [
 	"alarm",
+	"hurryup",
     "collapse",
     "erase4",
     "erasenot4",
@@ -15,9 +16,6 @@
     "rotate",
 	"hold",
 	"land",
-	"step",
-	"ready",
-	"start",
 	"tspin",
 	"tspin0"
   ],
