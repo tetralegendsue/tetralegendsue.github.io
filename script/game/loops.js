@@ -59,6 +59,7 @@ let lastLevel = 0
 let garbageTimer = 0
 let garbageSendTimer = 0
 let shown20GMessage = false
+let shownCycloneMessage = false
 let shownHoldWarning = false
 let lastSeenI = 0
 let lastBravos = 0
@@ -8649,15 +8650,21 @@ export const loops = {
 		1,
 	  ]
       game.next.nextLimit = NEXT_TABLE[calcLevel]
+	  if (calcLevel >= 6 && !shownCycloneMessage) {
+        $("#message").textContent = "CYCLONE!"
+        resetAnimation("#message", "dissolve")
+        shownCycloneMessage = true
+      }
+	  if (calcLevel >= 6) {
+		  game.piece.isCyclone = true
+	  } else {
+		  game.piece.isCyclone = false
+	  }
       levelUpdate(game)
     },
     onInit: (game) => {
       game.lineGoal = 150
-		1 / 20,
-		1 / 20,
-		1 / 20,
-		1 / 20,
-		1 / 20,
+	  shownCycloneMessage = settings.game.frozenx.startingLevel < 7
       game.stat.level = settings.game.frozenx.startingLevel
       lastLevel = parseInt(settings.game.frozenx.startingLevel)
       game.prefixes.level = "CD"
