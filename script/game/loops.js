@@ -2957,7 +2957,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-      game.stat.level = Math.min(
+      game.stat.level = Math.max(
 		settings.game.mono.startingLevel,
 		Math.floor(game.stat.line / 10 + 1)
 	  )
