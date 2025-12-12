@@ -2962,10 +2962,23 @@ export const loops = {
 		settings.game.mono.startingLevel,
 		Math.floor(game.stat.line / 10)
 	  )
+	  /*
       const x = game.stat.level
       const gravityEquation = (0.8 - x * 0.007) ** (x - 1)
       game.piece.gravity = Math.max(gravityEquation * 1000, framesToMs(1 / 20))
-      if (game.stat.level >= 20) {
+	  if (game.stat.level >= 20) {
+        game.piece.lockDelayLimit = ~~framesToMs(
+          30 * Math.pow(0.93, Math.pow(game.stat.level - 20, 0.8))
+        )
+      } else {
+        game.piece.lockDelayLimit = 500
+      }
+	  */
+	  const gravityTable = [
+        53, 49, 45, 41, 37, 33, 28, 22, 17, 11, 9, 8, 7, 6, 5, 4, 3, 1/3, 1/9, 1/20,
+      ]
+	  game.piece.gravity = gravityTable[game.stat.level]
+	  if (game.stat.level >= 19) {
         game.piece.lockDelayLimit = ~~framesToMs(
           30 * Math.pow(0.93, Math.pow(game.stat.level - 20, 0.8))
         )
