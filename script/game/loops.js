@@ -715,6 +715,8 @@ export const loops = {
 		  game.next.nextLimit = 1
 	  }
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
       game.stat.grade = "N/A"
 	  lastGrade = ""
@@ -949,6 +951,8 @@ export const loops = {
     },
     onInit: (game) => {
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
 	  game.trackTAPGrade = true
 	  game.internalTAPGrade = 0
@@ -1292,6 +1296,8 @@ export const loops = {
     },
     onInit: (game) => {
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.rta = 0
       game.isRaceMode = true
       game.arcadeCombo = 1
@@ -1384,6 +1390,8 @@ export const loops = {
 	  }
 	  game.stack.copyBottomForGarbage = true
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
       game.stat.grade = "N/A"
 	  //game.arcadeCombo = 1;
@@ -1624,6 +1632,8 @@ export const loops = {
     onInit: (game) => {
 	  internalTIGrade = 0
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
 	  isEndRoll = false
 	  endRollPassed = false
@@ -2056,6 +2066,8 @@ export const loops = {
     onInit: (game) => {
 	  game.useHeboMusic = false
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.rta = 0
 	  isEndRoll = false
 	  endRollPassed = false
@@ -2150,6 +2162,8 @@ export const loops = {
 		  shiraseTargetLevel = 1300
 	  }
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
       game.stat.grade = "N/A"
       game.rta = 0
@@ -2389,6 +2403,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  internalTIGrade = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.stat.level = 0
       game.isRaceMode = true
 	  isEndRoll = false
@@ -2821,6 +2837,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  game.useHeboMusic = false
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.stat.level = 0
       game.rta = 0
       game.isRaceMode = true
@@ -3511,6 +3529,8 @@ export const loops = {
     },
     onInit: (game) => {
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
 	  game.timeGoal = 420000
       game.stat.grade = "N/A"
@@ -3719,6 +3739,8 @@ export const loops = {
     },
     onInit: (game) => {
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
 	  game.timeGoal = 420000
       game.stat.grade = "N/A"
@@ -3977,6 +3999,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  underwaterProgression = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.stat.level = 0
       game.isRaceMode = true
       game.stat.grade = "N/A"
@@ -4260,6 +4284,8 @@ export const loops = {
     },
     onInit: (game) => {
 	  underwaterProgression = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.stat.level = 0
       game.isRaceMode = true
       game.stat.grade = "N/A"
@@ -10026,6 +10052,8 @@ export const loops = {
     },
     onInit: (game) => {
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
 	  isEndRoll = false
 	  endRollPassed = false
@@ -10331,6 +10359,8 @@ export const loops = {
     },
     onInit: (game) => {
       game.stat.level = 0
+	  game.hideGrid = true
+	  game.stack.updateGrid()
       game.isRaceMode = true
 	  isEndRoll = false
 	  endRollPassed = false
