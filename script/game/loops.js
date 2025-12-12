@@ -624,11 +624,6 @@ const updateAEGrade = (game) => {
 		  A = game.goodAESections
 	  }
 	  game.stat.grade = `${A} of ${B}`
-	  if (lastGrade !== game.stat.grade && game.stat.grade !== "N/A") {
-		  if (game.stat.grade !== "0 of 0") {
-			  sound.add("gradeup")
-		  }
-	  }
 	  lastGrade = game.stat.grade
 }
 const initMusicProgression = (game) => {
