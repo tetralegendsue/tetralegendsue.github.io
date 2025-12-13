@@ -24,8 +24,7 @@
     "nextLimit": 3
   },
   "stack": {
-    "flashLineClear": true,
-    "flashClearRate": 200,
+    "flashLineClear": false,
     "flashOnTetris": true,
 	"flashOnSpin": true
   },
