@@ -2978,7 +2978,7 @@ export const loops = {
 	  const gravityTable = [
         53, 49, 45, 41, 37, 33, 28, 22, 17, 11, 9, 8, 7, 6, 5, 4, 3, 1/3, 1/9, 1/20,
       ]
-	  game.piece.gravity = framesToMs(gravityTable[game.stat.level])
+	  game.piece.gravity = framesToMs(gravityTable[Math.min(game.stat.level, 19)])
 	  if (game.stat.level >= 19) {
         game.piece.lockDelayLimit = ~~framesToMs(
           30 * Math.pow(0.93, Math.pow(game.stat.level - 20, 0.8))
@@ -8972,7 +8972,7 @@ export const loops = {
         classicGravity(arg)
         softDropNes(arg, false)
         hardDrop(arg)
-		classicLockdown(arg)
+		retroLockdown(arg)
       }
       if (!arg.piece.inAre) {
         arg.piece.holdingTime += arg.ms
@@ -9011,10 +9011,8 @@ export const loops = {
       levelUpdate(game)
     },
     onInit: (game) => {
-      if (settings.game.retro.mechanics === "accurate") {
-        game.hideGrid = true
-        game.stack.updateGrid()
-      }
+	  game.hideGrid = true
+      game.stack.updateGrid()
       lastSeenI = 0
       game.piece.holdingTimeLimit = 1600
       game.stat.level = settings.game.retro.startingLevel

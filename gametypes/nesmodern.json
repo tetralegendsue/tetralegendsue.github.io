@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "width": 10,
+    "height": 18,
+    "hiddenHeight": 20,
+    "pieces": "standard",
+    "unfavored": "standardUnfavored",
+    "randomizer": "bag",
+    "rotationSystem": "srs",
+    "skin": "retro-special-nesmodern",
+    "soundbank": "nesmodern",
+    "music": "nesmodern",
+    "scoreTable": "guideline",
+	"disableDefaultSkinLoad": true,
+    "background": "marathon.jpg"
+  },
+  "piece": {
+    "areLimit": 33.3333333333,
+    "areLineLimit": 0,
+    "areLimitLineModifier": 0,
+    "spinDetectionType": "3corner"
+  },
+  "next": {
+    "nextLimit": 3
+  },
+  "stack": {
+    "flashLineClear": true,
+    "flashClearRate": 200,
+    "flashOnTetris": true,
+	"flashOnSpin": true
+  },
+  "stats": ["score", "level", "line"]
+}

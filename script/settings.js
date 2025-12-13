@@ -171,6 +171,12 @@ class Settings {
 	  mono: {
         startingLevel: 0,
       },
+	  monodx: {
+        startingLevel: 0,
+      },
+	  nesmodern: {
+        startingLevel: 0,
+      },
     }
     this.settings = {}
     this.controls = {}

@@ -177,10 +177,22 @@
     "message": "リワーク前の旧バージョンのスタンダード"
   },
   "monoLabel": {
-    "message": "NEW WORLD"
+    "message": "バラ色の回顧"
   },
   "monoDescription": {
-    "message": "ハンドヘルドだが、ガイドライン制御付き"
+    "message": "携帯機だが、ガイドライン制御付き"
+  },
+  "monoDeluxeLabel": {
+    "message": "バラ色の回顧 DX"
+  },
+  "monoDeluxeDescription": {
+    "message": "携帯機DX、ただしガイドライン制御付き"
+  },
+  "modernNesLabel": {
+    "message": "現代的逆転"
+  },
+  "modernNesDescription": {
+    "message": "レトロでありながら、ガイドライン付きコントロール"
   },
   "footerLabel": {
     "message": ""

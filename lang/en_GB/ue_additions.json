@@ -177,10 +177,22 @@
     "message": "The old version of Standard before the rework"
   },
   "monoLabel": {
-    "message": "New World"
+    "message": "Rosy Retrospection"
   },
   "monoDescription": {
     "message": "Handheld, but with guideline controls"
+  },
+  "monoDeluxeLabel": {
+    "message": "Rosy Retrospection DX"
+  },
+  "monoDeluxeDescription": {
+    "message": "Handheld DX, but with guideline controls"
+  },
+  "modernNesLabel": {
+    "message": "Contemporary Reversion"
+  },
+  "modernNesDescription": {
+    "message": "Retro, but with guideline controls"
   },
   "footerLabel": {
     "message": ""

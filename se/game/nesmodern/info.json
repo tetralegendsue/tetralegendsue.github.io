@@ -1,0 +1,24 @@
+{
+  "files": [
+	"collapse",
+	"land",
+	"alarm",
+	"hurryup",
+    "erase4",
+    "erasenot4",
+    "excellent",
+	"garbage",
+	"hold",
+	"initialhold",
+	"initialrotate",
+    "ko",
+    "levelup",
+    "lock",
+    "move",
+    "pause",
+    "rotate",
+	"tspin0",
+	"tspin"
+  ],
+  "ren": []
+}
